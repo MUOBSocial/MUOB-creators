@@ -975,35 +975,31 @@
   <section id="showcase" class="showcase-section">  <!-- Added id here -->
     <div class="container">
   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUOB Creators Showcase</title>
+  <title>MUOB Creator Showcase</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .showcase-section {
-      padding: 80px 20px;
+    .showcase-carousel {
+      padding: 60px 0;
       background: #f8faff;
-      color: #192b6c;
+      position: relative;
+      overflow: hidden;
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
     
     .section-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .section-header h2 {
@@ -1016,25 +1012,27 @@
       color: transparent;
     }
     
-    .section-header p {
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto;
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      padding: 20px 0;
     }
     
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .carousel-track {
+      display: flex;
       gap: 30px;
+      transition: transform 0.5s ease;
+      will-change: transform;
     }
     
     .video-card {
+      min-width: 300px;
       background: white;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(25, 43, 108, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
     }
     
     .video-card:hover {
@@ -1044,11 +1042,12 @@
     
     .video-embed {
       position: relative;
-      padding-bottom: 125%; /* 4:5 aspect ratio for TikTok */
+      padding-bottom: 125%;
       height: 0;
       overflow: hidden;
     }
     
+    .video-embed iframe,
     .video-embed blockquote {
       position: absolute;
       top: 0;
@@ -1058,23 +1057,40 @@
       border: none;
     }
     
-    .video-stats {
+    .video-info {
       padding: 20px;
+    }
+    
+    .creator-tag {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #5d6fc1;
+    }
+    
+    .creator-name {
+      margin-left: 8px;
+      color: #192b6c;
+      font-weight: 500;
+    }
+    
+    .video-stats {
       display: flex;
       justify-content: space-between;
-      background: white;
     }
     
     .stat {
       display: flex;
       align-items: center;
       font-weight: 600;
+      font-size: 0.9rem;
     }
     
     .stat svg {
-      margin-right: 8px;
-      width: 18px;
-      height: 18px;
+      margin-right: 6px;
+      width: 16px;
+      height: 16px;
     }
     
     .views {
@@ -1085,20 +1101,35 @@
       color: #ff6b6b;
     }
     
-    .creator-tag {
-      padding: 10px 20px;
-      background: #f0f4ff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #5d6fc1;
+    .carousel-nav {
       display: flex;
-      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
     }
     
-    .creator-name {
-      margin-left: 8px;
-      color: #192b6c;
-      font-weight: 500;
+    .carousel-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #e0e5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-btn:hover {
+      background: #192b6c;
+      color: white;
+      border-color: #192b6c;
+    }
+    
+    .carousel-btn svg {
+      width: 24px;
+      height: 24px;
     }
     
     @media (max-width: 768px) {
@@ -1106,268 +1137,361 @@
         font-size: 2rem;
       }
       
-      .videos-grid {
-        grid-template-columns: 1fr;
+      .video-card {
+        min-width: 280px;
       }
     }
   </style>
-  <!-- TikTok Embed Script -->
-  <script async src="https://www.tiktok.com/embed.js"></script>
 </head>
 <body>
-  <section class="showcase-section">
+  <section class="showcase-carousel">
     <div class="container">
       <div class="section-header">
-        <h2>Content Created by MUOB Creators</h2>
-        <p>See real examples of high-performing content our creators have made for hotel partners</p>
+        <h2>Creator Success Stories</h2>
+        <p>See how our creators are making an impact for hotels worldwide</p>
       </div>
       
-      <div class="videos-grid">
-        <!-- Video 1 - Bella Appiah -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7436333212399389984" data-video-id="7436333212399389984">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@belsappiah</span>
-            <span class="creator-name">Bella Appiah</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              1.3M views
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Video 1 - Bella Appiah -->
+          <div class="video-card" data-id="1">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7436333212399389984" data-video-id="7436333212399389984">
+                <section></section>
+              </blockquote>
             </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              145.1K likes
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">1.3M views</div>
+                <div class="stat likes">145.1K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 2 - Taz -->
+          <div class="video-card" data-id="2">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7466130229786971424" data-video-id="7466130229786971424">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@tazventures</span>
+                <span class="creator-name">Taz</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">1M views</div>
+                <div class="stat likes">62.3K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 3 - Bella Appiah -->
+          <div class="video-card" data-id="3">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7427417365081541921" data-video-id="7427417365081541921">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">709K views</div>
+                <div class="stat likes">35K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 4 - Bella Appiah -->
+          <div class="video-card" data-id="4">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7467489172471680289" data-video-id="7467489172471680289">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">530K views</div>
+                <div class="stat likes">106K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 5 - Taz -->
+          <div class="video-card" data-id="5">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7331903873461914912" data-video-id="7331903873461914912">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@tazventures</span>
+                <span class="creator-name">Taz</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">38.8K views</div>
+                <div class="stat likes">818 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 6 - Emmanuella Chukwuma -->
+          <div class="video-card" data-id="6">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@food_retreats/video/7497753473165937942" data-video-id="7497753473165937942">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@food_retreats</span>
+                <span class="creator-name">Emmanuella Chukwuma</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">30.4K views</div>
+                <div class="stat likes">783 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 7 - Lauren -->
+          <div class="video-card" data-id="7">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@travelmissions/video/7173357290525969670" data-video-id="7173357290525969670">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@travelmissions</span>
+                <span class="creator-name">Lauren</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">22.3K views</div>
+                <div class="stat likes">248 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 8 - krunal Raval -->
+          <div class="video-card" data-id="8">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@krunalraval_/video/7477322775569452310" data-video-id="7477322775569452310">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@krunalraval_</span>
+                <span class="creator-name">krunal Raval</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">18.1K views</div>
+                <div class="stat likes">706 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 9 - Jennifer Taborda -->
+          <div class="video-card" data-id="9">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@x_taborda/video/7445005362354277665" data-video-id="7445005362354277665">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@x_taborda</span>
+                <span class="creator-name">Jennifer Taborda</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">14.8K views</div>
+                <div class="stat likes">590 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Duplicates for seamless looping -->
+          <!-- Video 1 - Bella Appiah -->
+          <div class="video-card" data-id="1-clone">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7436333212399389984" data-video-id="7436333212399389984">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">1.3M views</div>
+                <div class="stat likes">145.1K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 2 - Taz -->
+          <div class="video-card" data-id="2-clone">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7466130229786971424" data-video-id="7466130229786971424">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@tazventures</span>
+                <span class="creator-name">Taz</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">1M views</div>
+                <div class="stat likes">62.3K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 3 - Bella Appiah -->
+          <div class="video-card" data-id="3-clone">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7427417365081541921" data-video-id="7427417365081541921">
+                <section></section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">709K views</div>
+                <div class="stat likes">35K likes</div>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- Video 2 - Taz -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7466130229786971424" data-video-id="7466130229786971424">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@tazventures</span>
-            <span class="creator-name">Taz</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              1M views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              62.3K likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 3 - Bella Appiah -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7427417365081541921" data-video-id="7427417365081541921">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@belsappiah</span>
-            <span class="creator-name">Bella Appiah</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              709K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              35K likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 4 - Bella Appiah -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7467489172471680289" data-video-id="7467489172471680289">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@belsappiah</span>
-            <span class="creator-name">Bella Appiah</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              530K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              106K likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 5 - Taz -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7331903873461914912" data-video-id="7331903873461914912">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@tazventures</span>
-            <span class="creator-name">Taz</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              38.8K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              818 likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 6 - Emmanuella Chukwuma -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@food_retreats/video/7497753473165937942" data-video-id="7497753473165937942">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@food_retreats</span>
-            <span class="creator-name">Emmanuella Chukwuma</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              30.4K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              783 likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 7 - Lauren -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@travelmissions/video/7173357290525969670" data-video-id="7173357290525969670">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@travelmissions</span>
-            <span class="creator-name">Lauren</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              22.3K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              248 likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 8 - krunal Raval -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@krunalraval_/video/7477322775569452310" data-video-id="7477322775569452310">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@krunalraval_</span>
-            <span class="creator-name">krunal Raval</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              18.1K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              706 likes
-            </div>
-          </div>
-        </div>
-        
-        <!-- Video 9 - Jennifer Taborda -->
-        <div class="video-card">
-          <div class="video-embed">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@x_taborda/video/7445005362354277665" data-video-id="7445005362354277665">
-              <section></section>
-            </blockquote>
-          </div>
-          <div class="creator-tag">
-            <span>@x_taborda</span>
-            <span class="creator-name">Jennifer Taborda</span>
-          </div>
-          <div class="video-stats">
-            <div class="stat views">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-              </svg>
-              14.8K views
-            </div>
-            <div class="stat likes">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              590 likes
-            </div>
-          </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="prevBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn" id="nextBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- TikTok Embed Script -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  
+  <!-- Infinite Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carouselTrack');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const cards = document.querySelectorAll('.video-card');
+      const cardWidth = cards[0].offsetWidth + 30; // width + gap
+      let position = 0;
+      let autoScrollInterval;
+      
+      // Clone first few cards and append to end for infinite effect
+      function initInfiniteScroll() {
+        const firstCards = Array.from(cards).slice(0, 4).map(card => card.cloneNode(true));
+        firstCards.forEach(card => {
+          card.setAttribute('data-cloned', 'true');
+          track.appendChild(card);
+        });
+      }
+      
+      initInfiniteScroll();
+      
+      function moveToPosition(newPosition) {
+        position = newPosition;
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(${position}px)`;
+        
+        // Check if we need to jump to cloned cards
+        setTimeout(() => {
+          const maxScroll = -((cards.length - 1) * cardWidth);
+          if (position <= maxScroll) {
+            position = 0;
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${position}px)`;
+          } else if (position >= cardWidth) {
+            position = -((cards.length - 4) * cardWidth);
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${position}px)`;
+          }
+        }, 500);
+      }
+      
+      nextBtn.addEventListener('click', function() {
+        moveToPosition(position - cardWidth);
+      });
+      
+      prevBtn.addEventListener('click', function() {
+        moveToPosition(position + cardWidth);
+      });
+      
+      // Touch/swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      track.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoScrollInterval);
+      }, false);
+      
+      track.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, false);
+      
+      function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+          moveToPosition(position - cardWidth);
+        }
+        if (touchEndX > touchStartX + 50) {
+          moveToPosition(position + cardWidth);
+        }
+      }
+      
+      // Auto-scroll (optional)
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+          moveToPosition(position - cardWidth);
+        }, 3000);
+      }
+      
+      // Uncomment to enable auto-scrolling
+      // startAutoScroll();
+      
+      // Pause on hover
+      track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+      track.addEventListener('mouseleave', startAutoScroll);
+    });
+  </script>
+</body>
+</html>
 
   <!-- CTA Section -->
   <section class="cta-section">
