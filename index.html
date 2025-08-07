@@ -74,6 +74,7 @@
         }
       ]
     }
+
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -337,6 +338,143 @@
       margin-bottom: 1.5rem;
       color: #192b6c;
       font-weight: 600;
+    }
+
+/* Pricing Cards */
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .pricing-card {
+      background: white;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(25, 43, 108, 0.15);
+      border: 1px solid rgba(25, 43, 108, 0.2);
+    }
+    
+    .pricing-card:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card:hover:before {
+      height: 8px;
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+      transform: rotate(5deg);
+    }
+    
+    .pricing-card h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .pricing-card h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+    }
+    
+    .pricing-card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pricing-card ul {
+      flex: 1;
+      list-style-type: none;
+      margin-left: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-card ul li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      color: #333;
+    }
+    
+    .pricing-card ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #5d6fc1;
+      font-weight: bold;
+    }
+    
+    .pricing-price {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 1.5rem 0;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .pricing-period {
+      display: block;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    
+    .pricing-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
     }
     
     /* Value Proposition Badge */
