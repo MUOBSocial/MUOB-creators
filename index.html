@@ -117,7 +117,7 @@
     
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       background: linear-gradient(145deg, #192b6c, #5d6fc1);
       -webkit-background-clip: text;
       background-clip: text;
@@ -292,8 +292,9 @@
       display: flex;
       align-items: center;
       position: relative;
-      padding: 6rem 0;
+      padding: 4rem 0;
       overflow: hidden;
+      margin-top: 60px; /* Account for fixed header */
     }
     
     .hero::before {
@@ -344,7 +345,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin: 3rem 0;
+      margin: 2rem 0 3rem 0;
     }
     
     .pricing-card {
@@ -578,9 +579,29 @@
       box-shadow: 0 20px 40px rgba(25, 43, 108, 0.15);
     }
     
+    /* Global Section Spacing */
+    section {
+      padding: 5rem 0;
+    }
+    
+    section + section {
+      border-top: none; /* Ensure no visual separation lines */
+    }
+    
+    /* Section spacing consistency */
+    .section {
+      padding: 5rem 0;
+    }
+    
+    /* Pricing Section */
+    .pricing-section {
+      padding: 5rem 0;
+      background: #ffffff;
+    }
+    
     /* Benefits Section */
     .benefits-section {
-      padding: 6rem 0;
+      padding: 5rem 0;
       background: #f8faff;
     }
     
@@ -588,7 +609,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin: 3rem 0;
+      margin: 2rem 0;
     }
     
     .benefit-card {
@@ -634,15 +655,16 @@
     /* How It Works */
     .how-it-works-section {
       position: relative;
-      padding: 8rem 0;
+      padding: 5rem 0;
       overflow: hidden;
+      background: #ffffff;
     }
     
     .how-it-works {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 3rem;
-      margin: 5rem 0;
+      margin: 2rem 0;
       position: relative;
       z-index: 1;
     }
@@ -719,13 +741,14 @@
     
     /* FAQ Section */
     .faq-section {
-      padding: 6rem 0;
+      padding: 5rem 0;
       position: relative;
+      background: #ffffff;
     }
     
     .faq-container {
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 2rem auto;
     }
     
     .faq-item {
@@ -787,7 +810,7 @@
     /* Showcase Section - Updated for Full TikTok Videos */
     .showcase-section,
     .showcase-carousel {
-      padding: 60px 0;
+      padding: 5rem 0;
       background: #f8faff;
       position: relative;
       overflow: hidden;
@@ -795,13 +818,13 @@
     
     .section-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 2rem;
     }
     
     .section-header h2 {
       font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
       background: linear-gradient(145deg, #192b6c, #5d6fc1);
       -webkit-background-clip: text;
       background-clip: text;
@@ -816,12 +839,12 @@
     .carousel-container {
       position: relative;
       overflow: hidden;
-      padding: 20px 0;
+      padding: 2rem 0;
     }
     
     .carousel-track {
       display: flex;
-      gap: 30px;
+      gap: 2rem;
       transition: transform 0.5s ease;
       will-change: transform;
     }
@@ -917,7 +940,7 @@
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 2rem;
     }
     
     .carousel-btn {
@@ -946,7 +969,7 @@
 
     /* CTA Section */
     .cta-section {
-      padding: 6rem 0;
+      padding: 5rem 0;
       background: linear-gradient(135deg, #192b6c, #5d6fc1);
       color: white;
       text-align: center;
@@ -960,6 +983,9 @@
     .cta-section h2 {
       color: white;
       margin-bottom: 1.5rem;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
     }
     
     .cta-section p {
@@ -972,7 +998,7 @@
     .footer {
       background: #192b6c;
       color: white;
-      padding: 3rem 0 1rem;
+      padding: 3rem 0 1.5rem;
     }
     
     .footer-container {
@@ -1057,7 +1083,7 @@
     
     .footer-bottom {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
       padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: rgba(255, 255, 255, 0.6);
@@ -1076,6 +1102,24 @@
       
       h2 {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Reduce section padding on mobile */
+      section,
+      .section,
+      .pricing-section,
+      .benefits-section,
+      .how-it-works-section,
+      .faq-section,
+      .showcase-section,
+      .showcase-carousel,
+      .cta-section {
+        padding: 3rem 0;
+      }
+      
+      .hero {
+        padding: 3rem 0;
       }
       
       .hero-subtitle {
@@ -1108,10 +1152,14 @@
       .guides-grid,
       .pricing-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
       }
       
       .how-it-works {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
       }
       
       .trust-badges {
@@ -1126,6 +1174,10 @@
         grid-template-columns: 1fr;
       }
       
+      .section-header {
+        margin-bottom: 1.5rem;
+      }
+      
       .section-header h2 {
         font-size: 2rem;
       }
@@ -1136,6 +1188,10 @@
       
       .video-embed {
         padding-bottom: 177.78%;
+      }
+      
+      .faq-container {
+        margin: 2rem auto;
       }
     }
   </style>
@@ -1199,7 +1255,7 @@
   <!-- Benefits Section -->
   <section id="benefits" class="benefits-section">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 3rem;">What MUOB Creators Offers</h2>
+      <h2 style="text-align: center;">What MUOB Creators Offers</h2>
       
       <div class="benefits-grid">
         <div class="benefit-card">
@@ -1242,12 +1298,12 @@
   </section>
 
   <!-- Pricing Section -->
-  <section class="section" id="pricing">
+  <section class="pricing-section" id="pricing">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading" style="margin-bottom: 2rem;">
         <h2 style="text-align: center;">Simple, Transparent Pricing</h2>
-        <p style="text-align: center;">All packages include research, scripting, editing, optimization, and publishing.</p>
-        <p style="text-align: center;"><strong>The only difference is how many videos you get each month.</strong></p>
+        <p style="text-align: center; margin-bottom: 0.5rem;">All packages include research, scripting, editing, optimization, and publishing.</p>
+        <p style="text-align: center; margin-bottom: 0;"><strong>The only difference is how many videos you get each month.</strong></p>
       </div>
       
       <div class="pricing-container">
@@ -1316,10 +1372,10 @@
         </div>
       </div>
       
-      <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; margin-top: 3rem; box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);">
-        <h3>Not sure which membership tier fits you best?</h3>
-        <p>Let's figure it out together — based on your goals, experience, and what you actually want from UGC.</p>
-        <p>You'll get honest advice, zero pressure, and a clear plan to help you land your first hotel deal (or your next).</p>
+      <div style="background: white; border-radius: 15px; padding: 2.5rem; text-align: center; margin-top: 2rem; box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);">>
+        <h3 style="margin-bottom: 1rem;">Not sure which membership tier fits you best?</h3>
+        <p style="margin-bottom: 1rem;">Let's figure it out together — based on your goals, experience, and what you actually want from UGC.</p>
+        <p style="margin-bottom: 2rem;">You'll get honest advice, zero pressure, and a clear plan to help you land your first hotel deal (or your next).</p>
         <a href="mailto:contact@muobsocial.com" class="btn btn-primary btn-with-icon">
           <span>Chat with the team</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1334,7 +1390,7 @@
   <!-- How It Works Section -->
   <section id="how-it-works" class="how-it-works-section">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 3rem;">How It Works</h2>
+      <h2 style="text-align: center;">How It Works</h2>
       
       <div class="how-it-works">
         <div class="step-card">
@@ -1361,7 +1417,7 @@
   <!-- FAQ Section -->
   <section id="faq" class="faq-section">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+      <h2 style="text-align: center;">Frequently Asked Questions</h2>
       
       <div class="faq-container">
         <div class="faq-item">
@@ -1656,7 +1712,7 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const cards = document.querySelectorAll('.video-card');
-      const cardWidth = 355; // 325px card + 30px gap
+      const cardWidth = 357; // 325px card + 32px gap (2rem)
       let position = 0;
       let autoScrollInterval;
       
