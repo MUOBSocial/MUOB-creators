@@ -74,7 +74,6 @@
         }
       ]
     }
-
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -340,7 +339,7 @@
       font-weight: 600;
     }
 
-/* Pricing Cards */
+    /* Pricing Cards */
     .pricing-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -551,6 +550,12 @@
       background: #192b6c;
       color: white;
       transform: translateY(-2px);
+    }
+    
+    .btn-with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
     /* Glass Card */
@@ -780,6 +785,7 @@
     }
     
     /* Showcase Section - Updated for Full TikTok Videos */
+    .showcase-section,
     .showcase-carousel {
       padding: 60px 0;
       background: #f8faff;
@@ -800,6 +806,11 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+      color: #666;
     }
     
     .carousel-container {
@@ -973,6 +984,11 @@
       padding: 0 2rem;
     }
     
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+    
     .footer-logo {
       margin-bottom: 1rem;
     }
@@ -995,6 +1011,8 @@
     
     .footer-links {
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
     
     .footer-links li {
@@ -1087,7 +1105,8 @@
       }
       
       .benefits-grid,
-      .guides-grid {
+      .guides-grid,
+      .pricing-container {
         grid-template-columns: 1fr;
       }
       
@@ -1222,27 +1241,29 @@
     </div>
   </section>
 
-<!-- Pricing Section -->
+  <!-- Pricing Section -->
   <section class="section" id="pricing">
     <div class="container">
-      <div class="section-heading animated" style="position: relative;">
-        <h2>Simple, Transparent Pricing</h2>
-        <p>All packages include research, scripting, editing, optimization, and publishing.</p>
-        <p><strong>The only difference is how many videos you get each month.</strong></p>
+      <div class="section-heading">
+        <h2 style="text-align: center;">Simple, Transparent Pricing</h2>
+        <p style="text-align: center;">All packages include research, scripting, editing, optimization, and publishing.</p>
+        <p style="text-align: center;"><strong>The only difference is how many videos you get each month.</strong></p>
+      </div>
       
       <div class="pricing-container">
-        <div class="pricing-card animated delay-1">
+        <!-- Explorers Card -->
+        <div class="pricing-card">
           <h3>Explorers</h3>
           <div class="pricing-card-content">
             <div class="pricing-price">£9<span class="pricing-period">per month</span></div>
             <ul>
-                <li><strong>Access to weekly hotel collabs</strong></li>
-                <li>New stay opportunities posted every Friday</li>
-                <li>Apply directly to hotel briefs inside the platform</li>
-                <li>Support group for creators</li>
-                <li>Pitch templates, content guides & video ideas</li>
-                <li>No followers required to land deals</li>
-                <li>Real-world briefs from real hotels</li>
+              <li><strong>Access to weekly hotel collabs</strong></li>
+              <li>New stay opportunities posted every Friday</li>
+              <li>Apply directly to hotel briefs inside the platform</li>
+              <li>Support group for creators</li>
+              <li>Pitch templates, content guides & video ideas</li>
+              <li>No followers required to land deals</li>
+              <li>Real-world briefs from real hotels</li>
             </ul>
             <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for beginners or first-time creators</p>
           </div>
@@ -1251,62 +1272,64 @@
           </div>
         </div>
         
-        <div class="pricing-container">
-            <div class="pricing-card animated delay-1">
-                <h3>Nomads</h3>
-                <div class="pricing-card-content">
-                <div class="pricing-price">£19<span class="pricing-period">per month</span></div>
-      <ul>
-        <li><strong>Everything in Explorers</strong></li>
-        <li>Access to higher-tier hotel briefs with better perks</li>
-        <li>Apply to paid UGC opportunities & brand deals</li>
-        <li>Priority access to popular hotel collaborations</li>
-        <li>Exclusive strategy drops and negotiation tips</li>
-        <li>Bonus trainings & pitch teardown examples</li>
-        <li>More creator perks with each stay (meals, experiences, etc.)</li>
-      </ul>
-      <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for creators ready to level up and land paid work</p>
-    </div>
-    <div class="pricing-buttons">
-      <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary">Join Nomads</a>
-    </div>
-  </div>
-</div>
+        <!-- Nomads Card -->
+        <div class="pricing-card">
+          <h3>Nomads</h3>
+          <div class="pricing-card-content">
+            <div class="pricing-price">£19<span class="pricing-period">per month</span></div>
+            <ul>
+              <li><strong>Everything in Explorers</strong></li>
+              <li>Access to higher-tier hotel briefs with better perks</li>
+              <li>Apply to paid UGC opportunities & brand deals</li>
+              <li>Priority access to popular hotel collaborations</li>
+              <li>Exclusive strategy drops and negotiation tips</li>
+              <li>Bonus trainings & pitch teardown examples</li>
+              <li>More creator perks with each stay (meals, experiences, etc.)</li>
+            </ul>
+            <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for creators ready to level up and land paid work</p>
+          </div>
+          <div class="pricing-buttons">
+            <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary">Join Nomads</a>
+          </div>
+        </div>
         
-        <div class="pricing-container">
-  <div class="pricing-card animated delay-1">
-    <h3>First Class</h3>
-    <div class="pricing-card-content">
-      <div class="pricing-price">£39<span class="pricing-period">per month</span></div>
-      <ul>
-        <li><strong>Everything in Nomads</strong></li>
-        <li>First look at the best hotel briefs before anyone else</li>
-        <li>Shortlisted first for high-value collaborations</li>
-        <li>Access to premium paid brand opportunities</li>
-        <li>Advanced pitch strategies & conversion playbooks</li>
-        <li>Exclusive deep-dive video trainings & mini courses</li>
-        <li>1:1 feedback opportunities on pitches, videos & outreach</li>
-      </ul>
-      <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Built for serious creators ready to turn UGC into income</p>
-    </div>
-    <div class="pricing-buttons">
-      <a href="https://muob-creators.circle.so/checkout/first-class" class="btn btn-primary">Join First Class</a>
-    </div>
-  </div>
-</div>
+        <!-- First Class Card -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>First Class</h3>
+          <div class="pricing-card-content">
+            <div class="pricing-price">£39<span class="pricing-period">per month</span></div>
+            <ul>
+              <li><strong>Everything in Nomads</strong></li>
+              <li>First look at the best hotel briefs before anyone else</li>
+              <li>Shortlisted first for high-value collaborations</li>
+              <li>Access to premium paid brand opportunities</li>
+              <li>Advanced pitch strategies & conversion playbooks</li>
+              <li>Exclusive deep-dive video trainings & mini courses</li>
+              <li>1:1 feedback opportunities on pitches, videos & outreach</li>
+            </ul>
+            <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Built for serious creators ready to turn UGC into income</p>
+          </div>
+          <div class="pricing-buttons">
+            <a href="https://muob-creators.circle.so/checkout/first-class" class="btn btn-primary">Join First Class</a>
+          </div>
+        </div>
+      </div>
       
       <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; margin-top: 3rem; box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);">
-  <h3>Not sure which membership tier fits you best?</h3>
-  <p>Let’s figure it out together — based on your goals, experience, and what you actually want from UGC.</p>
-  <p>You’ll get honest advice, zero pressure, and a clear plan to help you land your first hotel deal (or your next).</p>
-  <a href="mailto:contact@muobsocial.com" class="btn btn-primary btn-with-icon">
-    <span>Chat with the team</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14"></path>
-      <path d="M12 5l7 7-7 7"></path>
-    </svg>
-  </a>
-</div>
+        <h3>Not sure which membership tier fits you best?</h3>
+        <p>Let's figure it out together — based on your goals, experience, and what you actually want from UGC.</p>
+        <p>You'll get honest advice, zero pressure, and a clear plan to help you land your first hotel deal (or your next).</p>
+        <a href="mailto:contact@muobsocial.com" class="btn btn-primary btn-with-icon">
+          <span>Chat with the team</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
     
   <!-- How It Works Section -->
   <section id="how-it-works" class="how-it-works-section">
@@ -1383,202 +1406,198 @@
   <!-- Showcase Section -->
   <section id="showcase" class="showcase-section">
     <div class="container">
-      <section class="showcase-carousel">
-        <div class="container">
-          <div class="section-header">
-            <h2>Creator Success Stories</h2>
-            <p>See how our creators are making an impact for hotels worldwide</p>
-          </div>
-          
-          <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
-              <!-- Video 1 - Bella Appiah -->
-              <div class="video-card" data-id="1">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7436333212399389984" data-video-id="7436333212399389984" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@belsappiah</span>
-                    <span class="creator-name">Bella Appiah</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">1.3M views</div>
-                    <div class="stat likes">145.1K likes</div>
-                  </div>
-                </div>
+      <div class="section-header">
+        <h2>Creator Success Stories</h2>
+        <p>See how our creators are making an impact for hotels worldwide</p>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Video 1 - Bella Appiah -->
+          <div class="video-card" data-id="1">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7436333212399389984" data-video-id="7436333212399389984" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
               </div>
-              
-              <!-- Video 2 - Taz -->
-              <div class="video-card" data-id="2">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7466130229786971424" data-video-id="7466130229786971424" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@tazventures" href="https://www.tiktok.com/@tazventures?refer=embed">@tazventures</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@tazventures</span>
-                    <span class="creator-name">Taz</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">1M views</div>
-                    <div class="stat likes">62.3K likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 3 - Bella Appiah -->
-              <div class="video-card" data-id="3">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7427417365081541921" data-video-id="7427417365081541921" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@belsappiah</span>
-                    <span class="creator-name">Bella Appiah</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">709K views</div>
-                    <div class="stat likes">35K likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 4 - Bella Appiah -->
-              <div class="video-card" data-id="4">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7467489172471680289" data-video-id="7467489172471680289" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@belsappiah</span>
-                    <span class="creator-name">Bella Appiah</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">530K views</div>
-                    <div class="stat likes">106K likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 5 - Taz -->
-              <div class="video-card" data-id="5">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7331903873461914912" data-video-id="7331903873461914912" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@tazventures" href="https://www.tiktok.com/@tazventures?refer=embed">@tazventures</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@tazventures</span>
-                    <span class="creator-name">Taz</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">38.8K views</div>
-                    <div class="stat likes">818 likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 6 - Emmanuella Chukwuma -->
-              <div class="video-card" data-id="6">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@food_retreats/video/7497753473165937942" data-video-id="7497753473165937942" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@food_retreats" href="https://www.tiktok.com/@food_retreats?refer=embed">@food_retreats</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@food_retreats</span>
-                    <span class="creator-name">Emmanuella Chukwuma</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">30.4K views</div>
-                    <div class="stat likes">783 likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 7 - Lauren -->
-              <div class="video-card" data-id="7">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@travelmissions/video/7173357290525969670" data-video-id="7173357290525969670" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@travelmissions" href="https://www.tiktok.com/@travelmissions?refer=embed">@travelmissions</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@travelmissions</span>
-                    <span class="creator-name">Lauren</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">22.3K views</div>
-                    <div class="stat likes">248 likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 8 - krunal Raval -->
-              <div class="video-card" data-id="8">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@krunalraval_/video/7477322775569452310" data-video-id="7477322775569452310" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@krunalraval_" href="https://www.tiktok.com/@krunalraval_?refer=embed">@krunalraval_</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@krunalraval_</span>
-                    <span class="creator-name">krunal Raval</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">18.1K views</div>
-                    <div class="stat likes">706 likes</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Video 9 - Jennifer Taborda -->
-              <div class="video-card" data-id="9">
-                <div class="video-embed">
-                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@x_taborda/video/7445005362354277665" data-video-id="7445005362354277665" style="max-width: 605px; min-width: 325px;">
-                    <section> <a target="_blank" title="@x_taborda" href="https://www.tiktok.com/@x_taborda?refer=embed">@x_taborda</a> </section>
-                  </blockquote>
-                </div>
-                <div class="video-info">
-                  <div class="creator-tag">
-                    <span>@x_taborda</span>
-                    <span class="creator-name">Jennifer Taborda</span>
-                  </div>
-                  <div class="video-stats">
-                    <div class="stat views">14.8K views</div>
-                    <div class="stat likes">590 likes</div>
-                  </div>
-                </div>
+              <div class="video-stats">
+                <div class="stat views">1.3M views</div>
+                <div class="stat likes">145.1K likes</div>
               </div>
             </div>
-            
-            <div class="carousel-nav">
-              <button class="carousel-btn" id="prevBtn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M15 18l-6-6 6-6"></path>
-                </svg>
-              </button>
-              <button class="carousel-btn" id="nextBtn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 18l6-6-6-6"></path>
-                </svg>
-              </button>
+          </div>
+          
+          <!-- Video 2 - Taz -->
+          <div class="video-card" data-id="2">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7466130229786971424" data-video-id="7466130229786971424" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@tazventures" href="https://www.tiktok.com/@tazventures?refer=embed">@tazventures</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@tazventures</span>
+                <span class="creator-name">Taz</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">1M views</div>
+                <div class="stat likes">62.3K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 3 - Bella Appiah -->
+          <div class="video-card" data-id="3">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7427417365081541921" data-video-id="7427417365081541921" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">709K views</div>
+                <div class="stat likes">35K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 4 - Bella Appiah -->
+          <div class="video-card" data-id="4">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belsappiah/video/7467489172471680289" data-video-id="7467489172471680289" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@belsappiah" href="https://www.tiktok.com/@belsappiah?refer=embed">@belsappiah</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@belsappiah</span>
+                <span class="creator-name">Bella Appiah</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">530K views</div>
+                <div class="stat likes">106K likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 5 - Taz -->
+          <div class="video-card" data-id="5">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tazventures/video/7331903873461914912" data-video-id="7331903873461914912" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@tazventures" href="https://www.tiktok.com/@tazventures?refer=embed">@tazventures</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@tazventures</span>
+                <span class="creator-name">Taz</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">38.8K views</div>
+                <div class="stat likes">818 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 6 - Emmanuella Chukwuma -->
+          <div class="video-card" data-id="6">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@food_retreats/video/7497753473165937942" data-video-id="7497753473165937942" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@food_retreats" href="https://www.tiktok.com/@food_retreats?refer=embed">@food_retreats</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@food_retreats</span>
+                <span class="creator-name">Emmanuella Chukwuma</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">30.4K views</div>
+                <div class="stat likes">783 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 7 - Lauren -->
+          <div class="video-card" data-id="7">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@travelmissions/video/7173357290525969670" data-video-id="7173357290525969670" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@travelmissions" href="https://www.tiktok.com/@travelmissions?refer=embed">@travelmissions</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@travelmissions</span>
+                <span class="creator-name">Lauren</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">22.3K views</div>
+                <div class="stat likes">248 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 8 - krunal Raval -->
+          <div class="video-card" data-id="8">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@krunalraval_/video/7477322775569452310" data-video-id="7477322775569452310" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@krunalraval_" href="https://www.tiktok.com/@krunalraval_?refer=embed">@krunalraval_</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@krunalraval_</span>
+                <span class="creator-name">krunal Raval</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">18.1K views</div>
+                <div class="stat likes">706 likes</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Video 9 - Jennifer Taborda -->
+          <div class="video-card" data-id="9">
+            <div class="video-embed">
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@x_taborda/video/7445005362354277665" data-video-id="7445005362354277665" style="max-width: 605px; min-width: 325px;">
+                <section> <a target="_blank" title="@x_taborda" href="https://www.tiktok.com/@x_taborda?refer=embed">@x_taborda</a> </section>
+              </blockquote>
+            </div>
+            <div class="video-info">
+              <div class="creator-tag">
+                <span>@x_taborda</span>
+                <span class="creator-name">Jennifer Taborda</span>
+              </div>
+              <div class="video-stats">
+                <div class="stat views">14.8K views</div>
+                <div class="stat likes">590 likes</div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+        
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="prevBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button class="carousel-btn" id="nextBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
