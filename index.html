@@ -170,27 +170,95 @@
     
     /* Hero Section */
     .hero {
-      min-height: 60vh;
+      min-height: 50vh;
       display: flex;
       align-items: center;
       position: relative;
-      padding: 8rem 0 4rem;
+      padding: 6rem 0 4rem;
       overflow: hidden;
-      background: linear-gradient(125deg, rgba(25, 43, 108, 0.05) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(93, 111, 193, 0.08) 80%);
+      background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23192b6c" opacity="0.02"/><circle cx="80" cy="40" r="1" fill="%235d6fc1" opacity="0.02"/><circle cx="40" cy="80" r="1" fill="%23192b6c" opacity="0.02"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
+      pointer-events: none;
     }
     
     .hero-content {
-      max-width: 900px;
+      max-width: 700px;
       position: relative;
       z-index: 1;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #192b6c 0%, #5d6fc1 50%, #8b9dd9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(25, 43, 108, 0.1);
     }
     
     .hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
       color: #444;
       font-weight: 500;
       line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    
+    .hero-cta {
+      margin-top: 2rem;
+    }
+    
+    .hero-cta .btn {
+      font-size: 1.2rem;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+      color: white;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+      transition: all 0.3s ease;
+      text-transform: none;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-cta .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .hero-cta .btn:hover::before {
+      left: 100%;
+    }
+    
+    .hero-cta .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+      color: white;
     }
     
     /* Section Spacing */
@@ -919,9 +987,96 @@
         padding: 0 1rem;
       }
       
-      h1 {
-        font-size: 2.5rem;
+      .hero {
+        padding: 6rem 0 4rem;
+        min-height: 60vh;
       }
+      
+      .hero-content {
+        padding: 0 2rem;
+      }
+      
+      h1 {
+        font-size: 2.4rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-cta .btn {
+        font-size: 1.1rem;
+        padding: 1rem 2.5rem;
+      }
+      
+      .brief-card {
+        min-width: 280px;
+        width: 280px;
+        height: 280px;
+        padding: 1rem;
+      }
+      
+      .brief-location {
+        font-size: 0.9rem;
+      }
+      
+      .brief-name {
+        font-size: 1.1rem;
+      }
+      
+      .brief-feature {
+        font-size: 0.8rem;
+      }
+      
+      .pricing-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 0 1rem;
+        margin: 2rem auto;
+      }
+      
+      .pricing-card {
+        max-width: 320px;
+        min-width: auto;
+        width: 100%;
+        padding: 1.5rem;
+      }
+      
+      .pricing-card.featured {
+        transform: scale(1);
+        order: -1;
+      }
+      
+      .pricing-card.featured:hover {
+        transform: translateY(-5px);
+      }
+      
+      .who-grid,
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .founder-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
       
       h2 {
         font-size: 2rem;
@@ -1024,7 +1179,9 @@
           Pitch templates that work. Join MUOB Creators to access exclusive hotel 
           collaboration opportunities and build your UGC portfolio.
         </p>
-        <a href="#pricing" class="btn btn-primary">View Membership Options</a>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-primary">View Membership Options</a>
+        </div>
       </div>
     </div>
   </section>
