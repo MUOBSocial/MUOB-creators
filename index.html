@@ -245,25 +245,60 @@
       color: #ff6b6b;
     }
     
-    /* Recent Briefs Section */
+    /* Recent Briefs Section - Updated for Horizontal Scrolling */
     .recent-briefs {
       padding: 4rem 0;
       background: #f8faff;
     }
     
-    .briefs-grid {
-      display: grid;
-      gap: 2rem;
+    .briefs-scroll-container {
+      position: relative;
       margin-top: 2rem;
+    }
+    
+    .briefs-grid {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 1rem 0 2rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .briefs-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-track {
+      background: rgba(25, 43, 108, 0.1);
+      border-radius: 10px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+      border-radius: 10px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, #5d6fc1, #8b9dd9);
     }
     
     .brief-card {
       background: white;
       border: 1px solid rgba(25, 43, 108, 0.1);
       border-radius: 20px;
-      padding: 2rem;
+      padding: 1.5rem;
       box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
       transition: all 0.3s ease;
+      min-width: 320px;
+      width: 320px;
+      height: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
     }
     
     .brief-card:hover {
@@ -275,17 +310,18 @@
       display: flex;
       justify-content: space-between;
       align-items: start;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
     }
     
     .brief-tier {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       background: linear-gradient(45deg, #192b6c, #5d6fc1);
       color: white;
       border-radius: 30px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     
     .brief-tier.nomads {
@@ -298,32 +334,87 @@
     
     .brief-date {
       color: #666;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      text-align: right;
+      line-height: 1.2;
     }
     
     .brief-location {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #192b6c;
       margin-bottom: 1rem;
+      line-height: 1.3;
+      flex-shrink: 0;
     }
     
     .brief-details {
       list-style: none;
       margin: 0;
       padding: 0;
-    }
-    
-    .brief-details li {
-      padding: 0.5rem 0;
-      color: #555;
+      flex-grow: 1;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 0.5rem;
     }
     
+    .brief-details li {
+      padding: 0.3rem 0;
+      color: #555;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
     .brief-details li span {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .brief-apply-link {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      color: white;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .brief-apply-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(25, 43, 108, 0.3);
+      color: white;
+    }
+    
+    /* Scroll Navigation Buttons */
+    .scroll-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .scroll-btn {
+      padding: 0.5rem 1rem;
+      background: rgba(25, 43, 108, 0.1);
+      border: none;
+      border-radius: 25px;
+      color: #192b6c;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .scroll-btn:hover {
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      color: white;
     }
     
     /* Buttons */
@@ -830,6 +921,21 @@
         font-size: 2rem;
       }
       
+      .brief-card {
+        min-width: 280px;
+        width: 280px;
+        height: 350px;
+        padding: 1.2rem;
+      }
+      
+      .brief-location {
+        font-size: 1rem;
+      }
+      
+      .brief-details li {
+        font-size: 0.85rem;
+      }
+      
       .who-grid,
       .pricing-container,
       .metrics-grid {
@@ -921,51 +1027,133 @@
       <h2>Recent Hotel Briefs Posted</h2>
       <p style="color: #666; margin-bottom: 2rem;">New briefs drop every Friday. Higher tiers get earlier access and better perks.</p>
       
-      <div class="briefs-grid">
-        <!-- August 8th Brief -->
-        <div class="brief-card">
-          <div class="brief-header">
-            <span class="brief-tier">Explorers</span>
-            <span class="brief-date">Posted: Aug 8, 2025</span>
+      <div class="briefs-scroll-container">
+        <div class="briefs-grid" id="briefsGrid">
+          <!-- August 8th Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Cosy Woodland Cabin – Peak District</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in late August or early September</li>
+              <li><span>🎥</span>2x TikToks or Reels on your profile</li>
+              <li><span>🔥</span>Outdoor fire pit, peaceful forest location</li>
+              <li><span>🍳</span>Breakfast included</li>
+            </ul>
           </div>
-          <h4 class="brief-location">📍 Cosy Woodland Cabin – Peak District</h4>
-          <ul class="brief-details">
-            <li><span>📅</span> 1 night in late August or early September</li>
-            <li><span>🎥</span> 2x TikToks or Reels on your profile</li>
-            <li><span>🔥</span> Outdoor fire pit, peaceful forest location</li>
-            <li><span>🍳</span> Breakfast included</li>
-          </ul>
+          
+          <!-- August 1st Luxury Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Luxury Resort – Maldives</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights</li>
+              <li><span>🎥</span>3x TikToks + raw footage for hotel</li>
+              <li><span>🌅</span>Overwater villa with private deck</li>
+              <li><span>🍽️</span>All meals included</li>
+              <li><span>✈️</span>International travel not covered</li>
+            </ul>
+          </div>
+          
+          <!-- August 8th Santorini Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Adults-Only Cliffside Resort – Santorini, Greece</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights between Sept–Oct 2025</li>
+              <li><span>🎥</span>3x TikToks + 10 raw clips</li>
+              <li><span>🏝️</span>Private plunge pool, sunset view balcony</li>
+              <li><span>🍽️</span>Breakfast & dinner included</li>
+            </ul>
+          </div>
+
+          <!-- August 1st Lake District Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Lake District Cabin Stay</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in August 2025</li>
+              <li><span>🎥</span>3x vertical videos (TikTok)</li>
+              <li><span>🍳</span>Breakfast included + outdoor hot tub</li>
+              <li><span>🌲</span>Cosy, rustic vibe with stunning views</li>
+            </ul>
+          </div>
+
+          <!-- August 1st Cornwall Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Boutique Stay in Cornwall</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights in August or September 2025</li>
+              <li><span>🎥</span>3x Reels on your platform</li>
+              <li><span>🌊</span>Near the coast with design-led interiors</li>
+              <li><span>🥐</span>Breakfast included</li>
+            </ul>
+          </div>
+
+          <!-- July 25th Oxford Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Spa Weekend Escape near Oxford</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night for 2 people</li>
+              <li><span>🎥</span>3x vertical videos (Reels/TikToks)</li>
+              <li><span>🥐</span>Breakfast + full spa access included</li>
+              <li><span>💆</span>Relaxing weekend retreat</li>
+            </ul>
+          </div>
+
+          <!-- July 25th Portugal Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 5-Star Luxury Stay in Coastal Portugal</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights + dinner included</li>
+              <li><span>🎥</span>3x Reels + 5x raw clips for hotel use</li>
+              <li><span>🌊</span>Stunning coastal location</li>
+              <li><span>⭐</span>Luxury 5-star accommodation</li>
+            </ul>
+          </div>
+
+          <!-- July 25th Tuscany Brief -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Vineyard Retreat in Tuscany</h4>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights, all meals included</li>
+              <li><span>🎥</span>5x TikToks + raw footage for hotel</li>
+              <li><span>💰</span>Unlimited wine throughout the stay</li>
+              <li><span>🍇</span>Authentic vineyard experience</li>
+            </ul>
+          </div>
         </div>
         
-        <!-- August 1st Luxury Brief -->
-        <div class="brief-card">
-          <div class="brief-header">
-            <span class="brief-tier first-class">First Class</span>
-            <span class="brief-date">Posted: Aug 1, 2025</span>
-          </div>
-          <h4 class="brief-location">📍 Luxury Resort – Maldives</h4>
-          <ul class="brief-details">
-            <li><span>📅</span> 4 nights (First Class Members Only)</li>
-            <li><span>🎥</span> Content requirements visible to members</li>
-            <li><span>🌅</span> Overwater villa with private deck</li>
-            <li><span>🍽️</span> All meals included</li>
-            <li><span>✈️</span> Additional perks for First Class members</li>
-          </ul>
-        </div>
-        
-        <!-- August 8th Santorini Brief -->
-        <div class="brief-card">
-          <div class="brief-header">
-            <span class="brief-tier first-class">First Class</span>
-            <span class="brief-date">Posted: Aug 8, 2025</span>
-          </div>
-          <h4 class="brief-location">📍 Adults-Only Cliffside Resort – Santorini, Greece</h4>
-          <ul class="brief-details">
-            <li><span>📅</span> 3 nights between Sept–Oct 2025</li>
-            <li><span>🎥</span> 3x TikToks + 10 raw clips</li>
-            <li><span>🏝️</span> Private plunge pool, sunset view balcony</li>
-            <li><span>🍽️</span> Breakfast & dinner included</li>
-          </ul>
+        <div class="scroll-nav">
+          <button class="scroll-btn" onclick="scrollBriefs('left')">← Previous</button>
+          <button class="scroll-btn" onclick="scrollBriefs('right')">Next →</button>
         </div>
       </div>
     </div>
@@ -1182,6 +1370,46 @@
         question.classList.toggle('active');
         answer.classList.toggle('active');
       });
+    });
+
+    // Horizontal scrolling functionality for briefs
+    function scrollBriefs(direction) {
+      const container = document.getElementById('briefsGrid');
+      const scrollAmount = 340; // Width of one card plus gap
+      
+      if (direction === 'left') {
+        container.scrollLeft -= scrollAmount;
+      } else {
+        container.scrollLeft += scrollAmount;
+      }
+    }
+
+    // Touch/swipe support for mobile
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const briefsGrid = document.getElementById('briefsGrid');
+
+    briefsGrid.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - briefsGrid.offsetLeft;
+      scrollLeft = briefsGrid.scrollLeft;
+    });
+
+    briefsGrid.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+
+    briefsGrid.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    briefsGrid.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - briefsGrid.offsetLeft;
+      const walk = (x - startX) * 2;
+      briefsGrid.scrollLeft = scrollLeft - walk;
     });
   </script>
 </body>
