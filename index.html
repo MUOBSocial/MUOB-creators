@@ -336,6 +336,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
+      position: relative;
     }
 
     .sticky-title {
@@ -344,6 +345,30 @@
       color: #192b6c;
       text-align: center;
       margin-bottom: 0.5rem;
+    }
+
+    .sticky-close {
+      position: absolute;
+      top: -0.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #666;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .sticky-close:hover {
+      background: rgba(25, 43, 108, 0.1);
+      color: #192b6c;
     }
 
     .sticky-pills {
@@ -1453,6 +1478,13 @@
         max-width: 350px;
       }
 
+      .sticky-close {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+        top: -0.3rem;
+      }
+
       .boosters {
         flex-direction: column;
         gap: 0.5rem;
@@ -1534,6 +1566,12 @@
 
       .sticky-content {
         max-width: 300px;
+      }
+
+      .sticky-close {
+        width: 22px;
+        height: 22px;
+        font-size: 0.9rem;
       }
     }
     </style>
@@ -2043,6 +2081,7 @@
   <!-- Sticky Bottom Bar -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-content">
+      <button class="sticky-close" id="stickyClose">&times;</button>
       <div class="sticky-title">Choose your path:</div>
       <div class="sticky-pills">
         <button class="sticky-pill" data-path="brand-new">
@@ -2093,11 +2132,13 @@
     const pathPills = document.querySelectorAll('.path-pill');
     const stickyPills = document.querySelectorAll('.sticky-pill');
     const stickyBar = document.getElementById('stickyBar');
+    const stickyClose = document.getElementById('stickyClose');
     const recommendationOverlay = document.getElementById('recommendationOverlay');
     const closeRecommendation = document.getElementById('closeRecommendation');
     const browseAllPlans = document.getElementById('browseAllPlans');
     
     let hasInteracted = false;
+    let stickyBarDismissed = false;
 
     // Tier recommendations for each path
     const recommendations = {
@@ -2156,11 +2197,17 @@
 
     // Show sticky bar on scroll after interaction
     window.addEventListener('scroll', () => {
-      if (hasInteracted && window.scrollY > window.innerHeight * 0.3) {
+      if (hasInteracted && !stickyBarDismissed && window.scrollY > window.innerHeight * 0.3) {
         stickyBar.classList.add('active');
       } else if (window.scrollY < 100) {
         stickyBar.classList.remove('active');
       }
+    });
+
+    // Close sticky bar
+    stickyClose.addEventListener('click', () => {
+      stickyBarDismissed = true;
+      stickyBar.classList.remove('active');
     });
 
     function showRecommendation(path) {
