@@ -2577,4 +2577,40 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     });
 
     // Mouse wheel scroll also pauses auto-scroll
-    briefsGri
+    briefsGrid.addEventListener('wheel', () => {
+      pauseAutoScroll();
+    }, { passive: true });
+
+    function handleStart(e) {
+      startX = e.touches[0].clientX;
+      scrollLeft = briefsGrid.scrollLeft;
+      startTime = Date.now();
+      pauseAutoScroll();
+    }
+
+    function handleMove(e) {
+      if (!startX) return;
+      e.preventDefault();
+      const x = e.touches[0].clientX;
+      const walk = (startX - x) * 1.5;
+      briefsGrid.scrollLeft = scrollLeft + walk;
+    }
+
+    function handleEnd(e) {
+      startX = null;
+      endTime = Date.now();
+    }
+
+    // Set initial cursor style
+    briefsGrid.style.cursor = 'grab';
+
+    // Initialize scroll position to show first set of cards
+    briefsGrid.scrollLeft = 0;
+
+    // Pause auto-scroll when tab/window is not visible
+    document.addEventListener('visibilitychange', () => {
+      isAutoScrolling = !document.hidden;
+    });
+  </script>
+</body>
+</html>
