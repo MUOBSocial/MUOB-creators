@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D2JFFGRC77U89NHRV1QG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21WCBJHLP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-21WCBJHLP9');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUOB Partner Program - Earn Through Creator Referrals</title>
-    <meta name="description" content="Join MUOB's partner program and earn substantial commissions referring creators. High rates, monthly payouts, and excellent support.">
+    <title>Join MUOB Creators - Weekly Hotel Collaboration Briefs</title>
+    <meta name="description" content="Get weekly hotel collaboration briefs, pitch templates, and creator support. No big following needed.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +51,7 @@
       background: #ffffff;
       color: #192b6c;
       line-height: 1.6;
+      padding-bottom: 100px; /* Space for sticky bar */
     }
     
     h1, h2, h3, h4, h5, h6 {
@@ -54,10 +78,49 @@
       color: transparent;
     }
     
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #192b6c;
+    }
+    
+    h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #192b6c;
+    }
+    
+    h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+      font-weight: 600;
+    }
+    
     p {
       margin-bottom: 1rem;
       font-weight: 400;
       color: #333;
+    }
+    
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    a {
+      color: #192b6c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: #5d6fc1;
     }
     
     .container {
@@ -103,7 +166,6 @@
       padding: 0.5rem 0;
       color: #192b6c;
       transition: transform 0.3s ease, color 0.3s ease;
-      text-decoration: none;
     }
     
     .nav-link:hover {
@@ -116,7 +178,12 @@
       display: block;
     }
     
-    /* Hero Section */
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+    }
+    
+    /* Hero Section - Sticky Path Style */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -143,24 +210,12 @@
       z-index: 1;
       text-align: center;
       margin: 0 auto;
-      max-width: 800px;
+      max-width: 500px;
       padding: 0 1rem;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-    }
-
     .hero-content h1 {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       line-height: 1.1;
       margin-bottom: 1.5rem;
       background: linear-gradient(135deg, #192b6c 0%, #5d6fc1 50%, #8b9dd9 100%);
@@ -172,510 +227,768 @@
     }
 
     .hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
       color: #444;
       font-weight: 500;
       line-height: 1.5;
       opacity: 0.9;
-      max-width: 600px;
+    }
+
+    /* Experience Level Selector */
+    .experience-selector {
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-title {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    /* Path Pills */
+    .path-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      max-width: 400px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 3rem auto;
-      max-width: 600px;
+    .path-pill {
       background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.1);
-      border: 1px solid rgba(25, 43, 108, 0.05);
-    }
-
-    .stat-item {
+      border: 2px solid rgba(25, 43, 108, 0.1);
+      border-radius: 25px;
+      padding: 1.2rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
       text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #192b6c;
+      box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
+      position: relative;
+      overflow: hidden;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #192b6c, #5d6fc1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
+    .path-pill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+      transition: left 0.5s ease;
     }
 
-    .stat-label {
+    .path-pill:hover::before {
+      left: 100%;
+    }
+
+    .path-pill:hover {
+      transform: translateY(-3px);
+      border-color: rgba(25, 43, 108, 0.2);
+      box-shadow: 0 12px 35px rgba(25, 43, 108, 0.15);
+    }
+
+    .path-pill:active {
+      transform: translateY(-1px);
+      transition: transform 0.1s ease;
+    }
+
+    .path-pill.selected {
+      border-color: #ff6b6b;
+      background: linear-gradient(135deg, #fff8f6 0%, #ffffff 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
+    }
+
+    /* Boosters */
+    .boosters {
       font-size: 0.9rem;
       color: #666;
       font-weight: 500;
-    }
-
-    .hero-cta {
+      margin-top: 1rem;
       display: flex;
-      gap: 1rem;
+      align-items: center;
       justify-content: center;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .hero-note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #666;
-      font-style: italic;
+    .booster-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    /* Why Choose MUOB */
-    .why-choose {
-      padding: 5rem 0;
-      background: white;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .feature-card {
-      background: #f8faff;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    .booster-dot {
+      width: 4px;
       height: 4px;
-      background: linear-gradient(90deg, #ff6b6b, #ffa76b);
+      background: #5d6fc1;
+      border-radius: 50%;
     }
 
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(25, 43, 108, 0.15);
-      border-color: #5d6fc1;
+    /* Live indicator for briefs section */
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .feature-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #192b6c;
-      margin-bottom: 1rem;
-    }
-
-    .feature-description {
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .feature-highlight {
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: inline-block;
-    }
-
-    /* Earnings Calculator */
-    .calculator-section {
-      padding: 5rem 0;
-      background: #f8faff;
-    }
-    
-    .calculator-container {
-      max-width: 700px;
-      margin: 0 auto;
-      background: white;
-      padding: 3rem;
-      border-radius: 25px;
-      box-shadow: 0 20px 50px rgba(25, 43, 108, 0.1);
-      border: 1px solid rgba(25, 43, 108, 0.1);
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #28a745;
+      border-radius: 50%;
+      animation: pulse-green 2s infinite;
       position: relative;
-      overflow: hidden;
     }
 
-    .calculator-container::before {
+    .live-dot::before {
       content: '';
       position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 12px;
+      height: 12px;
+      background: #28a745;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+    }
+
+    /* Sticky Bottom Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border-top: 1px solid rgba(25, 43, 108, 0.1);
+      padding: 1rem;
+      z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      box-shadow: 0 -10px 30px rgba(25, 43, 108, 0.1);
+    }
+
+    .sticky-bar.active {
+      transform: translateY(0);
+    }
+
+    .sticky-content {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      position: relative;
+    }
+
+    .sticky-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #192b6c;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .sticky-close {
+      position: absolute;
+      top: -0.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #666;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .sticky-close:hover {
+      background: rgba(25, 43, 108, 0.1);
+      color: #192b6c;
+    }
+
+    .sticky-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .sticky-pill {
+      background: white;
+      border: 2px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #192b6c;
+      box-shadow: 0 5px 15px rgba(25, 43, 108, 0.08);
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sticky-pill:hover {
+      border-color: #ff6b6b;
+      background: linear-gradient(135deg, #fff8f6 0%, #ffffff 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.15);
+    }
+
+    .sticky-pill:active {
+      transform: translateY(0);
+      transition: transform 0.1s ease;
+    }
+
+    /* Recommendation Overlay */
+    .recommendation-overlay {
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(90deg, #ff6b6b, #ffa76b, #192b6c, #5d6fc1);
+      right: 0;
+      bottom: 0;
+      background: rgba(25, 43, 108, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
     }
-    
-    .calc-title {
-      font-size: 2rem;
+
+    .recommendation-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .recommendation-card {
+      background: white;
+      border-radius: 25px;
+      padding: 3rem 2.5rem;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(25, 43, 108, 0.3);
+      transform: translateY(30px) scale(0.9);
+      transition: all 0.4s ease;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .recommendation-overlay.active .recommendation-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #666;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .close-btn:hover {
+      background: #f0f0f0;
+      color: #192b6c;
+    }
+
+    .recommendation-title {
+      font-size: 1.8rem;
       font-weight: 700;
       color: #192b6c;
-      margin-bottom: 0.5rem;
-      text-align: center;
+      margin-bottom: 0.8rem;
       background: linear-gradient(135deg, #192b6c 0%, #5d6fc1 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .calc-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 2rem;
-    }
-    
-    .calc-input {
-      margin-bottom: 2rem;
-    }
-    
-    .calc-label {
-      font-weight: 600;
-      color: #192b6c;
-      margin-bottom: 1rem;
-      display: block;
+    .recommendation-subtitle {
       font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
     }
-    
-    .calc-slider {
-      width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: #e2e8f0;
-      outline: none;
-      -webkit-appearance: none;
-      margin: 1rem 0;
-    }
-    
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-    }
-    
-    .calc-value {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #192b6c;
-      margin: 1rem 0;
-    }
-    
-    .calc-results {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .calc-result {
+
+    .tier-highlight {
       background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+      border: 2px solid #ff6b6b;
+      border-radius: 20px;
       padding: 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .calc-result:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(25, 43, 108, 0.1);
-    }
-
-    .result-tier {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    
-    .result-amount {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #10b981;
-      margin-bottom: 0.25rem;
-    }
-    
-    .result-commission {
-      font-size: 0.8rem;
-      color: #666;
-    }
-
-
-
-    /* Commission Structure */
-    .commission-structure {
-      padding: 5rem 0;
-      background: white;
-    }
-    
-    .commission-tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .tier-card {
-      background: white;
-      border: 2px solid rgba(25, 43, 108, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      text-align: center;
-      position: relative;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
-    }
-    
-    .tier-card:hover {
-      border-color: #5d6fc1;
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(25, 43, 108, 0.15);
-    }
-    
-    .tier-card.featured {
-      border-color: #ff6b6b;
-      transform: scale(1.05);
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 20px 60px rgba(255, 107, 107, 0.2);
-    }
-    
-    .tier-card.featured::before {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-    }
-    
-    .tier-name {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #192b6c;
-      margin-bottom: 1rem;
-    }
-    
-    .tier-rate {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(45deg, #192b6c, #5d6fc1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
-    }
-    
-    .tier-per-sale {
-      color: #10b981;
-      font-weight: 700;
-      font-size: 1.1rem;
       margin-bottom: 1.5rem;
-    }
-    
-    .tier-requirements {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      background: #f8faff;
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(25, 43, 108, 0.05);
-    }
-
-    .tier-benefits {
-      list-style: none;
-      text-align: left;
-      margin-top: 1rem;
-    }
-
-    .tier-benefits li {
-      margin-bottom: 0.7rem;
-      padding-left: 1.5rem;
-      position: relative;
-      color: #555;
-      font-size: 0.9rem;
-    }
-
-    .tier-benefits li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #10b981;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    /* Application Steps */
-    .application-steps {
-      padding: 5rem 0;
-      background: #f8faff;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .step-card {
-      background: #f8faff;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .step-card::before {
+    .tier-highlight::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+      background: linear-gradient(90deg, #ff6b6b, #ffa76b);
     }
 
-    .step-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(25, 43, 108, 0.1);
-      border-color: #5d6fc1;
-    }
-
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+    .tier-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
       color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem;
-      box-shadow: 0 6px 20px rgba(25, 43, 108, 0.3);
-    }
-
-    .step-title {
-      font-size: 1.2rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
       font-weight: 600;
-      color: #192b6c;
+      font-size: 0.8rem;
       margin-bottom: 0.8rem;
     }
 
-    .step-description {
-      color: #555;
-      line-height: 1.6;
+    .tier-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #192b6c;
+      margin-bottom: 0.4rem;
     }
 
-    /* FAQ Section */
-    .faq-section {
-      padding: 5rem 0;
-      background: white;
-    }
-    
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .faq-item {
+    .tier-description {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
       margin-bottom: 1rem;
-      border: 1px solid rgba(25, 43, 108, 0.1);
+    }
+
+    .tier-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #192b6c;
+      margin-bottom: 0.3rem;
+    }
+
+    .discount-banner {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 0.8rem;
       border-radius: 15px;
+      margin-bottom: 1.5rem;
+      position: relative;
       overflow: hidden;
-      background: white;
-      box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
+    }
+
+    .discount-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .discount-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .discount-code {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+    }
+
+    .discount-subtitle {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .recommendation-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .btn-large {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #192b6c;
+      border: 2px solid #192b6c;
+    }
+
+    .btn-outline:hover {
+      background: #192b6c;
+      color: white;
+    }
+
+    /* Mobile-specific styles for recommendation overlay */
+    @media (max-width: 768px) {
+      .recommendation-overlay {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 10vh;
+      }
+
+      .recommendation-card {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+        max-height: 80vh;
+        margin: 0;
+      }
+
+      .recommendation-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .recommendation-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .tier-highlight {
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .tier-name {
+        font-size: 1.2rem;
+      }
+
+      .tier-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .tier-price {
+        font-size: 1.1rem;
+      }
+
+      .discount-banner {
+        padding: 0.7rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .discount-title {
+        font-size: 1rem;
+      }
+
+      .discount-code {
+        font-size: 1.2rem;
+      }
+
+      .discount-subtitle {
+        font-size: 0.8rem;
+      }
+
+      .btn-large {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+      }
+
+      .close-btn {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recommendation-overlay {
+        padding: 0.5rem;
+        padding-top: 8vh;
+      }
+
+      .recommendation-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        max-height: 85vh;
+      }
+
+      .recommendation-title {
+        font-size: 1.4rem;
+      }
+
+      .recommendation-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .tier-highlight {
+        padding: 1rem;
+      }
+
+      .tier-description {
+        font-size: 0.8rem;
+      }
     }
     
-    .faq-question {
+    /* Section Spacing */
+    section {
+      padding: 4rem 0;
+    }
+    
+    .section-white {
+      background: #ffffff;
+    }
+    
+    .section-gray {
+      background: #f8faff;
+    }
+    
+    /* Who For Section */
+    .who-for {
+      padding: 4rem 0;
+      background: #ffffff;
+    }
+    
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .who-column h3 {
+      margin-bottom: 1.5rem;
+      color: #192b6c;
+      font-size: 1.5rem;
+    }
+    
+    .who-column ul {
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .who-column li {
+      margin-bottom: 1rem;
+      padding-left: 1.8rem;
+      position: relative;
+      color: #444;
+      line-height: 1.6;
+    }
+    
+    .who-column li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #5d6fc1;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .who-not li:before {
+      content: "✕";
+      color: #ff6b6b;
+    }
+    
+    /* Recent Briefs Section - Updated for Horizontal Scrolling */
+    .recent-briefs {
+      padding: 4rem 0;
+      background: #f8faff;
+    }
+    
+    .briefs-scroll-container {
+      position: relative;
+      margin-top: 2rem;
+    }
+    
+    .briefs-grid {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 1rem 0 2rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .briefs-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-track {
+      background: rgba(25, 43, 108, 0.1);
+      border-radius: 10px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+      border-radius: 10px;
+    }
+    
+    .briefs-grid::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, #5d6fc1, #8b9dd9);
+    }
+    
+    .brief-card {
       background: white;
-      padding: 1.5rem;
-      cursor: pointer;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+      transition: all 0.3s ease;
+      min-width: 320px;
+      width: 320px;
+      height: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .brief-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(25, 43, 108, 0.1);
+    }
+    
+    .brief-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: start;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .brief-tier {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      color: white;
+      border-radius: 30px;
       font-weight: 600;
+      font-size: 0.8rem;
+    }
+    
+    .brief-tier.nomads {
+      background: linear-gradient(45deg, #5d6fc1, #8b9dd9);
+    }
+    
+    .brief-tier.first-class {
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+    }
+    
+    .brief-date {
+      color: #666;
+      font-size: 0.8rem;
+      text-align: right;
+      line-height: 1.2;
+    }
+    
+    .brief-location {
+      font-size: 1rem;
+      font-weight: 700;
       color: #192b6c;
-      transition: background-color 0.3s ease;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      flex-shrink: 0;
     }
     
-    .faq-question:hover {
-      background: #f9f9f9;
+    .brief-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #192b6c;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+      flex-shrink: 0;
     }
     
-    .faq-question.active {
-      background: #f5f8ff;
+    .brief-feature {
+      font-size: 0.9rem;
+      font-weight: 500;
       color: #5d6fc1;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      flex-shrink: 0;
     }
     
-    .faq-question::after {
-      content: "+";
-      font-size: 1.5rem;
-      transition: transform 0.3s ease;
+    .brief-details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
     
-    .faq-question.active::after {
-      content: "−";
-    }
-    
-    .faq-answer {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      background: white;
-    }
-    
-    .faq-answer.active {
-      padding: 1.5rem;
-      max-height: 300px;
-    }
-    
-    .faq-answer p {
+    .brief-details li {
+      padding: 0.1rem 0;
       color: #555;
-      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      line-height: 1.3;
     }
+    
+    .brief-details li span {
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    
 
+    
     /* Buttons */
     .btn {
       display: inline-block;
@@ -715,12 +1028,391 @@
       color: white;
       transform: translateY(-2px);
     }
-
-    .btn-large {
-      padding: 1.2rem 2.5rem;
-      font-size: 1.1rem;
+    
+    /* Pricing Section - All Cards Visible */
+    .pricing-section {
+      padding: 5rem 0;
+      background: #ffffff;
     }
-
+    
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      padding: 0 1rem;
+    }
+    
+    .pricing-card {
+      background: white;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 1.8rem;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+      flex: 1;
+      max-width: 380px;
+      min-width: 320px;
+    }
+    
+    .pricing-card.featured {
+      transform: scale(1.05);
+      border: 2px solid #ff6b6b;
+      box-shadow: 0 20px 50px rgba(255, 107, 107, 0.2);
+      z-index: 2;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(25, 43, 108, 0.15);
+      border: 1px solid rgba(25, 43, 108, 0.2);
+    }
+    
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-10px);
+      box-shadow: 0 25px 60px rgba(255, 107, 107, 0.25);
+    }
+    
+    .pricing-card:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card:hover:before {
+      height: 8px;
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: -5px;
+      right: 15px;
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 0 0 15px 15px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+      z-index: 10;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pricing-card h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .pricing-card h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #192b6c, #5d6fc1);
+    }
+    
+    .pricing-price {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 1.5rem 0;
+      background: linear-gradient(45deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .pricing-period {
+      display: block;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    
+    .pricing-card ul {
+      flex: 1;
+      list-style-type: none;
+      margin-left: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-card ul li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      color: #333;
+    }
+    
+    .pricing-card ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #5d6fc1;
+      font-weight: bold;
+    }
+    
+    .pricing-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
+    }
+    
+    /* Case Studies */
+    .case-studies {
+      padding: 4rem 0;
+      background: #f8faff;
+    }
+    
+    .case-study {
+      background: white;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+    }
+    
+    .case-study-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .creator-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .creator-info h4 {
+      margin-bottom: 0.25rem;
+      color: #192b6c;
+    }
+    
+    .creator-handle {
+      color: #5d6fc1;
+      font-weight: 500;
+    }
+    
+    .case-study-content {
+      margin-bottom: 1.5rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+    
+    .metric {
+      text-align: center;
+    }
+    
+    .metric-label {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #192b6c;
+    }
+    
+    .view-posts {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #5d6fc1;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 4rem 0;
+      background: white;
+    }
+    
+    .testimonial {
+      background: #f8faff;
+      border: 1px solid rgba(25, 43, 108, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
+    }
+    
+    .testimonial-content {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      color: #192b6c;
+    }
+    
+    .author-link {
+      color: #5d6fc1;
+      font-size: 0.9rem;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 0;
+      background: #f8faff;
+    }
+    
+    .faq-container {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
+      overflow: hidden;
+      border: 1px solid rgba(25, 43, 108, 0.05);
+      background: white;
+    }
+    
+    .faq-question {
+      background: white;
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #192b6c;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: #f9f9f9;
+    }
+    
+    .faq-question.active {
+      background: #f5f8ff;
+    }
+    
+    .faq-question::after {
+      content: "+";
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-question.active::after {
+      content: "−";
+    }
+    
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-answer.active {
+      padding: 1.5rem 1.5rem 1.5rem;
+      max-height: 500px;
+    }
+    
+    /* Founder Section */
+    .founder {
+      padding: 4rem 0;
+      background: white;
+    }
+    
+    .founder-content {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    
+    .founder-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    
+    .founder-bio h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .founder-bio p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      color: #444;
+    }
+    
+    .founder-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
     /* CTA Section */
     .cta-section {
       padding: 4rem 0;
@@ -742,7 +1434,7 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
     }
-
+    
     /* Footer */
     .footer {
       background: #192b6c;
@@ -759,28 +1451,48 @@
       padding: 0 2rem;
     }
     
-    .footer-col h3 {
-      font-weight: 600;
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .footer-logo {
       margin-bottom: 1rem;
-      color: white;
+    }
+    
+    .footer-logo img {
+      height: 40px;
+    }
+    
+    .footer-description {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
     }
     
     .footer-links {
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
     
     .footer-links li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
     }
     
     .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8);
       transition: color 0.3s ease;
     }
     
     .footer-links a:hover {
-      color: white;
+      color: #ffa76b;
     }
     
     .footer-bottom {
@@ -789,72 +1501,147 @@
       padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
-
-    /* Mobile Responsiveness */
+    
+    /* Responsive */
     @media (max-width: 768px) {
       .container {
         padding: 0 1rem;
       }
-
+      
       .hero {
         padding: 5rem 0 3rem;
-        min-height: auto;
+        min-height: 80vh;
       }
-
+      
+      .hero-content {
+        padding: 0 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2.6rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
       .hero-content h1 {
         font-size: 2.8rem;
       }
 
-      .hero-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      .hero-subtitle {
+        font-size: 1.1rem;
       }
 
-      .hero-cta {
+      .path-pills {
+        max-width: 350px;
+      }
+
+      .path-pill {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .sticky-content {
+        max-width: 350px;
+      }
+
+      .sticky-close {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+        top: -0.3rem;
+      }
+
+      .boosters {
         flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .brief-card {
+        min-width: 280px;
+        width: 280px;
+        height: 280px;
+        padding: 1rem;
+      }
+      
+      .brief-location {
+        font-size: 0.9rem;
+      }
+      
+      .brief-name {
+        font-size: 1.1rem;
+      }
+      
+      .brief-feature {
+        font-size: 0.8rem;
+      }
+      
+      .pricing-container {
+        flex-direction: column;
+        gap: 1.5rem;
         align-items: center;
+        padding: 0 1rem;
+        margin: 2rem auto;
       }
-
-      .features-grid,
-      .commission-tiers,
-      .steps-grid {
-        grid-template-columns: 1fr;
+      
+      .pricing-card {
+        max-width: 320px;
+        min-width: auto;
+        width: 100%;
+        padding: 1.5rem;
       }
-
-      .calc-results {
-        grid-template-columns: 1fr;
-      }
-
-      .tier-card.featured {
+      
+      .pricing-card.featured {
         transform: scale(1);
+        order: -1;
       }
-
+      
+      .pricing-card.featured:hover {
+        transform: translateY(-5px);
+      }
+      
+      .who-grid,
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .founder-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
       .nav-menu {
         display: none;
       }
-
-      h1 {
-        font-size: 2.6rem;
-      }
-
-      h2 {
-        font-size: 2rem;
+      
+      .mobile-menu-toggle {
+        display: block;
       }
     }
 
     @media (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2.4rem;
+      .hero-content {
+        padding: 0 0.5rem;
       }
 
-      .tier-rate {
-        font-size: 2.5rem;
+      .path-pills {
+        max-width: 300px;
       }
 
-      .stat-number {
-        font-size: 1.8rem;
+      .sticky-content {
+        max-width: 300px;
+      }
+
+      .sticky-close {
+        width: 22px;
+        height: 22px;
+        font-size: 0.9rem;
       }
     }
     </style>
@@ -865,313 +1652,577 @@
     <div class="container">
       <div class="header-container">
         <div class="logo">
-          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB">
+          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
         </div>
         <nav class="nav-menu">
-          <a href="#benefits" class="nav-link">Benefits</a>
-          <a href="#calculator" class="nav-link">Calculator</a>
-          <a href="#commission" class="nav-link">Commission</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
           <a href="#faq" class="nav-link">FAQ</a>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
+          <a href="#pricing" class="btn btn-primary">Join Now</a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section - Sticky Path Style -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">🚀 MUOB PARTNER PROGRAM</div>
-        
-        <h1>Turn your audience into<br>serious monthly income</h1>
-        
+        <h1>Land hotel stays.<br>Start today.</h1>
         <p class="hero-subtitle">
-          Partner with MUOB and earn substantial commissions by referring creators to our membership program. High commission rates, monthly payouts, and full support.
+          Get weekly briefs, proven templates, and direct hotel connections. No big following needed.
         </p>
         
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">40%</div>
-            <div class="stat-label">Max commission rate</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">£1.80-15.60</div>
-            <div class="stat-label">Per successful referral</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Monthly</div>
-            <div class="stat-label">Payout schedule</div>
+        <div class="experience-selector">
+          <p class="experience-title">👋 Choose your experience level to get started:</p>
+          
+          <div class="path-pills">
+            <button class="path-pill" data-path="brand-new">
+              I'm brand-new
+            </button>
+            
+            <button class="path-pill" data-path="free-stays">
+              Building with free stays
+            </button>
+            
+            <button class="path-pill" data-path="paid-ready">
+              Ready for paid collabs
+            </button>
           </div>
         </div>
 
-        <div class="hero-cta">
-          <a href="#apply" class="btn btn-primary btn-large">Start Earning Today</a>
-          <a href="#calculator" class="btn btn-secondary btn-large">Calculate Earnings</a>
-        </div>
-
-        <div class="hero-note">
-          <span style="color: #10b981; font-weight: 600;">✓</span> No upfront costs • Monthly payouts • Dedicated support
+        <div class="boosters">
+          <div class="booster-item">
+            <div class="live-dot"></div>
+            <span>21 briefs live</span>
+          </div>
+          <div class="booster-dot"></div>
+          <div class="booster-item">
+            <span>Cancel anytime</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose MUOB -->
-  <section class="why-choose" id="benefits">
+  <!-- Who It's For Section -->
+  <section class="who-for section-white">
     <div class="container">
-      <h2 style="text-align: center;">Why Partner With MUOB?</h2>
-      <p style="text-align: center; color: #666; margin-bottom: 0;">The smartest way to monetize your creator audience</p>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <div class="feature-title">Perfect Audience Match</div>
-          <div class="feature-description">
-            Our creator membership is exactly what your travel and lifestyle audience needs. High conversion rates because it's genuinely valuable.
-          </div>
-          <div class="feature-highlight">High conversion rates</div>
+      <h2>Who MUOB Creators is for (and not for)</h2>
+      <div class="who-grid">
+        <div class="who-column">
+          <h3>This is for you if:</h3>
+          <ul>
+            <li>You create travel content (any follower count)</li>
+            <li>You can deliver professional photos/videos</li>
+            <li>You're willing to follow brief requirements</li>
+            <li>You want to build long-term hotel relationships</li>
+            <li>You're ready to pitch weekly and improve</li>
+          </ul>
         </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <div class="feature-title">Industry-Leading Commissions</div>
-          <div class="feature-description">
-            Start at 20% and earn up to 40% commission - significantly higher than most affiliate programs. Top partners earn £500+ monthly.
-          </div>
-          <div class="feature-highlight">Up to 40% commission</div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <div class="feature-title">Growing Income Stream</div>
-          <div class="feature-description">
-            Build recurring income as your referrals continue their memberships. Create content once, earn for months.
-          </div>
-          <div class="feature-highlight">Recurring earnings</div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🔧</div>
-          <div class="feature-title">Full Marketing Support</div>
-          <div class="feature-description">
-            Professional content assets, email templates, and custom graphics. We provide everything you need to succeed.
-          </div>
-          <div class="feature-highlight">Complete toolkit</div>
+        <div class="who-column who-not">
+          <h3>This is NOT for you if:</h3>
+          <ul>
+            <li>You expect guaranteed hotel approvals</li>
+            <li>You want instant results without effort</li>
+            <li>You can't meet content deadlines</li>
+            <li>You're looking for a get-rich-quick scheme</li>
+            <li>You won't engage with the community</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Earnings Calculator -->
-  <section class="calculator-section" id="calculator">
+  <!-- Recent Briefs Section -->
+  <section class="recent-briefs section-gray">
     <div class="container">
-      <h2 style="text-align: center;">Calculate Your Earning Potential</h2>
-      <p style="text-align: center; color: #666; margin-bottom: 3rem;">See how much you could earn with MUOB's commission structure</p>
+      <h2>Recent Hotel Briefs Posted</h2>
+      <p style="color: #666; margin-bottom: 2rem;">New briefs drop every Friday. Higher tiers get earlier access and better perks.</p>
       
-      <div class="calculator-container">
-        <div class="calc-title">Monthly Earnings Calculator</div>
-        <div class="calc-subtitle">Based on MUOB Creators membership tiers: Explorers £9 • Nomads £29 • First Class £39</div>
-        
-        <div class="calc-input">
-          <label class="calc-label">How many referrals could you drive monthly?</label>
-          <input type="range" class="calc-slider" id="refSlider" min="2" max="100" value="8" step="1">
-          <div class="calc-value" id="refValue">8 referrals</div>
-        </div>
-        
-        <div style="margin-bottom: 2rem; text-align: center;">
-          <label class="calc-label">Which tier do you expect to refer most?</label>
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem;">
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-              <input type="radio" name="tier" value="explorers" style="margin: 0;"> 
-              <span style="font-weight: 500;">Explorers (£9)</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-              <input type="radio" name="tier" value="nomads" checked style="margin: 0;"> 
-              <span style="font-weight: 500;">Nomads (£29)</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-              <input type="radio" name="tier" value="firstclass" style="margin: 0;"> 
-              <span style="font-weight: 500;">First Class (£39)</span>
-            </label>
-          </div>
-        </div>
-        
-        <div class="calc-results">
-          <div class="calc-result">
-            <div class="result-tier">Starter (20%)</div>
-            <div class="result-amount" id="starterEarnings">£14.40</div>
-            <div class="result-commission" id="starterCommission">£1.80 per referral</div>
+      <div class="briefs-scroll-container">
+        <div class="briefs-grid" id="briefsGrid">
+          <!-- First set of cards -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Peak District</h4>
+            <h5 class="brief-name">Cosy Woodland Cabin</h5>
+            <p class="brief-feature">🔥 Outdoor fire pit</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
           </div>
           
-          <div class="calc-result">
-            <div class="result-tier">Growth (30%)</div>
-            <div class="result-amount" id="growthEarnings">£21.60</div>
-            <div class="result-commission" id="growthCommission">£2.70 per referral</div>
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Maldives</h4>
+            <h5 class="brief-name">Luxury Resort</h5>
+            <p class="brief-feature">🌅 Overwater villa with private deck</p>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights</li>
+              <li><span>🎥</span>3x TikToks + raw footage</li>
+            </ul>
           </div>
           
-          <div class="calc-result">
-            <div class="result-tier">Elite (40%)</div>
-            <div class="result-amount" id="eliteEarnings">£28.80</div>
-            <div class="result-commission" id="eliteCommission">£3.60 per referral</div>
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Santorini, Greece</h4>
+            <h5 class="brief-name">Adults-Only Cliffside Resort</h5>
+            <p class="brief-feature">🏖️ Private plunge pool & sunset views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights</li>
+              <li><span>🎥</span>3x TikToks + 10 raw clips</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Lake District</h4>
+            <h5 class="brief-name">Lake District Cabin Stay</h5>
+            <p class="brief-feature">🛁 Outdoor hot tub</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night</li>
+              <li><span>🎥</span>3x vertical videos</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Cornwall</h4>
+            <h5 class="brief-name">Boutique Stay</h5>
+            <p class="brief-feature">🌊 Design-led interiors near coast</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights</li>
+              <li><span>🎥</span>3x Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Near Oxford</h4>
+            <h5 class="brief-name">Spa Weekend Escape</h5>
+            <p class="brief-feature">💆 Full spa access included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night for 2 people</li>
+              <li><span>🎥</span>3x vertical videos</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Coastal Portugal</h4>
+            <h5 class="brief-name">5-Star Luxury Stay</h5>
+            <p class="brief-feature">⭐ Stunning coastal location</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights</li>
+              <li><span>🎥</span>3x Reels + 5x raw clips</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Tuscany</h4>
+            <h5 class="brief-name">Vineyard Retreat</h5>
+            <p class="brief-feature">🍷 Unlimited wine throughout stay</p>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights</li>
+              <li><span>🎥</span>5x TikToks + raw footage</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Porto, Portugal 🇵🇹</h4>
+            <h5 class="brief-name">Boutique Riverside Stay</h5>
+            <p class="brief-feature">🍷 Complimentary wine tasting included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in September 2025</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Swiss Alps 🇨🇭</h4>
+            <h5 class="brief-name">Mountain Hotel</h5>
+            <p class="brief-feature">🔥 Panoramic balcony views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights in October 2025</li>
+              <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bali, Indonesia 🇮🇩</h4>
+            <h5 class="brief-name">Luxury Retreat</h5>
+            <p class="brief-feature">🌴 Pool overlooking the ocean</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights Nov-Dec 2025</li>
+              <li><span>🎥</span>3x TikToks + 15 raw clips</li>
+              <li><span>🍽️</span>Continental Breakfast included</li>
+            </ul>
+          </div>
+
+          <!-- Duplicate set for infinite scroll -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Peak District</h4>
+            <h5 class="brief-name">Cosy Woodland Cabin</h5>
+            <p class="brief-feature">🔥 Outdoor fire pit</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
+          </div>
+          
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Maldives</h4>
+            <h5 class="brief-name">Luxury Resort</h5>
+            <p class="brief-feature">🌅 Overwater villa with private deck</p>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights</li>
+              <li><span>🎥</span>3x TikToks + raw footage</li>
+            </ul>
+          </div>
+          
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 8, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Santorini, Greece</h4>
+            <h5 class="brief-name">Adults-Only Cliffside Resort</h5>
+            <p class="brief-feature">🏖️ Private plunge pool & sunset views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights</li>
+              <li><span>🎥</span>3x TikToks + 10 raw clips</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Lake District</h4>
+            <h5 class="brief-name">Lake District Cabin Stay</h5>
+            <p class="brief-feature">🛁 Outdoor hot tub</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night</li>
+              <li><span>🎥</span>3x vertical videos</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 1, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Cornwall</h4>
+            <h5 class="brief-name">Boutique Stay</h5>
+            <p class="brief-feature">🌊 Design-led interiors near coast</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights</li>
+              <li><span>🎥</span>3x Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Near Oxford</h4>
+            <h5 class="brief-name">Spa Weekend Escape</h5>
+            <p class="brief-feature">💆 Full spa access included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night for 2 people</li>
+              <li><span>🎥</span>3x vertical videos</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Coastal Portugal</h4>
+            <h5 class="brief-name">5-Star Luxury Stay</h5>
+            <p class="brief-feature">⭐ Stunning coastal location</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights</li>
+              <li><span>🎥</span>3x Reels + 5x raw clips</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>July 25, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Tuscany</h4>
+            <h5 class="brief-name">Vineyard Retreat</h5>
+            <p class="brief-feature">🍷 Unlimited wine throughout stay</p>
+            <ul class="brief-details">
+              <li><span>📅</span>4 nights</li>
+              <li><span>🎥</span>5x TikToks + raw footage</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Porto, Portugal 🇵🇹</h4>
+            <h5 class="brief-name">Boutique Riverside Stay</h5>
+            <p class="brief-feature">🍷 Complimentary wine tasting included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in September 2025</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Swiss Alps 🇨🇭</h4>
+            <h5 class="brief-name">Mountain Hotel</h5>
+            <p class="brief-feature">🔥 Panoramic balcony views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights in October 2025</li>
+              <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bali, Indonesia 🇮🇩</h4>
+            <h5 class="brief-name">Luxury Retreat</h5>
+            <p class="brief-feature">🌴 Pool overlooking the ocean</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights Nov-Dec 2025</li>
+              <li><span>🎥</span>3x TikToks + 15 raw clips</li>
+              <li><span>🍽️</span>Continental Breakfast included</li>
+            </ul>
           </div>
         </div>
-
-        <p style="text-align: center; margin-top: 2rem; color: #666;" id="annualEarnings">
-          <strong>That's £207-1,488 per year</strong> with just 8 monthly referrals
-        </p>
       </div>
     </div>
   </section>
 
-
-
-  <!-- Commission Structure -->
-  <section class="commission-structure" id="commission">
+  <!-- Pricing Section -->
+  <section class="pricing-section section-white" id="pricing">
     <div class="container">
-      <h2 style="text-align: center;">Generous Commission Structure</h2>
-      <p style="text-align: center; color: #666; margin-bottom: 0;">Higher rates than most programs, with clear progression path</p>
+      <h2 style="text-align: center;">Choose Your Creator Journey</h2>
+      <p style="text-align: center; color: #666; margin-bottom: 0;">Cancel anytime. Upgrade or downgrade whenever you need.</p>
       
-      <div class="commission-tiers">
-        <div class="tier-card">
-          <div class="tier-name">Starter Partner</div>
-          <div class="tier-rate">20%</div>
-          <div class="tier-per-sale">£1.80 - £7.80 per referral</div>
-          <div class="tier-requirements">
-            Start earning immediately with your first referrals
-          </div>
-          <ul class="tier-benefits">
-            <li>Monthly PayPal payouts</li>
-            <li>Partner dashboard access</li>
-            <li>Basic marketing materials</li>
-            <li>Email support</li>
+      <div class="pricing-container">
+        <!-- Explorers Card -->
+        <div class="pricing-card">
+          <h3>Explorers</h3>
+          <div class="pricing-price">£9<span class="pricing-period">per month</span></div>
+          <ul>
+            <li><strong>Access to weekly hotel collabs</strong></li>
+            <li>New stay opportunities posted every Friday</li>
+            <li>Apply directly to hotel briefs inside the platform</li>
+            <li>Support group for creators</li>
+            <li>Pitch templates, content guides & video ideas</li>
           </ul>
+          
+          <!-- Resource Icons Section -->
+          <div style="background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%); border: 1px solid rgba(93, 111, 193, 0.2); border-radius: 15px; padding: 1rem; margin: 1rem 0;">
+            <div style="font-weight: 600; font-size: 0.9rem; color: #5d6fc1; margin-bottom: 0.8rem; text-align: center;">📚 Bonus Resource Library</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+              <span style="background: #5d6fc1; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">📬 Follow-Up Messages</span>
+              <span style="background: #5d6fc1; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">📩 Email Subject Lines</span>
+              <span style="background: #5d6fc1; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">🚀 Viral Hook Library</span>
+            </div>
+          </div>
+          
+          <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for beginners or first-time creators</p>
+          <div class="pricing-buttons">
+            <a href="https://muob-creators.circle.so/checkout/explorers" class="btn btn-primary">Join Explorers</a>
+          </div>
         </div>
         
-        <div class="tier-card featured">
-          <div class="tier-name">Growth Partner</div>
-          <div class="tier-rate">30%</div>
-          <div class="tier-per-sale">£2.70 - £11.70 per referral</div>
-          <div class="tier-requirements">
-            Unlock after 10 successful referrals
-          </div>
-          <ul class="tier-benefits">
-            <li>Everything in Starter</li>
-            <li>Custom promotional assets</li>
-            <li>Priority support</li>
-            <li>Performance insights</li>
+        <!-- Nomads Card - Featured -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Nomads</h3>
+          <div class="pricing-price">£19<span class="pricing-period">per month</span></div>
+          <ul>
+            <li><strong>Everything in Explorers</strong></li>
+            <li>Access to higher-tier hotel briefs with better perks</li>
+            <li>Apply to paid UGC opportunities & brand deals</li>
+            <li>Exclusive strategy drops and negotiation tips</li>
           </ul>
+          
+          <!-- Resource Icons Section -->
+          <div style="background: linear-gradient(135deg, #fff8f6 0%, #ffffff 100%); border: 1px solid rgba(255, 107, 107, 0.3); border-radius: 15px; padding: 1rem; margin: 1rem 0;">
+            <div style="font-weight: 600; font-size: 0.9rem; color: #ff6b6b; margin-bottom: 0.8rem; text-align: center;">💎 Premium Resource Library</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+              <span style="background: #ff6b6b; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">💡 ChatGPT Prompts</span>
+              <span style="background: #ff6b6b; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">✉️ Outreach Pack</span>
+              <span style="background: #888; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">+ All Explorers</span>
+            </div>
+          </div>
+          
+          <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for creators ready to level up and land paid work</p>
+          <div class="pricing-buttons">
+            <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary">Join Nomads</a>
+          </div>
         </div>
         
-        <div class="tier-card">
-          <div class="tier-name">Elite Partner</div>
-          <div class="tier-rate">40%</div>
-          <div class="tier-per-sale">£3.60 - £15.60 per referral</div>
-          <div class="tier-requirements">
-            Elite tier for top performers (25+ referrals)
-          </div>
-          <ul class="tier-benefits">
-            <li>Everything in Growth</li>
-            <li>Dedicated partner manager</li>
-            <li>Exclusive opportunities</li>
-            <li>Monthly performance bonuses</li>
+        <!-- First Class Card -->
+        <div class="pricing-card">
+          <h3>First Class</h3>
+          <div class="pricing-price">£39<span class="pricing-period">per month</span></div>
+          <ul>
+            <li><strong>Everything in Nomads</strong></li>
+            <li>Access to premium paid brand opportunities</li>
+            <li>Exclusive deep-dive video trainings & mini courses</li>
+            <li>1:1 feedback opportunities on pitches, videos & outreach</li>
           </ul>
+          
+          <!-- Resource Icons Section -->
+          <div style="background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); border: 1px solid rgba(25, 43, 108, 0.3); border-radius: 15px; padding: 1rem; margin: 1rem 0;">
+            <div style="font-weight: 600; font-size: 0.9rem; color: #192b6c; margin-bottom: 0.8rem; text-align: center;">🏆 Complete Resource Suite</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+              <span style="background: #192b6c; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">🔥 Priority Access</span>
+              <span style="background: #192b6c; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">📋 New Templates</span>
+              <span style="background: #888; color: white; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">+ All Previous</span>
+            </div>
+          </div>
+          
+          <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Built for serious creators ready to turn UGC into income</p>
+          <div class="pricing-buttons">
+            <a href="https://muob-creators.circle.so/checkout/first-class" class="btn btn-primary">Join First Class</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Application Steps -->
-  <section class="application-steps">
-    <div class="container">
-      <h2 style="text-align: center;">How to Get Started</h2>
-      <p style="text-align: center; color: #666; margin-bottom: 0;">Simple process to start earning with MUOB</p>
-      
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-title">Apply in 2 Minutes</div>
-          <div class="step-description">Quick application with your audience details and content examples. No complicated requirements.</div>
-        </div>
-        
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-title">Get Approved Fast</div>
-          <div class="step-description">Most applications reviewed within 24-48 hours. We're looking for engaged audiences, not huge follower counts.</div>
-        </div>
-        
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-title">Receive Your Kit</div>
-          <div class="step-description">Get your unique link, promotional materials, and access to your earnings dashboard immediately.</div>
-        </div>
-        
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-title">Start Earning</div>
-          <div class="step-description">Share MUOB with your audience and watch your commissions grow. First payout after just £20.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section" id="faq">
+  <!-- FAQ Section -->
+  <section class="faq-section section-gray" id="faq">
     <div class="container">
       <h2 style="text-align: center;">Frequently Asked Questions</h2>
       
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
-            What audience size do I need to get accepted?
+            How many hotel briefs do you post?
           </div>
           <div class="faq-answer">
-            <p>We work with creators starting from 1,000 engaged followers. We care more about audience engagement and alignment than raw numbers. If your audience includes travel creators or aspiring influencers, you're likely a good fit.</p>
+            <p>We post new briefs every Friday. The number varies but typically 3-5 opportunities per week, depending on season and hotel partnerships.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            How much can I realistically earn per month?
+            Do I need a certain number of followers?
           </div>
           <div class="faq-answer">
-            <p>Earnings vary based on which MUOB tier your referrals choose and your commission level. Partners typically earn £150-600 per month, with top performers reaching £1,000+. Explorers (£9) gives smaller commissions but easier conversions, while First Class (£39) gives higher commissions per referral.</p>
+            <p>No minimum required. Hotels value quality content and engagement. We have members with 500 followers successfully landing collaborations.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            When and how do I get paid?
+            Are hotel approvals guaranteed?
           </div>
           <div class="faq-answer">
-            <p>Monthly payouts via PayPal or bank transfer on the 1st of each month. Minimum payout is just £20, so you can start earning quickly. All payments are tracked transparently in your dashboard.</p>
+            <p>No. Hotels make their own selection decisions. We provide the opportunities and tools to improve your chances, but success depends on your content quality and pitch.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            What marketing support do you provide?
+            Can I cancel anytime?
           </div>
           <div class="faq-answer">
-            <p>Complete marketing toolkit including professionally designed graphics, video assets, email templates, and content guidelines. Growth and Elite partners get custom assets created specifically for their brand.</p>
+            <p>Yes. No contracts or commitments. Cancel directly from your account dashboard. You'll retain access until the end of your billing period.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            Can I promote across all my social platforms?
+            What's the difference between tiers?
           </div>
           <div class="faq-answer">
-            <p>Absolutely! Use your referral link across Instagram, TikTok, YouTube, email newsletters, and any other platforms. We provide platform-specific content and strategies for maximum conversion.</p>
+              <p>Higher tiers get earlier access to briefs (First Class on Wednesday, Nomads on Thursday, Explorers on Friday), better hotel perks, paid opportunities, and more support.</p>
           </div>
         </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            How quickly can I start earning?
-          </div>
-          <div class="faq-answer">
-            <p>Most approved partners start earning within their first week. After approval, you'll receive your materials and unique link immediately. The faster you start promoting, the faster you start earning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="founder section-white">
+    <div class="container">
+      <h2>About the Founder</h2>
+      <div class="founder-content">
+        <img src="https://i.imgur.com/0uYsIz4.jpeg" alt="Alex Davidson" class="founder-photo">
+        <div class="founder-bio">
+          <h3>Alex Davidson</h3>
+          <p>
+            I started MUOB after working with hotels for 5 years and seeing how desperately they need quality UGC. 
+            I was tired of seeing talented creators struggle to get noticed while hotels were paying agencies thousands for mediocre content.
+          </p>
+          <p>
+            MUOB Creators bridges that gap. We work directly with hotels to understand what they need, then connect them with creators who can deliver.
+            No inflated promises - just real opportunities for creators who are ready to work.
+          </p>
+          <div class="founder-links">
+            <a href="https://instagram.com/alexmuob" class="btn btn-secondary">Follow on Instagram</a>
+            <a href="https://tiktok.com/@alexmuob" class="btn btn-secondary">TikTok</a>
           </div>
         </div>
       </div>
@@ -1179,67 +2230,244 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section" id="apply">
+  <section class="cta-section">
     <div class="container">
-      <h2>Ready to Start Earning Serious Commissions?</h2>
-      <p>Join MUOB's partner program and start building substantial monthly income</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-        <a href="#" class="btn btn-primary btn-large" style="background: white; color: #192b6c;">Apply Now - It's Free</a>
-        <a href="#calculator" class="btn btn-secondary btn-large" style="border-color: rgba(255,255,255,0.5); color: white;">Calculate Your Earnings</a>
-      </div>
-      <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-        Applications typically approved within 24-48 hours
-      </p>
+      <h2>Ready to Start Landing Hotel Collabs?</h2>
+      <p>Join MUOB Creators today. New briefs drop every Friday.</p>
+      <a href="#pricing" class="btn btn-primary" style="background: white; color: #192b6c;">Choose Your Membership</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-col">
-          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB" style="height: 40px; margin-bottom: 1rem;">
-          <p style="color: rgba(255,255,255,0.7);">High-paying partner program for content creators. Earn substantial commissions with industry-leading support.</p>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
         </div>
-        
-        <div class="footer-col">
-          <h3>Partnership</h3>
-          <ul class="footer-links">
-            <li><a href="#commission">Commission Rates</a></li>
-            <li><a href="#calculator">Earnings Calculator</a></li>
-            <li><a href="#benefits">Partner Benefits</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Resources</h3>
-          <ul class="footer-links">
-            <li><a href="#">Marketing Materials</a></li>
-            <li><a href="#">Partner Guidelines</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="#">Best Practices</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h3>Support</h3>
-          <ul class="footer-links">
-            <li><a href="mailto:partners@muob.com">Partner Support</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Payment Information</a></li>
-            <li><a href="#">Dashboard Access</a></li>
-          </ul>
-        </div>
+      
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/refund">Refund Policy</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+        </ul>
       </div>
       
-      <div class="footer-bottom">
-        © 2025 MUOB. All rights reserved. | Partner Program
+      <div class="footer-col">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:contact@muobsocial.com">Contact Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/guidelines">Community Guidelines</a></li>
+          <li><a href="http://muob-creators.circle.so/account/billing?tab=paymentMethods">How to Cancel</a></li>
+        </ul>
       </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2025 MIND UR OWN BUSINESS. All rights reserved.
     </div>
   </footer>
 
+  <!-- Sticky Bottom Bar -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-content">
+      <button class="sticky-close" id="stickyClose">&times;</button>
+      <div class="sticky-title">Choose your path:</div>
+      <div class="sticky-pills">
+        <button class="sticky-pill" data-path="brand-new">
+          I'm brand-new
+        </button>
+        
+        <button class="sticky-pill" data-path="free-stays">
+          Building with free stays
+        </button>
+        
+        <button class="sticky-pill" data-path="paid-ready">
+          Ready for paid collabs
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendation Overlay -->
+  <div class="recommendation-overlay" id="recommendationOverlay">
+    <div class="recommendation-card">
+      <button class="close-btn" id="closeRecommendation">&times;</button>
+      
+      <h3 class="recommendation-title">We recommend</h3>
+      <p class="recommendation-subtitle" id="recommendationSubtitle">Perfect for your creator journey</p>
+      
+      <div class="tier-highlight">
+        <div class="tier-badge" id="tierBadge">RECOMMENDED</div>
+        <div class="tier-name" id="tierName">Explorers</div>
+        <div class="tier-description" id="tierDescription">Access to weekly hotel collabs and pitch templates</div>
+        <div class="tier-price" id="tierPrice">£9/month</div>
+      </div>
+
+      <div class="discount-banner">
+        <div class="discount-title">🎉 First Month Free!</div>
+        <div class="discount-code">MUOB30</div>
+        <div class="discount-subtitle">Use code at checkout - no commitment</div>
+      </div>
+
+      <div class="recommendation-cta">
+        <a href="#" class="btn btn-primary btn-large" id="claimOfferBtn">Claim Your Free Month</a>
+        <button class="btn btn-outline" id="browseAllPlans">Browse All Plans</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Path recommendation functionality
+    const pathPills = document.querySelectorAll('.path-pill');
+    const stickyPills = document.querySelectorAll('.sticky-pill');
+    const stickyBar = document.getElementById('stickyBar');
+    const stickyClose = document.getElementById('stickyClose');
+    const recommendationOverlay = document.getElementById('recommendationOverlay');
+    const closeRecommendation = document.getElementById('closeRecommendation');
+    const browseAllPlans = document.getElementById('browseAllPlans');
+    
+    let hasInteracted = false;
+    let stickyBarDismissed = false;
+
+    // Tier recommendations for each path
+    const recommendations = {
+      'brand-new': {
+        tier: 'Explorers',
+        price: '£9/month',
+        description: 'Perfect for beginners - get weekly briefs, templates, and community support to land your first hotel collaboration',
+        subtitle: 'Perfect for first-time creators',
+        link: 'https://muob-creators.circle.so/checkout/explorers'
+      },
+      'free-stays': {
+        tier: 'Nomads',
+        price: '£19/month',
+        description: 'Level up with better hotel briefs, paid opportunities, and exclusive strategy content for consistent collaborations',
+        subtitle: 'Perfect for growing creators',
+        link: 'https://muob-creators.circle.so/checkout/nomads'
+      },
+      'paid-ready': {
+        tier: 'First Class',
+        price: '£39/month',
+        description: 'Access premium paid opportunities, 1:1 feedback, and advanced training to maximize your creator income',
+        subtitle: 'Perfect for serious creators',
+        link: 'https://muob-creators.circle.so/checkout/first-class'
+      }
+    };
+
+    // Handle main path pill clicks
+    pathPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        // Remove selected class from all pills
+        pathPills.forEach(p => p.classList.remove('selected'));
+        // Add selected class to clicked pill
+        pill.classList.add('selected');
+        
+        // Show sticky bar after first interaction
+        if (!hasInteracted) {
+          hasInteracted = true;
+          setTimeout(() => {
+            stickyBar.classList.add('active');
+          }, 800);
+        }
+        
+        // Handle the path selection
+        const path = pill.dataset.path;
+        showRecommendation(path);
+      });
+    });
+
+    // Handle sticky pill clicks
+    stickyPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const path = pill.dataset.path;
+        showRecommendation(path);
+      });
+    });
+
+    // Show sticky bar on scroll after interaction
+    window.addEventListener('scroll', () => {
+      if (hasInteracted && !stickyBarDismissed && window.scrollY > window.innerHeight * 0.3) {
+        stickyBar.classList.add('active');
+      } else if (window.scrollY < 100) {
+        stickyBar.classList.remove('active');
+      }
+    });
+
+    // Close sticky bar
+    stickyClose.addEventListener('click', () => {
+      stickyBarDismissed = true;
+      stickyBar.classList.remove('active');
+    });
+
+    function showRecommendation(path) {
+      const rec = recommendations[path];
+      if (!rec) return;
+
+      // Update recommendation content
+      document.getElementById('recommendationSubtitle').textContent = rec.subtitle;
+      document.getElementById('tierName').textContent = rec.tier;
+      document.getElementById('tierDescription').textContent = rec.description;
+      document.getElementById('tierPrice').textContent = rec.price;
+      document.getElementById('claimOfferBtn').href = rec.link;
+
+      // Show overlay
+      recommendationOverlay.classList.add('active');
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideRecommendation() {
+      recommendationOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close recommendation handlers
+    closeRecommendation.addEventListener('click', hideRecommendation);
+    
+    browseAllPlans.addEventListener('click', () => {
+      hideRecommendation();
+      // Scroll to pricing section
+      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Close on overlay click (outside card)
+    recommendationOverlay.addEventListener('click', (e) => {
+      if (e.target === recommendationOverlay) {
+        hideRecommendation();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hideRecommendation();
+      }
+    });
+
+    // Add touch feedback for mobile
+    function addTouchFeedback(elements) {
+      elements.forEach(element => {
+        element.addEventListener('touchstart', () => {
+          element.style.transform = 'translateY(-1px) scale(0.98)';
+        }, { passive: true });
+        
+        element.addEventListener('touchend', () => {
+          setTimeout(() => {
+            element.style.transform = '';
+          }, 150);
+        }, { passive: true });
+      });
+    }
+
+    addTouchFeedback(pathPills);
+    addTouchFeedback(stickyPills);
+
     // FAQ accordion functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
     
@@ -1262,91 +2490,91 @@
       });
     });
 
-    // Earnings Calculator
-    const refSlider = document.getElementById('refSlider');
-    const refValue = document.getElementById('refValue');
-    const starterEarnings = document.getElementById('starterEarnings');
-    const growthEarnings = document.getElementById('growthEarnings');
-    const eliteEarnings = document.getElementById('eliteEarnings');
-    const starterCommission = document.getElementById('starterCommission');
-    const growthCommission = document.getElementById('growthCommission');
-    const eliteCommission = document.getElementById('eliteCommission');
-    const annualEarnings = document.getElementById('annualEarnings');
+    // Infinite scroll functionality for briefs
+    const briefsGrid = document.getElementById('briefsGrid');
+    const cardWidth = 320 + 24; // Card width + gap
+    const totalCards = 8; // Number of unique cards
+    const duplicateWidth = totalCards * cardWidth;
 
-    function updateCalculator() {
-      const referrals = parseInt(refSlider.value);
-      
-      // Get selected tier price
-      const selectedTier = document.querySelector('input[name="tier"]:checked').value;
-      let membershipPrice;
-      
-      switch(selectedTier) {
-        case 'explorers':
-          membershipPrice = 9;
-          break;
-        case 'nomads':
-          membershipPrice = 29;
-          break;
-        case 'firstclass':
-          membershipPrice = 39;
-          break;
-        default:
-          membershipPrice = 29;
+    // Auto-scroll variables
+    let autoScrollSpeed = 0.5; // pixels per frame
+    let isAutoScrolling = true;
+    let userInteracting = false;
+    let autoScrollTimeout;
+
+    // Auto-scroll function
+    function autoScroll() {
+      if (isAutoScrolling && !userInteracting) {
+        briefsGrid.scrollLeft += autoScrollSpeed;
       }
-      
-      // Commission rates
-      const starterRate = 0.20; // 20%
-      const growthRate = 0.30; // 30%
-      const eliteRate = 0.40; // 40%
-      
-      // Calculate per-referral amounts
-      const starterPerReferral = membershipPrice * starterRate;
-      const growthPerReferral = membershipPrice * growthRate;
-      const elitePerReferral = membershipPrice * eliteRate;
-      
-      // Calculate earnings
-      const starterTotal = referrals * starterPerReferral;
-      const growthTotal = referrals * growthPerReferral;
-      const eliteTotal = referrals * elitePerReferral;
-      
-      // Calculate annual earnings
-      const annualStarter = starterTotal * 12;
-      const annualElite = eliteTotal * 12;
-      
-      // Update display
-      refValue.textContent = `${referrals} referral${referrals !== 1 ? 's' : ''}`;
-      starterEarnings.textContent = `£${starterTotal.toFixed(2)}`;
-      growthEarnings.textContent = `£${growthTotal.toFixed(2)}`;
-      eliteEarnings.textContent = `£${eliteTotal.toFixed(2)}`;
-      starterCommission.textContent = `£${starterPerReferral.toFixed(2)} per referral`;
-      growthCommission.textContent = `£${growthPerReferral.toFixed(2)} per referral`;
-      eliteCommission.textContent = `£${elitePerReferral.toFixed(2)} per referral`;
-      annualEarnings.innerHTML = `<strong>That's £${annualStarter.toFixed(0)}-${annualElite.toFixed(0)} per year</strong> with just ${referrals} monthly referrals`;
+      requestAnimationFrame(autoScroll);
     }
 
-    refSlider.addEventListener('input', updateCalculator);
-    
-    // Add event listeners for tier selection
-    document.querySelectorAll('input[name="tier"]').forEach(radio => {
-      radio.addEventListener('change', updateCalculator);
-    });
-    
-    // Initialize calculator
-    updateCalculator();
+    // Start auto-scroll
+    autoScroll();
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
+    // Function to pause auto-scroll temporarily
+    function pauseAutoScroll() {
+      userInteracting = true;
+      clearTimeout(autoScrollTimeout);
+      autoScrollTimeout = setTimeout(() => {
+        userInteracting = false;
+      }, 3000); // Resume after 3 seconds of no interaction
+    }
+
+    // Infinite scroll logic
+    briefsGrid.addEventListener('scroll', () => {
+      const scrollLeft = briefsGrid.scrollLeft;
+      const maxScroll = briefsGrid.scrollWidth - briefsGrid.clientWidth;
+      
+      // When reaching the end (duplicate section), jump back to beginning
+      if (scrollLeft >= duplicateWidth) {
+        briefsGrid.scrollLeft = scrollLeft - duplicateWidth;
+      }
+      
+      // When scrolling backwards past the beginning, jump to the end of original section
+      if (scrollLeft <= 0) {
+        briefsGrid.scrollLeft = duplicateWidth;
+      }
     });
-  </script>
-</body>
-</html>
+
+    // Enhanced touch/swipe support for mobile
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let startTime;
+    let endTime;
+
+    briefsGrid.addEventListener('touchstart', handleStart, { passive: false });
+    briefsGrid.addEventListener('touchmove', handleMove, { passive: false });
+    briefsGrid.addEventListener('touchend', handleEnd, { passive: false });
+
+    briefsGrid.addEventListener('mousedown', (e) => {
+      isDown = true;
+      briefsGrid.style.cursor = 'grabbing';
+      startX = e.pageX - briefsGrid.offsetLeft;
+      scrollLeft = briefsGrid.scrollLeft;
+      startTime = Date.now();
+      pauseAutoScroll();
+    });
+
+    briefsGrid.addEventListener('mouseleave', () => {
+      isDown = false;
+      briefsGrid.style.cursor = 'grab';
+    });
+
+    briefsGrid.addEventListener('mouseup', () => {
+      isDown = false;
+      briefsGrid.style.cursor = 'grab';
+    });
+
+    briefsGrid.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - briefsGrid.offsetLeft;
+      const walk = (x - startX) * 2;
+      briefsGrid.scrollLeft = scrollLeft - walk;
+    });
+
+    // Mouse wheel scroll also pauses auto-scroll
+    briefsGri
