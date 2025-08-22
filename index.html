@@ -235,6 +235,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       opacity: 0.9;
     }
 
+    /* Experience Level Selector */
+    .experience-selector {
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-title {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
     /* Path Pills */
     .path-pills {
       display: flex;
@@ -322,6 +334,50 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       height: 4px;
       background: #5d6fc1;
       border-radius: 50%;
+    }
+
+    /* Live indicator for briefs section */
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #28a745;
+      border-radius: 50%;
+      animation: pulse-green 2s infinite;
+      position: relative;
+    }
+
+    .live-dot::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 12px;
+      height: 12px;
+      background: #28a745;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
     }
 
     /* Sticky Bottom Bar */
@@ -1616,23 +1672,28 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           Get weekly briefs, proven templates, and direct hotel connections. No big following needed.
         </p>
         
-        <div class="path-pills">
-          <button class="path-pill" data-path="brand-new">
-            I'm brand-new
-          </button>
+        <div class="experience-selector">
+          <p class="experience-title">👋 Choose your experience level to get started:</p>
           
-          <button class="path-pill" data-path="free-stays">
-            Building with free stays
-          </button>
-          
-          <button class="path-pill" data-path="paid-ready">
-            Ready for paid collabs
-          </button>
+          <div class="path-pills">
+            <button class="path-pill" data-path="brand-new">
+              I'm brand-new
+            </button>
+            
+            <button class="path-pill" data-path="free-stays">
+              Building with free stays
+            </button>
+            
+            <button class="path-pill" data-path="paid-ready">
+              Ready for paid collabs
+            </button>
+          </div>
         </div>
 
         <div class="boosters">
           <div class="booster-item">
-            <span>18 briefs live</span>
+            <div class="live-dot"></div>
+            <span>21 briefs live</span>
           </div>
           <div class="booster-dot"></div>
           <div class="booster-item">
@@ -1716,7 +1777,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             </div>
             <h4 class="brief-location">📍 Santorini, Greece</h4>
             <h5 class="brief-name">Adults-Only Cliffside Resort</h5>
-            <p class="brief-feature">🏝️ Private plunge pool & sunset views</p>
+            <p class="brief-feature">🏖️ Private plunge pool & sunset views</p>
             <ul class="brief-details">
               <li><span>📅</span>3 nights</li>
               <li><span>🎥</span>3x TikToks + 10 raw clips</li>
@@ -1790,6 +1851,49 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <ul class="brief-details">
               <li><span>📅</span>4 nights</li>
               <li><span>🎥</span>5x TikToks + raw footage</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Porto, Portugal 🇵🇹</h4>
+            <h5 class="brief-name">Boutique Riverside Stay</h5>
+            <p class="brief-feature">🍷 Complimentary wine tasting included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in September 2025</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Swiss Alps 🇨🇭</h4>
+            <h5 class="brief-name">Mountain Hotel</h5>
+            <p class="brief-feature">🔥 Panoramic balcony views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights in October 2025</li>
+              <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bali, Indonesia 🇮🇩</h4>
+            <h5 class="brief-name">Luxury Retreat</h5>
+            <p class="brief-feature">🌴 Pool overlooking the ocean</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights Nov-Dec 2025</li>
+              <li><span>🎥</span>3x TikToks + 15 raw clips</li>
+              <li><span>🍽️</span>Continental Breakfast included</li>
             </ul>
           </div>
 
@@ -1829,7 +1933,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             </div>
             <h4 class="brief-location">📍 Santorini, Greece</h4>
             <h5 class="brief-name">Adults-Only Cliffside Resort</h5>
-            <p class="brief-feature">🏝️ Private plunge pool & sunset views</p>
+            <p class="brief-feature">🏖️ Private plunge pool & sunset views</p>
             <ul class="brief-details">
               <li><span>📅</span>3 nights</li>
               <li><span>🎥</span>3x TikToks + 10 raw clips</li>
@@ -1903,6 +2007,49 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <ul class="brief-details">
               <li><span>📅</span>4 nights</li>
               <li><span>🎥</span>5x TikToks + raw footage</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Porto, Portugal 🇵🇹</h4>
+            <h5 class="brief-name">Boutique Riverside Stay</h5>
+            <p class="brief-feature">🍷 Complimentary wine tasting included</p>
+            <ul class="brief-details">
+              <li><span>📅</span>1 night in September 2025</li>
+              <li><span>🎥</span>2x TikToks or Reels</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Swiss Alps 🇨🇭</h4>
+            <h5 class="brief-name">Mountain Hotel</h5>
+            <p class="brief-feature">🔥 Panoramic balcony views</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights in October 2025</li>
+              <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Aug 22, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bali, Indonesia 🇮🇩</h4>
+            <h5 class="brief-name">Luxury Retreat</h5>
+            <p class="brief-feature">🌴 Pool overlooking the ocean</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3 nights Nov-Dec 2025</li>
+              <li><span>🎥</span>3x TikToks + 15 raw clips</li>
+              <li><span>🍽️</span>Continental Breakfast included</li>
             </ul>
           </div>
         </div>
@@ -2430,40 +2577,4 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     });
 
     // Mouse wheel scroll also pauses auto-scroll
-    briefsGrid.addEventListener('wheel', () => {
-      pauseAutoScroll();
-    }, { passive: true });
-
-    function handleStart(e) {
-      startX = e.touches[0].clientX;
-      scrollLeft = briefsGrid.scrollLeft;
-      startTime = Date.now();
-      pauseAutoScroll();
-    }
-
-    function handleMove(e) {
-      if (!startX) return;
-      e.preventDefault();
-      const x = e.touches[0].clientX;
-      const walk = (startX - x) * 1.5;
-      briefsGrid.scrollLeft = scrollLeft + walk;
-    }
-
-    function handleEnd(e) {
-      startX = null;
-      endTime = Date.now();
-    }
-
-    // Set initial cursor style
-    briefsGrid.style.cursor = 'grab';
-
-    // Initialize scroll position to show first set of cards
-    briefsGrid.scrollLeft = 0;
-
-    // Pause auto-scroll when tab/window is not visible
-    document.addEventListener('visibilitychange', () => {
-      isAutoScrolling = !document.hidden;
-    });
-  </script>
-</body>
-</html>
+    briefsGri
