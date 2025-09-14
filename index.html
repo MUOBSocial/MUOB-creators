@@ -7,8 +7,6 @@
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
 var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
 ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
   ttq.load('D2JFFGRC77U89NHRV1QG');
   ttq.page();
 }(window, document, 'ttq');
@@ -204,7 +202,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23192b6c" opacity="0.02"/><circle cx="80" cy="40" r="1" fill="%235d6fc1" opacity="0.02"/><circle cx="40" cy="80" r="1" fill="%23192b6c" opacity="0.02"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
       pointer-events: none;
     }
-
     .hero-content {
       position: relative;
       z-index: 1;
@@ -213,7 +210,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       max-width: 500px;
       padding: 0 1rem;
     }
-
     .hero-content h1 {
       font-size: 3.2rem;
       line-height: 1.1;
@@ -225,7 +221,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       font-weight: 700;
       letter-spacing: -0.025em;
     }
-
     .hero-subtitle {
       font-size: 1.2rem;
       margin-bottom: 3rem;
@@ -234,19 +229,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       line-height: 1.5;
       opacity: 0.9;
     }
-
     /* Experience Level Selector */
     .experience-selector {
       margin-bottom: 1.5rem;
     }
-
     .experience-title {
       font-size: 1rem;
       color: #666;
       margin-bottom: 1rem;
       font-weight: 500;
     }
-
     /* Path Pills */
     .path-pills {
       display: flex;
@@ -257,7 +249,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       margin-left: auto;
       margin-right: auto;
     }
-
     .path-pill {
       background: white;
       border: 2px solid rgba(25, 43, 108, 0.1);
@@ -277,7 +268,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       align-items: center;
       justify-content: center;
     }
-
     .path-pill::before {
       content: '';
       position: absolute;
@@ -288,29 +278,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
       transition: left 0.5s ease;
     }
-
     .path-pill:hover::before {
       left: 100%;
     }
-
     .path-pill:hover {
       transform: translateY(-3px);
       border-color: rgba(25, 43, 108, 0.2);
       box-shadow: 0 12px 35px rgba(25, 43, 108, 0.15);
     }
-
     .path-pill:active {
       transform: translateY(-1px);
       transition: transform 0.1s ease;
     }
-
     .path-pill.selected {
       border-color: #ff6b6b;
       background: linear-gradient(135deg, #fff8f6 0%, #ffffff 100%);
       transform: translateY(-3px);
       box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
     }
-
     /* Boosters */
     .boosters {
       font-size: 0.9rem;
@@ -322,27 +307,23 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       justify-content: center;
       gap: 1rem;
     }
-
     .booster-item {
       display: flex;
       align-items: center;
       gap: 0.3rem;
     }
-
     .booster-dot {
       width: 4px;
       height: 4px;
       background: #5d6fc1;
       border-radius: 50%;
     }
-
     /* Live indicator for briefs section */
     .live-indicator {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
     }
-
     .live-dot {
       width: 8px;
       height: 8px;
@@ -351,7 +332,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       animation: pulse-green 2s infinite;
       position: relative;
     }
-
     .live-dot::before {
       content: '';
       position: absolute;
@@ -364,7 +344,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       opacity: 0.3;
       animation: pulse-green 2s infinite;
     }
-
     @keyframes pulse-green {
       0% {
         transform: scale(0.8);
@@ -379,7 +358,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         opacity: 1;
       }
     }
-
     /* Sticky Bottom Bar */
     .sticky-bar {
       position: fixed;
@@ -395,11 +373,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       transition: transform 0.4s ease;
       box-shadow: 0 -10px 30px rgba(25, 43, 108, 0.1);
     }
-
     .sticky-bar.active {
       transform: translateY(0);
     }
-
     .sticky-content {
       max-width: 500px;
       margin: 0 auto;
@@ -408,7 +384,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       gap: 0.8rem;
       position: relative;
     }
-
     .sticky-title {
       font-size: 0.9rem;
       font-weight: 600;
@@ -416,7 +391,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       text-align: center;
       margin-bottom: 0.5rem;
     }
-
     .sticky-close {
       position: absolute;
       top: -0.5rem;
@@ -435,18 +409,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       transition: all 0.3s ease;
       z-index: 10;
     }
-
     .sticky-close:hover {
       background: rgba(25, 43, 108, 0.1);
       color: #192b6c;
     }
-
     .sticky-pills {
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
     }
-
     .sticky-pill {
       background: white;
       border: 2px solid rgba(25, 43, 108, 0.1);
@@ -464,19 +435,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       align-items: center;
       justify-content: center;
     }
-
     .sticky-pill:hover {
       border-color: #ff6b6b;
       background: linear-gradient(135deg, #fff8f6 0%, #ffffff 100%);
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(255, 107, 107, 0.15);
     }
-
     .sticky-pill:active {
       transform: translateY(0);
       transition: transform 0.1s ease;
     }
-
     /* Recommendation Overlay */
     .recommendation-overlay {
       position: fixed;
@@ -495,12 +463,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       visibility: hidden;
       transition: all 0.4s ease;
     }
-
     .recommendation-overlay.active {
       opacity: 1;
       visibility: visible;
     }
-
     .recommendation-card {
       background: white;
       border-radius: 25px;
@@ -515,11 +481,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       max-height: 90vh;
       overflow-y: auto;
     }
-
     .recommendation-overlay.active .recommendation-card {
       transform: translateY(0) scale(1);
     }
-
     .close-btn {
       position: absolute;
       top: 1rem;
@@ -538,12 +502,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       transition: all 0.3s ease;
       z-index: 10;
     }
-
     .close-btn:hover {
       background: #f0f0f0;
       color: #192b6c;
     }
-
     .recommendation-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -554,14 +516,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       background-clip: text;
       color: transparent;
     }
-
     .recommendation-subtitle {
       font-size: 1.1rem;
       color: #666;
       margin-bottom: 1.5rem;
       line-height: 1.5;
     }
-
     .tier-highlight {
       background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
       border: 2px solid #ff6b6b;
@@ -571,7 +531,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       position: relative;
       overflow: hidden;
     }
-
     .tier-highlight::before {
       content: '';
       position: absolute;
@@ -581,7 +540,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       height: 4px;
       background: linear-gradient(90deg, #ff6b6b, #ffa76b);
     }
-
     .tier-badge {
       display: inline-block;
       background: linear-gradient(45deg, #ff6b6b, #ffa76b);
@@ -592,28 +550,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       font-size: 0.8rem;
       margin-bottom: 0.8rem;
     }
-
     .tier-name {
       font-size: 1.4rem;
       font-weight: 700;
       color: #192b6c;
       margin-bottom: 0.4rem;
     }
-
     .tier-description {
       color: #666;
       font-size: 0.9rem;
       line-height: 1.4;
       margin-bottom: 1rem;
     }
-
     .tier-price {
       font-size: 1.2rem;
       font-weight: 700;
       color: #192b6c;
       margin-bottom: 0.3rem;
     }
-
     .discount-banner {
       background: linear-gradient(135deg, #28a745, #20c997);
       color: white;
@@ -623,7 +577,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       position: relative;
       overflow: hidden;
     }
-
     .discount-banner::before {
       content: '';
       position: absolute;
@@ -634,53 +587,44 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       animation: shimmer 2s infinite;
     }
-
     @keyframes shimmer {
       0% { left: -100%; }
       100% { left: 100%; }
     }
-
     .discount-title {
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
     }
-
     .discount-code {
       font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: 2px;
       margin-bottom: 0.4rem;
     }
-
     .discount-subtitle {
       font-size: 0.85rem;
       opacity: 0.9;
     }
-
     .recommendation-cta {
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
     }
-
     .btn-large {
       font-size: 1.1rem;
       padding: 1rem 2rem;
       border-radius: 25px;
     }
-
     .btn-outline {
       background: transparent;
       color: #192b6c;
       border: 2px solid #192b6c;
     }
-
     .btn-outline:hover {
       background: #192b6c;
       color: white;
     }
-
     /* Mobile-specific styles for recommendation overlay */
     @media (max-width: 768px) {
       .recommendation-overlay {
@@ -688,64 +632,51 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         align-items: flex-start;
         padding-top: 10vh;
       }
-
       .recommendation-card {
         padding: 2rem 1.5rem;
         max-width: 100%;
         max-height: 80vh;
         margin: 0;
       }
-
       .recommendation-title {
         font-size: 1.5rem;
         margin-bottom: 0.6rem;
       }
-
       .recommendation-subtitle {
         font-size: 1rem;
         margin-bottom: 1.2rem;
       }
-
       .tier-highlight {
         padding: 1.2rem;
         margin-bottom: 1.2rem;
       }
-
       .tier-name {
         font-size: 1.2rem;
       }
-
       .tier-description {
         font-size: 0.85rem;
         margin-bottom: 0.8rem;
       }
-
       .tier-price {
         font-size: 1.1rem;
       }
-
       .discount-banner {
         padding: 0.7rem;
         margin-bottom: 1.2rem;
       }
-
       .discount-title {
         font-size: 1rem;
       }
-
       .discount-code {
         font-size: 1.2rem;
       }
-
       .discount-subtitle {
         font-size: 0.8rem;
       }
-
       .btn-large {
         font-size: 1rem;
         padding: 0.9rem 1.8rem;
       }
-
       .close-btn {
         top: 0.5rem;
         right: 0.5rem;
@@ -754,31 +685,25 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         font-size: 1.3rem;
       }
     }
-
     @media (max-width: 480px) {
       .recommendation-overlay {
         padding: 0.5rem;
         padding-top: 8vh;
       }
-
       .recommendation-card {
         padding: 1.5rem 1rem;
         border-radius: 20px;
         max-height: 85vh;
       }
-
       .recommendation-title {
         font-size: 1.4rem;
       }
-
       .recommendation-subtitle {
         font-size: 0.95rem;
       }
-
       .tier-highlight {
         padding: 1rem;
       }
-
       .tier-description {
         font-size: 0.8rem;
       }
@@ -861,24 +786,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       scroll-behavior: smooth;
       padding: 1rem 0 2rem 0;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
     }
     
+    /* Hide scrollbar for WebKit browsers */
     .briefs-grid::-webkit-scrollbar {
-      height: 8px;
-    }
-    
-    .briefs-grid::-webkit-scrollbar-track {
-      background: rgba(25, 43, 108, 0.1);
-      border-radius: 10px;
-    }
-    
-    .briefs-grid::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #192b6c, #5d6fc1);
-      border-radius: 10px;
-    }
-    
-    .briefs-grid::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(90deg, #5d6fc1, #8b9dd9);
+      width: 0;
+      height: 0;
+      display: none;
     }
     
     .brief-card {
@@ -987,7 +903,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       flex-shrink: 0;
     }
     
-
     
     /* Buttons */
     .btn {
@@ -1530,31 +1445,25 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       .hero-content h1 {
         font-size: 2.8rem;
       }
-
       .hero-subtitle {
         font-size: 1.1rem;
       }
-
       .path-pills {
         max-width: 350px;
       }
-
       .path-pill {
         font-size: 1rem;
         padding: 1rem 1.5rem;
       }
-
       .sticky-content {
         max-width: 350px;
       }
-
       .sticky-close {
         width: 25px;
         height: 25px;
         font-size: 1rem;
         top: -0.3rem;
       }
-
       .boosters {
         flex-direction: column;
         gap: 0.5rem;
@@ -1624,20 +1533,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         display: block;
       }
     }
-
     @media (max-width: 480px) {
       .hero-content {
         padding: 0 0.5rem;
       }
-
       .path-pills {
         max-width: 300px;
       }
-
       .sticky-content {
         max-width: 300px;
       }
-
       .sticky-close {
         width: 22px;
         height: 22px;
@@ -1663,7 +1568,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </header>
-
   <!-- Hero Section - Sticky Path Style -->
   <section class="hero">
     <div class="container">
@@ -1690,7 +1594,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             </button>
           </div>
         </div>
-
         <div class="boosters">
           <div class="booster-item">
             <div class="live-dot"></div>
@@ -1704,7 +1607,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- Who It's For Section -->
   <section class="who-for section-white">
     <div class="container">
@@ -1733,7 +1635,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- Recent Briefs Section -->
   <section class="recent-briefs section-gray">
     <div class="container">
@@ -1743,6 +1644,66 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="briefs-scroll-container">
         <div class="briefs-grid" id="briefsGrid">
           <!-- First set of cards -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Sep 14, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Rome, Italy 🇮🇹</h4>
+            <h5 class="brief-name">Luxury Palazzo Stay</h5>
+            <p class="brief-feature">✨ Italian Art Deco meets timeless style</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3-4 nights</li>
+              <li><span>🎥</span>Content package to be negotiated</li>
+              <li><span>📆</span>November to January 2025</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Sep 11, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bardolino, Italy 🇮🇹</h4>
+            <h5 class="brief-name">4* Wellness Retreat</h5>
+            <p class="brief-feature">💦 Lake Garda spa destination</p>
+            <ul class="brief-details">
+              <li><span>📅</span>Flexible nights</li>
+              <li><span>🎥</span>Instagram, TikTok, or blog content</li>
+              <li><span>📆</span>Flexible dates available</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Sep 9, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Malta 🇲🇹</h4>
+            <h5 class="brief-name">Chain Hotel</h5>
+            <p class="brief-feature">🏝️ Multiple locations across island</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2-4 nights</li>
+              <li><span>🎥</span>Content + raw footage for hotel</li>
+              <li><span>📆</span>Flexible dates</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Sep 6, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Newbury, England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h4>
+            <h5 class="brief-name">Luxury Retreat Hotel</h5>
+            <p class="brief-feature">🌟 4* with full spa access</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights</li>
+              <li><span>🎥</span>Stories + 1 video post (2 platforms)</li>
+              <li><span>📆</span>November-December 2025</li>
+            </ul>
+          </div>
+          
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -1784,7 +1745,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x TikToks + 10 raw clips</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -1798,7 +1758,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x vertical videos</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -1812,7 +1771,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -1826,7 +1784,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x vertical videos</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -1840,7 +1797,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels + 5x raw clips</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier first-class">First Class</span>
@@ -1854,7 +1810,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>5x TikToks + raw footage</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -1868,7 +1823,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>2x TikToks or Reels</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -1882,7 +1836,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier first-class">First Class</span>
@@ -1898,67 +1851,67 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             </ul>
           </div>
             
-            <div class="brief-card">
-            <div class="brief-header">
-    <span class="brief-tier first-class">First Class</span>
-    <span class="brief-date">Posted:<br>Sep 14, 2025</span>
-  </div>
-  <h4 class="brief-location">📍 Rome, Italy 🇮🇹</h4>
-  <h5 class="brief-name">Luxury Palazzo Stay</h5>
-  <p class="brief-feature">✨ Italian Art Deco meets timeless style</p>
-  <ul class="brief-details">
-    <li><span>📅</span>3-4 nights</li>
-    <li><span>🎥</span>Content package to be negotiated</li>
-    <li><span>📆</span>November to January 2025</li>
-  </ul>
-</div>
-
-<div class="brief-card">
-  <div class="brief-header">
-    <span class="brief-tier">Explorers</span>
-    <span class="brief-date">Posted:<br>Sep 11, 2025</span>
-  </div>
-  <h4 class="brief-location">📍 Bardolino, Italy 🇮🇹</h4>
-  <h5 class="brief-name">4* Wellness Retreat</h5>
-  <p class="brief-feature">💦 Lake Garda spa destination</p>
-  <ul class="brief-details">
-    <li><span>📅</span>Flexible nights</li>
-    <li><span>🎥</span>Instagram, TikTok, or blog content</li>
-    <li><span>📆</span>Flexible dates available</li>
-  </ul>
-</div>
-
-<div class="brief-card">
-  <div class="brief-header">
-    <span class="brief-tier nomads">Nomads</span>
-    <span class="brief-date">Posted:<br>Sep 9, 2025</span>
-  </div>
-  <h4 class="brief-location">📍 Malta 🇲🇹</h4>
-  <h5 class="brief-name">Chain Hotel</h5>
-  <p class="brief-feature">🏝️ Multiple locations across island</p>
-  <ul class="brief-details">
-    <li><span>📅</span>2-4 nights</li>
-    <li><span>🎥</span>Content + raw footage for hotel</li>
-    <li><span>📆</span>Flexible dates</li>
-  </ul>
-</div>
-
-<div class="brief-card">
-  <div class="brief-header">
-    <span class="brief-tier first-class">First Class</span>
-    <span class="brief-date">Posted:<br>Sep 6, 2025</span>
-  </div>
-  <h4 class="brief-location">📍 Newbury, England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h4>
-  <h5 class="brief-name">Luxury Retreat Hotel</h5>
-  <p class="brief-feature">🌟 4* with full spa access</p>
-  <ul class="brief-details">
-    <li><span>📅</span>2 nights</li>
-    <li><span>🎥</span>Stories + 1 video post (2 platforms)</li>
-    <li><span>📆</span>November-December 2025</li>
-  </ul>
-</div>
-
           <!-- Duplicate set for infinite scroll -->
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Sep 14, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Rome, Italy 🇮🇹</h4>
+            <h5 class="brief-name">Luxury Palazzo Stay</h5>
+            <p class="brief-feature">✨ Italian Art Deco meets timeless style</p>
+            <ul class="brief-details">
+              <li><span>📅</span>3-4 nights</li>
+              <li><span>🎥</span>Content package to be negotiated</li>
+              <li><span>📆</span>November to January 2025</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier">Explorers</span>
+              <span class="brief-date">Posted:<br>Sep 11, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Bardolino, Italy 🇮🇹</h4>
+            <h5 class="brief-name">4* Wellness Retreat</h5>
+            <p class="brief-feature">💦 Lake Garda spa destination</p>
+            <ul class="brief-details">
+              <li><span>📅</span>Flexible nights</li>
+              <li><span>🎥</span>Instagram, TikTok, or blog content</li>
+              <li><span>📆</span>Flexible dates available</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier nomads">Nomads</span>
+              <span class="brief-date">Posted:<br>Sep 9, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Malta 🇲🇹</h4>
+            <h5 class="brief-name">Chain Hotel</h5>
+            <p class="brief-feature">🏝️ Multiple locations across island</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2-4 nights</li>
+              <li><span>🎥</span>Content + raw footage for hotel</li>
+              <li><span>📆</span>Flexible dates</li>
+            </ul>
+          </div>
+
+          <div class="brief-card">
+            <div class="brief-header">
+              <span class="brief-tier first-class">First Class</span>
+              <span class="brief-date">Posted:<br>Sep 6, 2025</span>
+            </div>
+            <h4 class="brief-location">📍 Newbury, England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h4>
+            <h5 class="brief-name">Luxury Retreat Hotel</h5>
+            <p class="brief-feature">🌟 4* with full spa access</p>
+            <ul class="brief-details">
+              <li><span>📅</span>2 nights</li>
+              <li><span>🎥</span>Stories + 1 video post (2 platforms)</li>
+              <li><span>📆</span>November-December 2025</li>
+            </ul>
+          </div>
+          
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -2000,7 +1953,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x TikToks + 10 raw clips</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -2014,7 +1966,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x vertical videos</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -2028,7 +1979,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -2042,7 +1992,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x vertical videos</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -2056,7 +2005,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels + 5x raw clips</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier first-class">First Class</span>
@@ -2070,7 +2018,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>5x TikToks + raw footage</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier">Explorers</span>
@@ -2084,7 +2031,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>2x TikToks or Reels</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier nomads">Nomads</span>
@@ -2098,7 +2044,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
               <li><span>🎥</span>3x Reels or TikToks (Voiceover preferred)</li>
             </ul>
           </div>
-
           <div class="brief-card">
             <div class="brief-header">
               <span class="brief-tier first-class">First Class</span>
@@ -2117,7 +2062,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- Pricing Section -->
   <section class="pricing-section section-white" id="pricing">
     <div class="container">
@@ -2210,7 +2154,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- FAQ Section -->
   <section class="faq-section section-gray" id="faq">
     <div class="container">
@@ -2264,7 +2207,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- Founder Section -->
   <section class="founder section-white">
     <div class="container">
@@ -2289,7 +2231,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
     </div>
   </section>
-
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
@@ -2298,7 +2239,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <a href="#pricing" class="btn btn-primary" style="background: white; color: #192b6c;">Choose Your Membership</a>
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
@@ -2321,346 +2261,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       © 2025 MIND UR OWN BUSINESS. All rights reserved.
     </div>
   </footer>
-
   <!-- Sticky Bottom Bar -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-content">
       <button class="sticky-close" id="stickyClose">&times;</button>
       <div class="sticky-title">Choose your path:</div>
       <div class="sticky-pills">
-        <button class="sticky-pill" data-path="brand-new">
-          I'm brand-new
-        </button>
-        
-        <button class="sticky-pill" data-path="free-stays">
-          Building with free stays
-        </button>
-        
-        <button class="sticky-pill" data-path="paid-ready">
-          Ready for paid collabs
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Recommendation Overlay -->
-  <div class="recommendation-overlay" id="recommendationOverlay">
-    <div class="recommendation-card">
-      <button class="close-btn" id="closeRecommendation">&times;</button>
-      
-      <h3 class="recommendation-title">We recommend</h3>
-      <p class="recommendation-subtitle" id="recommendationSubtitle">Perfect for your creator journey</p>
-      
-      <div class="tier-highlight">
-        <div class="tier-badge" id="tierBadge">RECOMMENDED</div>
-        <div class="tier-name" id="tierName">Explorers</div>
-        <div class="tier-description" id="tierDescription">Access to weekly hotel collabs and pitch templates</div>
-        <div class="tier-price" id="tierPrice">£9/month</div>
-      </div>
-
-      <div class="discount-banner">
-        <div class="discount-title">🎉 First Month Free!</div>
-        <div class="discount-code">MUOB30</div>
-        <div class="discount-subtitle">Use code at checkout - no commitment</div>
-      </div>
-
-      <div class="recommendation-cta">
-        <a href="#" class="btn btn-primary btn-large" id="claimOfferBtn">Claim Your Free Month</a>
-        <button class="btn btn-outline" id="browseAllPlans">Browse All Plans</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Path recommendation functionality
-    const pathPills = document.querySelectorAll('.path-pill');
-    const stickyPills = document.querySelectorAll('.sticky-pill');
-    const stickyBar = document.getElementById('stickyBar');
-    const stickyClose = document.getElementById('stickyClose');
-    const recommendationOverlay = document.getElementById('recommendationOverlay');
-    const closeRecommendation = document.getElementById('closeRecommendation');
-    const browseAllPlans = document.getElementById('browseAllPlans');
-    
-    let hasInteracted = false;
-    let stickyBarDismissed = false;
-
-    // Tier recommendations for each path
-    const recommendations = {
-      'brand-new': {
-        tier: 'Explorers',
-        price: '£9/month',
-        description: 'Perfect for beginners - get weekly briefs, templates, and community support to land your first hotel collaboration',
-        subtitle: 'Perfect for first-time creators',
-        link: 'https://muob-creators.circle.so/checkout/explorers'
-      },
-      'free-stays': {
-        tier: 'Nomads',
-        price: '£19/month',
-        description: 'Level up with better hotel briefs, paid opportunities, and exclusive strategy content for consistent collaborations',
-        subtitle: 'Perfect for growing creators',
-        link: 'https://muob-creators.circle.so/checkout/nomads'
-      },
-      'paid-ready': {
-        tier: 'First Class',
-        price: '£39/month',
-        description: 'Access premium paid opportunities, 1:1 feedback, and advanced training to maximize your creator income',
-        subtitle: 'Perfect for serious creators',
-        link: 'https://muob-creators.circle.so/checkout/first-class'
-      }
-    };
-
-    // Handle main path pill clicks
-    pathPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        // Remove selected class from all pills
-        pathPills.forEach(p => p.classList.remove('selected'));
-        // Add selected class to clicked pill
-        pill.classList.add('selected');
-        
-        // Show sticky bar after first interaction
-        if (!hasInteracted) {
-          hasInteracted = true;
-          setTimeout(() => {
-            stickyBar.classList.add('active');
-          }, 800);
-        }
-        
-        // Handle the path selection
-        const path = pill.dataset.path;
-        showRecommendation(path);
-      });
-    });
-
-    // Handle sticky pill clicks
-    stickyPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        const path = pill.dataset.path;
-        showRecommendation(path);
-      });
-    });
-
-    // Show sticky bar on scroll after interaction
-    window.addEventListener('scroll', () => {
-      if (hasInteracted && !stickyBarDismissed && window.scrollY > window.innerHeight * 0.3) {
-        stickyBar.classList.add('active');
-      } else if (window.scrollY < 100) {
-        stickyBar.classList.remove('active');
-      }
-    });
-
-    // Close sticky bar
-    stickyClose.addEventListener('click', () => {
-      stickyBarDismissed = true;
-      stickyBar.classList.remove('active');
-    });
-
-    function showRecommendation(path) {
-      const rec = recommendations[path];
-      if (!rec) return;
-
-      // Update recommendation content
-      document.getElementById('recommendationSubtitle').textContent = rec.subtitle;
-      document.getElementById('tierName').textContent = rec.tier;
-      document.getElementById('tierDescription').textContent = rec.description;
-      document.getElementById('tierPrice').textContent = rec.price;
-      document.getElementById('claimOfferBtn').href = rec.link;
-
-      // Show overlay
-      recommendationOverlay.classList.add('active');
-      
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-    }
-
-    function hideRecommendation() {
-      recommendationOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Close recommendation handlers
-    closeRecommendation.addEventListener('click', hideRecommendation);
-    
-    browseAllPlans.addEventListener('click', () => {
-      hideRecommendation();
-      // Scroll to pricing section
-      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Close on overlay click (outside card)
-    recommendationOverlay.addEventListener('click', (e) => {
-      if (e.target === recommendationOverlay) {
-        hideRecommendation();
-      }
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        hideRecommendation();
-      }
-    });
-
-    // Add touch feedback for mobile
-    function addTouchFeedback(elements) {
-      elements.forEach(element => {
-        element.addEventListener('touchstart', () => {
-          element.style.transform = 'translateY(-1px) scale(0.98)';
-        }, { passive: true });
-        
-        element.addEventListener('touchend', () => {
-          setTimeout(() => {
-            element.style.transform = '';
-          }, 150);
-        }, { passive: true });
-      });
-    }
-
-    addTouchFeedback(pathPills);
-    addTouchFeedback(stickyPills);
-
-    // FAQ accordion functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all other FAQs
-        faqQuestions.forEach(q => {
-          if (q !== question) {
-            q.classList.remove('active');
-            q.nextElementSibling.classList.remove('active');
-          }
-        });
-        
-        // Toggle current FAQ
-        question.classList.toggle('active');
-        answer.classList.toggle('active');
-      });
-    });
-
-    // Infinite scroll functionality for briefs
-    const briefsGrid = document.getElementById('briefsGrid');
-    const cardWidth = 320 + 24; // Card width + gap
-    const totalCards = 8; // Number of unique cards
-    const duplicateWidth = totalCards * cardWidth;
-
-    // Auto-scroll variables
-    let autoScrollSpeed = 0.5; // pixels per frame
-    let isAutoScrolling = true;
-    let userInteracting = false;
-    let autoScrollTimeout;
-
-    // Auto-scroll function
-    function autoScroll() {
-      if (isAutoScrolling && !userInteracting) {
-        briefsGrid.scrollLeft += autoScrollSpeed;
-      }
-      requestAnimationFrame(autoScroll);
-    }
-
-    // Start auto-scroll
-    autoScroll();
-
-    // Function to pause auto-scroll temporarily
-    function pauseAutoScroll() {
-      userInteracting = true;
-      clearTimeout(autoScrollTimeout);
-      autoScrollTimeout = setTimeout(() => {
-        userInteracting = false;
-      }, 3000); // Resume after 3 seconds of no interaction
-    }
-
-    // Infinite scroll logic
-    briefsGrid.addEventListener('scroll', () => {
-      const scrollLeft = briefsGrid.scrollLeft;
-      const maxScroll = briefsGrid.scrollWidth - briefsGrid.clientWidth;
-      
-      // When reaching the end (duplicate section), jump back to beginning
-      if (scrollLeft >= duplicateWidth) {
-        briefsGrid.scrollLeft = scrollLeft - duplicateWidth;
-      }
-      
-      // When scrolling backwards past the beginning, jump to the end of original section
-      if (scrollLeft <= 0) {
-        briefsGrid.scrollLeft = duplicateWidth;
-      }
-    });
-
-    // Enhanced touch/swipe support for mobile
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let startTime;
-    let endTime;
-
-    briefsGrid.addEventListener('touchstart', handleStart, { passive: false });
-    briefsGrid.addEventListener('touchmove', handleMove, { passive: false });
-    briefsGrid.addEventListener('touchend', handleEnd, { passive: false });
-
-    briefsGrid.addEventListener('mousedown', (e) => {
-      isDown = true;
-      briefsGrid.style.cursor = 'grabbing';
-      startX = e.pageX - briefsGrid.offsetLeft;
-      scrollLeft = briefsGrid.scrollLeft;
-      startTime = Date.now();
-      pauseAutoScroll();
-    });
-
-    briefsGrid.addEventListener('mouseleave', () => {
-      isDown = false;
-      briefsGrid.style.cursor = 'grab';
-    });
-
-    briefsGrid.addEventListener('mouseup', () => {
-      isDown = false;
-      briefsGrid.style.cursor = 'grab';
-    });
-
-    briefsGrid.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - briefsGrid.offsetLeft;
-      const walk = (x - startX) * 2;
-      briefsGrid.scrollLeft = scrollLeft - walk;
-    });
-
-    // Mouse wheel scroll also pauses auto-scroll
-    briefsGrid.addEventListener('wheel', () => {
-      pauseAutoScroll();
-    }, { passive: true });
-
-    function handleStart(e) {
-      startX = e.touches[0].clientX;
-      scrollLeft = briefsGrid.scrollLeft;
-      startTime = Date.now();
-      pauseAutoScroll();
-    }
-
-    function handleMove(e) {
-      if (!startX) return;
-      e.preventDefault();
-      const x = e.touches[0].clientX;
-      const walk = (startX - x) * 1.5;
-      briefsGrid.scrollLeft = scrollLeft + walk;
-    }
-
-    function handleEnd(e) {
-      startX = null;
-      endTime = Date.now();
-    }
-
-    // Set initial cursor style
-    briefsGrid.style.cursor = 'grab';
-
-    // Initialize scroll position to show first set of cards
-    briefsGrid.scrollLeft = 0;
-
-    // Pause auto-scroll when tab/window is not visible
-    document.addEventListener('visibilitychange', () => {
-      isAutoScrolling = !document.hidden;
-    });
-  </script>
-</body>
-</html>
