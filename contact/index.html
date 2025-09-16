@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D2JFFGRC77U89NHRV1QG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21WCBJHLP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-21WCBJHLP9');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MUOB Creators</title>
+    <meta name="description" content="Get in touch with MUOB Creators. Questions about membership, hotel partnerships, or need support? We're here to help.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      background: #ffffff;
+      color: #192b6c;
+      line-height: 1.6;
+      padding-top: 50px; /* Space for promo banner */
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: #192b6c;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(145deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(145deg, #192b6c, #5d6fc1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #192b6c;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      font-weight: 400;
+      color: #333;
+    }
+    
+    a {
+      color: #192b6c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: #5d6fc1;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Promo Banner */
+    .promo-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, #ff6b6b, #ffa76b);
+      color: white;
+      padding: 0.75rem 0;
+      z-index: 1001;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .promo-banner a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .promo-banner a:hover {
+      color: rgba(255, 255, 255, 0.8);
+      transform: translateX(2px);
+    }
+    
+    .promo-banner-close {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .promo-banner-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Navigation */
+    .header {
+      position: fixed;
+      top: 50px; /* Adjusted for promo banner */
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header.banner-hidden {
+      top: 0;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      margin-left: auto;
+      margin-right: 20px;
+      align-items: center;
+    }
+    
+    .nav-link {
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      padding: 0.5rem 0;
+      color: #192b6c;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      transform: translateY(-2px);
+      color: #5d6fc1;
+    }
+    
+    .logo img {
+      height: 40px;
+      display: block;
+    }
+    
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 7rem 0 5rem;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+      margin-top: 50px; /* Account for banner and header */
+    }
+    
+    .hero.banner-hidden {
+      margin-top: 0;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23192b6c" opacity="0.02"/><circle cx="80" cy="40" r="1" fill="%235d6fc1" opacity="0.02"/><circle cx="40" cy="80" r="1" fill="%23192b6c" opacity="0.02"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #192b6c 0%, #5d6fc1 50%, #8b9dd9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #444;
+      font-weight: 500;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 0;
+      background: #ffffff;
+    }
+    
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .contact-intro h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-intro p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Form Container */
+    .form-container {
+      background: white;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(25, 43, 108, 0.1);
+      margin-bottom: 3rem;
+    }
+    
+    /* Contact Info Grid */
+    .contact-info {
+      padding: 3rem 0;
+      background: #f8faff;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    
+    .contact-card {
+      background: white;
+      border: 1px solid rgba(25, 43, 108, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(25, 43, 108, 0.1);
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .contact-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #192b6c;
+    }
+    
+    .contact-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .contact-card a {
+      color: #5d6fc1;
+      font-weight: 600;
+    }
+    
+    .contact-card a:hover {
+      color: #192b6c;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+      color: white;
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #192b6c;
+      border: 2px solid #192b6c;
+    }
+    
+    .btn-secondary:hover {
+      background: #192b6c;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    .footer {
+      background: #192b6c;
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-logo img {
+      height: 40px;
+    }
+    
+    .footer-description {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #ffa76b;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .hero {
+        padding: 5rem 0 3rem;
+        min-height: 50vh;
+      }
+      
+      .hero-content {
+        padding: 0 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2.6rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .form-container {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem 2rem;
+      }
+      
+      .contact-container {
+        padding: 0 1rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .contact-card {
+        padding: 1.5rem;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+      
+      /* Mobile promo banner adjustments */
+      .promo-banner {
+        font-size: 0.8rem;
+        padding: 0.6rem 0;
+      }
+      
+      .promo-banner-close {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+      }
+      
+      body {
+        padding-top: 40px; /* Smaller banner on mobile */
+      }
+      
+      .header {
+        top: 40px;
+      }
+      
+      .header.banner-hidden {
+        top: 0;
+      }
+      
+      .hero {
+        margin-top: 40px;
+      }
+      
+      .hero.banner-hidden {
+        margin-top: 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 0 0.5rem;
+      }
+      
+      .form-container {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+      }
+      
+      .contact-card {
+        padding: 1.2rem;
+      }
+      
+      .contact-icon {
+        font-size: 2rem;
+      }
+    }
+    </style>
+</head>
+<body>
+  <!-- Promo Banner -->
+  <div class="promo-banner" id="promoBanner">
+    <a href="https://repurpose.io?fpr=497129&fp_sid=website" target="_blank">
+      Save time, post everywhere. Try Repurpose.io →
+    </a>
+    <button class="promo-banner-close" id="promoBannerClose">&times;</button>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
+        </div>
+        <nav class="nav-menu">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/#pricing" class="nav-link">Pricing</a>
+          <a href="/#faq" class="nav-link">FAQ</a>
+          <a href="https://www.muobcreators.com/influencers" class="nav-link">Affiliate Program</a>
+          <a href="https://www.muobcreators.com/hosts" class="btn btn-secondary">Hosts Join</a>
+          <a href="/#pricing" class="btn btn-primary">Join Now</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Get in Touch</h1>
+        <p class="hero-subtitle">
+          Have questions about MUOB Creators? Need help with your membership? We're here to help you succeed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-intro">
+        <h2>Send us a message</h2>
+        <p>Whether you have questions about membership, need technical support, or want to discuss hotel partnerships, we'd love to hear from you.</p>
+      </div>
+      
+      <div class="form-container">
+        <iframe data-tally-src="https://tally.so/embed/wgB64O?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="381" frameborder="0" marginheight="0" marginwidth="0" title="Contact form"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="contact-info">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 1rem;">Other ways to reach us</h2>
+      <p style="text-align: center; color: #666; margin-bottom: 2rem;">We typically respond within 24 hours during business days.</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="contact-icon">📧</span>
+          <h3>Email Support</h3>
+          <p>For general questions, membership help, or technical issues.</p>
+          <a href="mailto:contact@muobcreators.com">contact@muobcreators.com</a>
+        </div>
+        
+        <div class="contact-card">
+          <span class="contact-icon">🏨</span>
+          <h3>Hotel Partnerships</h3>
+          <p>Interested in partnering with us? Let's discuss collaboration opportunities.</p>
+          <a href="mailto:contact@muobcreators.com">contact@muobcreators.com</a>
+        </div>
+        
+        <div class="contact-card">
+          <span class="contact-icon">📱</span>
+          <h3>Follow Us</h3>
+          <p>Stay updated with the latest briefs and creator tips on our social channels.</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://instagram.com/alexmuob" style="margin-right: 1rem;">Instagram</a>
+            <a href="https://tiktok.com/@alexmuob">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="https://muob-creators.circle.so/terms">Terms of Service</a></li>
+          <li><a href="https://muob-creators.circle.so/privacy">Privacy Policy</a></li>
+          <li><a href="http://muob-creators.circle.so/account/billing?tab=paymentMethods">How to Cancel</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2025 MIND UR OWN BUSINESS. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Promo banner functionality
+    const promoBanner = document.getElementById('promoBanner');
+    const promoBannerClose = document.getElementById('promoBannerClose');
+    const header = document.getElementById('header');
+    const hero = document.getElementById('hero');
+
+    promoBannerClose.addEventListener('click', () => {
+      promoBanner.style.display = 'none';
+      document.body.style.paddingTop = '0';
+      header.classList.add('banner-hidden');
+      hero.classList.add('banner-hidden');
+    });
+  </script>
+
+  <!-- Tally Form Script -->
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+  </script>
+</body>
+</html>
