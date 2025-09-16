@@ -235,6 +235,111 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     /* Mobile menu toggle */
     .mobile-menu-toggle {
       display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      position: relative;
+      z-index: 1002;
+    }
+    
+    .hamburger-line {
+      width: 25px;
+      height: 3px;
+      background: #192b6c;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Mobile menu overlay */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(25, 43, 108, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .mobile-menu.active {
+      transform: translateY(0);
+    }
+    
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .mobile-nav-link {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+    
+    .mobile-nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffa76b;
+    }
+    
+    .mobile-nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .mobile-nav-buttons .btn {
+      min-width: 200px;
+      text-align: center;
+    }
+    
+    .mobile-menu-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-close:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
     
     /* Hero Section - Sticky Path Style */
@@ -281,6 +386,32 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       color: transparent;
       font-weight: 700;
       letter-spacing: -0.025em;
+    }
+    
+    /* Sparkle effect for hotel collabs */
+    .shimmer-text {
+      position: relative;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffa76b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .shimmer-text::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.9), transparent);
+      pointer-events: none;
+      mix-blend-mode: overlay;
     }
     .hero-subtitle {
       font-size: 1.2rem;
@@ -1591,7 +1722,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       }
       
       .mobile-menu-toggle {
-        display: block;
+        display: flex;
       }
       
       /* Mobile promo banner adjustments */
@@ -1663,17 +1794,38 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <nav class="nav-menu">
           <a href="#pricing" class="nav-link">Pricing</a>
           <a href="#faq" class="nav-link">FAQ</a>
-          <a href="https://www.muobcreators.com/hosts" class="btn btn-secondary">Hosts Join</a>
-          <a href="#pricing" class="btn btn-primary">Join Now</a>
+          <a href="https://www.muobcreators.com/influencers" class="nav-link">Affiliate Program</a>
+          <a href="https://www.muobcreators.com/hosts" class="btn btn-secondary">Join as Host</a>
+          <a href="#pricing" class="btn btn-primary">Join as Creator</a>
         </nav>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+    <div class="mobile-nav-links">
+      <a href="#pricing" class="mobile-nav-link">Pricing</a>
+      <a href="#faq" class="mobile-nav-link">FAQ</a>
+      <a href="https://www.muobcreators.com/influencers" class="mobile-nav-link">Affiliate Program</a>
+    </div>
+    <div class="mobile-nav-buttons">
+      <a href="https://www.muobcreators.com/hosts" class="btn btn-secondary">Join as Host</a>
+      <a href="#pricing" class="btn btn-primary">Join as Creator</a>
+    </div>
+  </div>
   <!-- Hero Section - Sticky Path Style -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Turn your content<br>into hotel collabs.</h1>
+        <h1>Turn your content into <span class="shimmer-text">hotel collabs</span>.</h1>
         <p class="hero-subtitle">
           Get weekly briefs, proven templates, and direct hotel connections. No big following needed.
         </p>
@@ -2403,7 +2555,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <button class="close-btn" id="closeRecommendation">&times;</button>
       
       <h3 class="recommendation-title">We recommend</h3>
-      <p class="recommendation-subtitle" id="recommendationSubtitle">Join now — use code 30FOR3 for 30% off your first 3 months</p>
+      <p class="recommendation-subtitle" id="recommendationSubtitle">Join now: use code 30FOR3 for 30% off your first 3 months</p>
       
       <div class="tier-highlight">
         <div class="tier-badge" id="tierBadge">RECOMMENDED</div>
@@ -2415,7 +2567,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="discount-banner">
         <div class="discount-title">🎉 30% off for your first 3 months</div>
         <div class="discount-code">30FOR3</div>
-        <div class="discount-subtitle">Use code at checkout · Months 1–3 discounted</div>
+        <div class="discount-subtitle">Use code at checkout. Months 1 to 3 discounted</div>
       </div>
 
       <div class="recommendation-cta">
@@ -2437,6 +2589,39 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       document.body.style.paddingTop = '0';
       header.classList.add('banner-hidden');
       hero.classList.add('banner-hidden');
+    });
+
+    // Mobile menu functionality
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-buttons .btn');
+
+    function closeMobileMenu() {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile menu with close button
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu when clicking on links
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
     });
 
     // Path recommendation functionality
