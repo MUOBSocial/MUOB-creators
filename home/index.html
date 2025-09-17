@@ -464,6 +464,76 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       font-size: 0.95rem;
     }
     
+    /* Footer */
+    .footer {
+      background: #192b6c;
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-logo img {
+      height: 40px;
+    }
+    
+    .footer-description {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      color: #ffa76b;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .container {
@@ -543,7 +613,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="container">
       <div class="header-container">
         <div class="logo">
-          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
+          <a href="/">
+            <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
+          </a>
         </div>
         <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary" onclick="trackCTA('header')">Join now</a>
       </div>
@@ -721,6 +793,52 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary" onclick="trackCTA('sticky')">Join now</a>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
+        </div>
+        <p class="footer-description">
+          Connecting travel creators with hotel collaboration opportunities worldwide. 
+          Turn your content into amazing stays.
+        </p>
+      </div>
+      
+      <div class="footer-col">
+        <h3 class="footer-heading">Platform</h3>
+        <ul class="footer-links">
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/hosts">For Hotels</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#pricing">Creator Tiers</a></li>
+          <li><a href="#briefs">Recent Briefs</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="https://muob-creators.circle.so/terms">Terms of Service</a></li>
+          <li><a href="https://muob-creators.circle.so/privacy">Privacy Policy</a></li>
+          <li><a href="http://muob-creators.circle.so/account/billing?tab=paymentMethods">How to Cancel</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 MIND UR OWN BUSINESS. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     // FAQ functionality
