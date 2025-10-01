@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Plan - MUOB Creators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #ffffff;
+            color: #192b6c;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(145deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(145deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #192b6c;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5d6fc1;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .hero {
+            padding: 5rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 500;
+        }
+        
+        .agency-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-gray {
+            background: #f8faff;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #ff6b6b;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.2);
+        }
+        
+        .pricing-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-period {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .exclusions {
+            background: #fff8f6;
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        
+        .exclusions h4 {
+            color: #ff6b6b;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .exclusions ul {
+            margin: 0;
+        }
+        
+        .exclusions li:before {
+            content: "✕";
+            color: #ff6b6b;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        footer {
+            background: #192b6c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #ffa76b;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .pricing-card {
+                padding: 2rem;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="agency-badge">For Talent Agencies</div>
+            <h1>Agency Plan</h1>
+            <p class="hero-subtitle">
+                MUOB is creator-first. Always. But we know agencies manage talented creators who deserve access to real opportunities. Here's how it works.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Premium Access, Fair Rules</h2>
+            <p>This isn't a back door. It's a controlled invite for agencies who respect the platform and our creator community.</p>
+            
+            <h3>What You Get</h3>
+            <ul>
+                <li>Access to all hotel, brand, and collaboration briefs</li>
+                <li>Apply up to 2 creators per brief</li>
+                <li>3+ new opportunities posted per week</li>
+                <li>Direct applications inside the platform</li>
+            </ul>
+            
+            <div class="exclusions">
+                <h4>What's Not Included</h4>
+                <ul>
+                    <li>No community access (that's for individual creators)</li>
+                    <li>No pitch templates or training guides</li>
+                    <li>No strategy content or resources</li>
+                </ul>
+            </div>
+            
+            <h3>The Rules</h3>
+            <p>You cannot bypass the platform to contact hotels directly. Any abuse means immediate removal. No refunds. No second chances.</p>
+            <p>We protect the integrity of this platform because creators trust us. Play fair or leave.</p>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <h2 style="text-align: center;">Pricing</h2>
+            
+            <div class="pricing-card">
+                <h3>Agency Plan</h3>
+                <div class="price">£350</div>
+                <div class="price-period">per month</div>
+                <ul>
+                    <li>All briefs (hotels, brands, collabs)</li>
+                    <li>Apply 2 creators per brief</li>
+                    <li>3+ new opportunities per week</li>
+                    <li>Cancel anytime</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Join?</h2>
+            <p>Limited spots available. Apply for access below.</p>
+            <a href="https://muob-creators.circle.so/checkout/agency" class="btn btn-primary">Apply for Agency Access</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 MIND UR OWN BUSINESS. <a href="https://muobcreators.com">Back to Main Site</a></p>
+        </div>
+    </footer>
+</body>
+</html>
