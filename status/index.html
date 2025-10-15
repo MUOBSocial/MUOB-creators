@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status - MUOB Creators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #f8faff;
+            color: #192b6c;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Loading Spinner */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #192b6c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Login Page Styles */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+        }
+        
+        .login-card {
+            background: white;
+            border: 1px solid rgba(25, 43, 108, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 50px rgba(25, 43, 108, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-logo img {
+            height: 50px;
+        }
+        
+        .login-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #192b6c;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(145deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .login-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(25, 43, 108, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #5d6fc1;
+            box-shadow: 0 0 0 3px rgba(93, 111, 193, 0.1);
+        }
+        
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: #ff6b6b;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+        }
+        
+        .success-message {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            color: #28a745;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+        }
+        
+        /* Dashboard Styles */
+        .dashboard {
+            display: none;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .user-email {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .btn-logout {
+            background: #192b6c;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-logout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 43, 108, 0.3);
+        }
+        
+        .status-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(145deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .welcome-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .no-applications {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(25, 43, 108, 0.05);
+        }
+        
+        .no-applications h3 {
+            color: #192b6c;
+            margin-bottom: 1rem;
+        }
+        
+        .no-applications p {
+            color: #666;
+        }
+        
+        .applications-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .application-card {
+            background: white;
+            border: 1px solid rgba(25, 43, 108, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(25, 43, 108, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(25, 43, 108, 0.1);
+        }
+        
+        .application-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .hotel-info h3 {
+            font-size: 1.2rem;
+            color: #192b6c;
+            margin-bottom: 0.3rem;
+        }
+        
+        .hotel-location {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .status-submitted {
+            background: #e8e8e8;
+            color: #666;
+        }
+        
+        .status-under-review {
+            background: #e8ecff;
+            color: #5d6fc1;
+        }
+        
+        .status-accepted {
+            background: #e8f5e9;
+            color: #28a745;
+        }
+        
+        .status-unsuccessful {
+            background: #ffeee8;
+            color: #ff6b6b;
+        }
+        
+        .progress-section {
+            margin: 1.5rem 0;
+        }
+        
+        .progress-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-fill.submitted {
+            background: #666;
+            width: 25%;
+        }
+        
+        .progress-fill.under-review {
+            background: #5d6fc1;
+            width: 50%;
+        }
+        
+        .progress-fill.accepted {
+            background: #28a745;
+            width: 100%;
+        }
+        
+        .progress-fill.unsuccessful {
+            background: #ff6b6b;
+            width: 100%;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        
+        .progress-step {
+            font-size: 0.75rem;
+            color: #999;
+        }
+        
+        .progress-step.active {
+            color: #192b6c;
+            font-weight: 600;
+        }
+        
+        .application-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .expand-arrow {
+            text-align: center;
+            margin-top: 1rem;
+            color: #5d6fc1;
+            font-size: 1.2rem;
+        }
+        
+        .application-details {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .application-card.expanded .application-details {
+            display: block;
+        }
+        
+        .detail-row {
+            display: flex;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f8f8f8;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #444;
+            width: 150px;
+            flex-shrink: 0;
+        }
+        
+        .detail-value {
+            color: #666;
+            flex: 1;
+        }
+        
+        .feedback-section {
+            background: #f8faff;
+            border: 1px solid rgba(93, 111, 193, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feedback-title {
+            font-weight: 600;
+            color: #192b6c;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .feedback-content {
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .feedback-content ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .feedback-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .status-container {
+                padding: 0 1rem;
+            }
+            
+            .application-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .detail-row {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                margin-bottom: 0.3rem;
+            }
+            
+            .progress-steps {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading" id="loadingSpinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="https://i.ibb.co/tXKHXsv/6UnWg9S.png" alt="MUOB Creators">
+            </div>
+            <h1 class="login-title">Application Status</h1>
+            <p class="login-subtitle">Check your MUOB hotel collaboration applications</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" id="emailInput" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn-login" id="loginButton">View My Applications</button>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="logo">
+                            <img src="https://i.ibb.co/tXKHXsv/6UnWg9S.png" alt="MUOB Creators">
+                        </div>
+                        <span class="user-email" id="userEmail"></span>
+                    </div>
+                    <button class="btn-logout" id="logoutBtn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="status-container">
+            <div class="welcome-section">
+                <h1>Your Applications</h1>
+                <p class="welcome-subtitle">Track your hotel collaboration progress</p>
+            </div>
+
+            <div class="applications-grid" id="applicationsGrid">
+                <!-- Applications will be dynamically loaded here -->
+            </div>
+
+            <div class="no-applications" id="noApplications" style="display: none;">
+                <h3>No Applications Found</h3>
+                <p>You haven't submitted any applications yet. Check out the latest briefs in the MUOB Creators group!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:3000' 
+            : 'https://your-production-api-url.com'; // Update this for production
+
+        // Utility functions
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingSpinner').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorElement = document.getElementById('errorMessage');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, 5000);
+        }
+
+        function showSuccess(message) {
+            const successElement = document.getElementById('successMessage');
+            successElement.textContent = message;
+            successElement.style.display = 'block';
+            setTimeout(() => {
+                successElement.style.display = 'none';
+            }, 5000);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+        }
+
+        function getStatusBadgeClass(status) {
+            const statusMap = {
+                'submitted': 'status-submitted',
+                'under review': 'status-under-review',
+                'accepted': 'status-accepted',
+                'unsuccessful': 'status-unsuccessful'
+            };
+            return statusMap[status.toLowerCase()] || 'status-submitted';
+        }
+
+        function getProgressClass(status) {
+            const statusMap = {
+                'submitted': 'submitted',
+                'under review': 'under-review',
+                'accepted': 'accepted',
+                'unsuccessful': 'unsuccessful'
+            };
+            return statusMap[status.toLowerCase()] || 'submitted';
+        }
+
+        function getProgressSteps(status) {
+            const steps = ['Submitted', 'Review', 'Decision', 'Complete'];
+            const statusIndex = {
+                'submitted': 0,
+                'under review': 1,
+                'accepted': 3,
+                'unsuccessful': 3
+            };
+            const activeIndex = statusIndex[status.toLowerCase()] || 0;
+            
+            return steps.map((step, index) => ({
+                text: step,
+                active: index <= activeIndex
+            }));
+        }
+
+        // Login functionality
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const loginButton = document.getElementById('loginButton');
+            
+            loginButton.disabled = true;
+            loginButton.textContent = 'Checking...';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/user/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    localStorage.setItem('userToken', data.token);
+                    localStorage.setItem('userEmail', data.email);
+                    showSuccess('Login successful! Loading your applications...');
+                    
+                    setTimeout(() => {
+                        document.getElementById('loginPage').style.display = 'none';
+                        document.getElementById('dashboard').style.display = 'block';
+                        document.getElementById('userEmail').textContent = data.email;
+                        loadApplications();
+                    }, 1000);
+                } else {
+                    showError(data.error || 'No applications found with this email');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showError('Connection error. Please try again.');
+            } finally {
+                loginButton.disabled = false;
+                loginButton.textContent = 'View My Applications';
+            }
+        });
+
+        // Load applications
+        async function loadApplications() {
+            const token = localStorage.getItem('userToken');
+            
+            if (!token) {
+                window.location.reload();
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_URL}/api/user/applications`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load applications');
+                }
+                
+                const data = await response.json();
+                renderApplications(data.applications);
+            } catch (error) {
+                console.error('Load applications error:', error);
+                showError('Failed to load applications. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Render applications
+        function renderApplications(applications) {
+            const grid = document.getElementById('applicationsGrid');
+            const noApplications = document.getElementById('noApplications');
+            
+            if (!applications || applications.length === 0) {
+                grid.innerHTML = '';
+                noApplications.style.display = 'block';
+                return;
+            }
+            
+            noApplications.style.display = 'none';
+            
+            grid.innerHTML = applications.map(app => {
+                const statusBadgeClass = getStatusBadgeClass(app.status);
+                const progressClass = getProgressClass(app.status);
+                const progressSteps = getProgressSteps(app.status);
+                const statusIcon = {
+                    'submitted': '📤',
+                    'under review': '🔍',
+                    'accepted': '✅',
+                    'unsuccessful': '❌'
+                }[app.status.toLowerCase()] || '📤';
+                
+                return `
+                    <div class="application-card" data-id="${app.id}">
+                        <div class="application-header">
+                            <div class="hotel-info">
+                                <h3>${app.brief_title}</h3>
+                                <div class="hotel-location">
+                                    <span>📍</span>
+                                    <span>${app.location || 'Location TBD'}</span>
+                                </div>
+                            </div>
+                            <div class="status-badge ${statusBadgeClass}">
+                                <span>${statusIcon}</span>
+                                <span>${app.status.charAt(0).toUpperCase() + app.status.slice(1)}</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-section">
+                            <div class="progress-label">Application Progress</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill ${progressClass}"></div>
+                            </div>
+                            <div class="progress-steps">
+                                ${progressSteps.map(step => 
+                                    `<span class="progress-step ${step.active ? 'active' : ''}">${step.text}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+
+                        <div class="application-meta">
+                            <span>📅 Submitted: ${formatDate(app.submitted_at)}</span>
+                            <span>🏷️ Tier: ${app.tier}</span>
+                            <span>💳 #MUOB-${app.id}</span>
+                        </div>
+
+                        <div class="expand-arrow">▼</div>
+
+                        <div class="application-details">
+                            <div class="detail-row">
+                                <div class="detail-label">Instagram</div>
+                                <div class="detail-value">${app.instagram || 'Not provided'}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Portfolio</div>
+                                <div class="detail-value">${app.portfolio || 'Not provided'}</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Content Proposal</div>
+                                <div class="detail-value">${app.content_proposal || 'Not provided'}</div>
+                            </div>
+
+                            ${app.admin_feedback ? `
+                                <div class="feedback-section">
+                                    <h3 class="feedback-title">📝 Feedback</h3>
+                                    <div class="feedback-content">${app.admin_feedback}</div>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Add click handlers for expanding cards
+            grid.querySelectorAll('.application-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                    const arrow = this.querySelector('.expand-arrow');
+                    arrow.textContent = this.classList.contains('expanded') ? '▲' : '▼';
+                });
+            });
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('userToken');
+            localStorage.removeItem('userEmail');
+            window.location.reload();
+        });
+
+        // Check if already logged in
+        window.addEventListener('load', function() {
+            const token = localStorage.getItem('userToken');
+            const email = localStorage.getItem('userEmail');
+            
+            if (token && email) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('userEmail').textContent = email;
+                loadApplications();
+            }
+        });
+    </script>
+</body>
+</html>

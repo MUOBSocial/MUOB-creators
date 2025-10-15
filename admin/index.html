@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MUOB Creators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #f8faff;
+            color: #192b6c;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Loading Spinner */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #192b6c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .toast.success {
+            border-left: 4px solid #28a745;
+        }
+        
+        .toast.error {
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        /* Login Styles */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+        }
+        
+        .login-card {
+            background: white;
+            border: 1px solid rgba(25, 43, 108, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 50px rgba(25, 43, 108, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-logo img {
+            height: 50px;
+        }
+        
+        .login-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #192b6c;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(145deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(25, 43, 108, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: #5d6fc1;
+            box-shadow: 0 0 0 3px rgba(93, 111, 193, 0.1);
+        }
+        
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(45deg, #192b6c, #5d6fc1);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(25, 43, 108, 0.3);
+        }
+        
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: #ff6b6b;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+        }
+        
+        /* Dashboard Styles */
+        .dashboard {
+            display: none;
+        }
+        
+        .header {
+            background: white;
+            border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .admin-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .btn-logout {
+            background: #192b6c;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-logout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 43, 108, 0.3);
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin: 2rem 0 1rem 0;
+            background: white;
+            border-radius: 15px;
+            padding: 0.3rem;
+            box-shadow: 0 2px 10px rgba(25, 43, 108, 0.05);
+            width: fit-content;
+        }
+        
+        .tab {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: linear-gradient(45deg, #192b6c, #5d6fc1);
+            color: white;
+        }
+        
+        .tab:hover:not(.active) {
+            background: #f8faff;
+            color: #192b6c;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid rgba(25, 43, 108, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(25, 43, 108, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #192b6c, #5d6fc1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Section styling */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #192b6c;
+        }
+        
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            padding: 0.6rem 1rem;
+            border: 1px solid rgba(25, 43, 108, 0.2);
+            border-radius: 10px;
+            background: white;
+            color: #192b6c;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-select:hover {
+            border-color: #5d6fc1;
+        }
+        
+        .btn-action-group {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+        
+        .btn-mass-action {
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(25, 43, 108, 0.2);
+            background: white;
+            color: #192b6c;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .btn-mass-action.show {
+            display: block;
+        }
+        
+        .btn-mass-action:hover {
+            background: #192b6c;
+            color: white;
+        }
+        
+        .btn-add-brief {
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-brief:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        /* Table Styles */
+        .data-table {
+            background: white;
+            border: 1px solid rgba(25, 43, 108, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: #f8faff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #444;
+            border-bottom: 2px solid rgba(25, 43, 108, 0.1);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #f8faff;
+        }
+        
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .brief-title {
+            font-weight: 600;
+            color: #192b6c;
+        }
+        
+        .brief-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        
+        .status-live {
+            background: #e8f5e9;
+            color: #28a745;
+        }
+        
+        .status-expired {
+            background: #f8d7da;
+            color: #dc3545;
+        }
+        
+        .status-review {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-draft {
+            background: #e8e8e8;
+            color: #666;
+        }
+        
+        .status-select {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .status-submitted {
+            background: #666;
+            color: white;
+        }
+        
+        .status-under-review {
+            background: #5d6fc1;
+            color: white;
+        }
+        
+        .status-accepted {
+            background: #28a745;
+            color: white;
+        }
+        
+        .status-unsuccessful {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-table-action {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(25, 43, 108, 0.2);
+            border-radius: 8px;
+            background: white;
+            color: #192b6c;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-table-action:hover {
+            background: #192b6c;
+            color: white;
+            border-color: #192b6c;
+        }
+        
+        .applicant-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.6rem;
+            background: #e8ecff;
+            color: #5d6fc1;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(25, 43, 108, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(25, 43, 108, 0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #192b6c;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: #f0f0f0;
+            color: #192b6c;
+        }
+        
+        .btn-save {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 1.5rem auto 0;
+        }
+        
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-save:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .form-info {
+            background: #f8faff;
+            border: 1px solid rgba(93, 111, 193, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+            }
+            
+            .table-wrapper {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading" id="loadingSpinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification"></div>
+
+    <!-- Login Section -->
+    <div class="login-container" id="loginPage">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="https://i.ibb.co/tXKHXsv/6UnWg9S.png" alt="MUOB Creators">
+            </div>
+            <h2 class="login-title">Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-input" id="usernameInput" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="passwordInput" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-login" id="loginButton">Sign In</button>
+                <div class="error-message" id="errorMessage"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard" id="dashboard">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="logo">
+                            <img src="https://i.ibb.co/tXKHXsv/6UnWg9S.png" alt="MUOB Creators">
+                        </div>
+                        <span class="admin-badge">Admin Dashboard</span>
+                    </div>
+                    <button class="btn-logout" id="logoutBtn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="briefs">Hotel Briefs</button>
+                <button class="tab" data-tab="applications">Applications</button>
+            </div>
+
+            <!-- Briefs Tab Content -->
+            <div class="tab-content active" id="briefs-tab">
+                <!-- Briefs Stats -->
+                <div class="stats-grid" id="briefsStats">
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Total Briefs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Live Briefs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Expired Briefs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Total Applications</div>
+                    </div>
+                </div>
+
+                <!-- Briefs Table -->
+                <div class="section-header">
+                    <h2 class="section-title">Manage Briefs</h2>
+                    <div class="filter-controls">
+                        <select class="filter-select" id="briefStatusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="live">Live</option>
+                            <option value="review">Under Review</option>
+                            <option value="expired">Expired</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                        <select class="filter-select" id="briefTierFilter">
+                            <option value="all">All Tiers</option>
+                            <option value="explorers">Explorers</option>
+                            <option value="nomads">Nomads</option>
+                            <option value="first-class">First Class</option>
+                        </select>
+                        <button class="btn-add-brief" id="addBriefBtn">+ Add New Brief</button>
+                    </div>
+                </div>
+
+                <div class="data-table">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="checkbox" id="selectAllBriefs"></th>
+                                    <th>Brief Title</th>
+                                    <th>Location</th>
+                                    <th>Tier</th>
+                                    <th>Status</th>
+                                    <th>Applications</th>
+                                    <th>Posted Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="briefsTableBody">
+                                <!-- Briefs will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Tab Content -->
+            <div class="tab-content" id="applications-tab">
+                <!-- Application Stats -->
+                <div class="stats-grid" id="applicationStats">
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Total Applications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Pending Review</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Accepted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">-</div>
+                        <div class="stat-label">Unsuccessful</div>
+                    </div>
+                </div>
+
+                <!-- Applications Table -->
+                <div class="section-header">
+                    <h2 class="section-title">Recent Applications</h2>
+                    <div class="filter-controls">
+                        <div class="btn-action-group">
+                            <button class="btn-mass-action" id="massApprove">Approve Selected</button>
+                            <button class="btn-mass-action" id="massDeny">Deny Selected</button>
+                        </div>
+                        <select class="filter-select" id="briefFilter">
+                            <option value="all">All Briefs</option>
+                        </select>
+                        <select class="filter-select" id="statusFilter">
+                            <option value="all">All Statuses</option>
+                            <option value="submitted">Submitted</option>
+                            <option value="under review">Under Review</option>
+                            <option value="accepted">Accepted</option>
+                            <option value="unsuccessful">Unsuccessful</option>
+                        </select>
+                        <select class="filter-select" id="tierFilter">
+                            <option value="all">All Tiers</option>
+                            <option value="explorers">Explorers</option>
+                            <option value="nomads">Nomads</option>
+                            <option value="first-class">First Class</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="data-table">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="checkbox" id="selectAll"></th>
+                                    <th>Application ID</th>
+                                    <th>Applicant</th>
+                                    <th>Hotel Brief</th>
+                                    <th>Tier</th>
+                                    <th>Status</th>
+                                    <th>Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicationsTableBody">
+                                <!-- Applications will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Brief Modal -->
+    <div class="modal" id="addBriefModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Brief</h3>
+                <button class="close-modal" onclick="closeBriefModal()">×</button>
+            </div>
+            
+            <form id="briefForm">
+                <div class="form-group">
+                    <label class="form-label">Select Tally Form</label>
+                    <select class="form-select" id="tallyFormSelect" required>
+                        <option value="">Choose a form...</option>
+                    </select>
+                    <div class="form-info">
+                        Forms already connected to a brief are disabled
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Brief Title</label>
+                    <input type="text" class="form-input" id="briefTitle" placeholder="e.g., Luxury Palazzo Stay" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" id="briefLocation" placeholder="e.g., Rome, Italy" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tier</label>
+                    <select class="form-select" id="briefTier" required>
+                        <option value="">Select tier...</option>
+                        <option value="explorers">Explorers</option>
+                        <option value="nomads">Nomads</option>
+                        <option value="first-class">First Class</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Requirements</label>
+                    <textarea class="form-textarea" id="briefRequirements" placeholder="3-4 nights, content requirements..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Dates</label>
+                    <input type="text" class="form-input" id="briefDates" placeholder="e.g., November 20-23, 2024">
+                </div>
+
+                <button type="submit" class="btn-save" id="saveBriefBtn">Create Brief & Import Applications</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Application Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="reviewModalTitle">Review Application</h3>
+                <button class="close-modal" onclick="closeReviewModal()">×</button>
+            </div>
+
+            <div id="reviewContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:3000' 
+            : 'https://your-production-api-url.com'; // Update this for production
+
+        let selectedApplications = [];
+        let currentBriefs = [];
+        let currentApplications = [];
+
+        // Utility functions
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingSpinner').style.display = 'none';
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toastNotification');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.style.display = 'block';
+            
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        function showError(message) {
+            const errorElement = document.getElementById('errorMessage');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, 5000);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
+        }
+
+        function getAuthHeader() {
+            const token = localStorage.getItem('adminToken');
+            return {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            };
+        }
+
+        // Login functionality
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('usernameInput').value;
+            const password = document.getElementById('passwordInput').value;
+            const loginButton = document.getElementById('loginButton');
+            
+            loginButton.disabled = true;
+            loginButton.textContent = 'Signing in...';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    localStorage.setItem('adminToken', data.token);
+                    showToast('Login successful!');
+                    
+                    setTimeout(() => {
+                        document.getElementById('loginPage').style.display = 'none';
+                        document.getElementById('dashboard').style.display = 'block';
+                        loadDashboard();
+                    }, 500);
+                } else {
+                    showError(data.error || 'Invalid credentials');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showError('Connection error. Please try again.');
+            } finally {
+                loginButton.disabled = false;
+                loginButton.textContent = 'Sign In';
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('adminToken');
+            window.location.reload();
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                const tabId = this.dataset.tab + '-tab';
+                document.getElementById(tabId).classList.add('active');
+                
+                if (this.dataset.tab === 'briefs') {
+                    loadBriefs();
+                    loadStats();
+                } else {
+                    loadApplications();
+                }
+            });
+        });
+
+        // Load dashboard
+        async function loadDashboard() {
+            await loadStats();
+            await loadBriefs();
+        }
+
+        // Load statistics
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_URL}/api/admin/stats`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (!response.ok) throw new Error('Failed to load stats');
+                
+                const stats = await response.json();
+                
+                // Update briefs stats
+                document.querySelector('#briefsStats .stat-card:nth-child(1) .stat-value').textContent = stats.total_briefs || 0;
+                document.querySelector('#briefsStats .stat-card:nth-child(2) .stat-value').textContent = stats.live_briefs || 0;
+                document.querySelector('#briefsStats .stat-card:nth-child(3) .stat-value').textContent = stats.expired_briefs || 0;
+                document.querySelector('#briefsStats .stat-card:nth-child(4) .stat-value').textContent = stats.total_applications || 0;
+                
+                // Update applications stats
+                document.querySelector('#applicationStats .stat-card:nth-child(1) .stat-value').textContent = stats.total_applications || 0;
+                document.querySelector('#applicationStats .stat-card:nth-child(2) .stat-value').textContent = stats.pending_applications || 0;
+                document.querySelector('#applicationStats .stat-card:nth-child(3) .stat-value').textContent = stats.accepted_applications || 0;
+                document.querySelector('#applicationStats .stat-card:nth-child(4) .stat-value').textContent = stats.unsuccessful_applications || 0;
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        // Load briefs
+        async function loadBriefs() {
+            showLoading();
+            try {
+                const response = await fetch(`${API_URL}/api/admin/briefs`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (!response.ok) throw new Error('Failed to load briefs');
+                
+                const data = await response.json();
+                currentBriefs = data.briefs;
+                renderBriefs(currentBriefs);
+                
+                // Update brief filter in applications tab
+                const briefFilter = document.getElementById('briefFilter');
+                briefFilter.innerHTML = '<option value="all">All Briefs</option>';
+                currentBriefs.forEach(brief => {
+                    const option = document.createElement('option');
+                    option.value = brief.id;
+                    option.textContent = brief.title;
+                    briefFilter.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading briefs:', error);
+                showToast('Failed to load briefs', 'error');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Render briefs
+        function renderBriefs(briefs) {
+            const tbody = document.getElementById('briefsTableBody');
+            
+            if (!briefs || briefs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: #666;">No briefs found</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = briefs.map(brief => `
+                <tr>
+                    <td><input type="checkbox" class="checkbox brief-checkbox" data-id="${brief.id}"></td>
+                    <td>
+                        <div class="brief-title">${brief.title}</div>
+                        <div class="brief-location">${brief.requirements || 'No requirements specified'}</div>
+                    </td>
+                    <td>${brief.location || 'TBD'}</td>
+                    <td>${brief.tier ? brief.tier.charAt(0).toUpperCase() + brief.tier.slice(1) : 'Not set'}</td>
+                    <td>
+                        <select class="status-select status-${brief.status}" data-id="${brief.id}" onchange="updateBriefStatus(this)">
+                            <option value="live" ${brief.status === 'live' ? 'selected' : ''}>Live</option>
+                            <option value="review" ${brief.status === 'review' ? 'selected' : ''}>Under Review</option>
+                            <option value="expired" ${brief.status === 'expired' ? 'selected' : ''}>Expired</option>
+                            <option value="draft" ${brief.status === 'draft' ? 'selected' : ''}>Draft</option>
+                        </select>
+                    </td>
+                    <td><span class="applicant-count">👥 ${brief.application_count || 0}</span></td>
+                    <td>${formatDate(brief.created_at)}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn-table-action">Edit</button>
+                            <button class="btn-table-action" onclick="viewBrief(${brief.id})">View</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Update brief status
+        async function updateBriefStatus(selectElement) {
+            const briefId = selectElement.dataset.id;
+            const status = selectElement.value;
+            
+            selectElement.className = `status-select status-${status}`;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/brief/${briefId}/status`, {
+                    method: 'PUT',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({ status })
+                });
+                
+                if (!response.ok) throw new Error('Failed to update status');
+                
+                showToast('Brief status updated');
+                loadStats();
+            } catch (error) {
+                console.error('Error updating brief status:', error);
+                showToast('Failed to update status', 'error');
+                loadBriefs(); // Reload to reset
+            }
+        }
+
+        // Add brief modal
+        document.getElementById('addBriefBtn').addEventListener('click', async function() {
+            showLoading();
+            try {
+                const response = await fetch(`${API_URL}/api/admin/tally/forms`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (!response.ok) throw new Error('Failed to load forms');
+                
+                const data = await response.json();
+                const select = document.getElementById('tallyFormSelect');
+                
+                select.innerHTML = '<option value="">Choose a form...</option>';
+                
+                data.forms.forEach(form => {
+                    const option = document.createElement('option');
+                    option.value = form.id;
+                    option.textContent = `${form.name} (${form.responseCount || 0} responses)`;
+                    option.dataset.formName = form.name;
+                    
+                    if (form.isConnected) {
+                        option.disabled = true;
+                        option.textContent += ' - Already Connected';
+                    }
+                    
+                    select.appendChild(option);
+                });
+                
+                document.getElementById('addBriefModal').classList.add('active');
+            } catch (error) {
+                console.error('Error loading forms:', error);
+                showToast('Failed to load Tally forms', 'error');
+            } finally {
+                hideLoading();
+            }
+        });
+
+        function closeBriefModal() {
+            document.getElementById('addBriefModal').classList.remove('active');
+            document.getElementById('briefForm').reset();
+        }
+
+        // Create brief
+        document.getElementById('briefForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const saveButton = document.getElementById('saveBriefBtn');
+            saveButton.disabled = true;
+            saveButton.textContent = 'Creating...';
+            
+            const formSelect = document.getElementById('tallyFormSelect');
+            const briefData = {
+                tallyFormId: formSelect.value,
+                tallyFormName: formSelect.options[formSelect.selectedIndex].dataset.formName,
+                title: document.getElementById('briefTitle').value,
+                location: document.getElementById('briefLocation').value,
+                tier: document.getElementById('briefTier').value,
+                requirements: document.getElementById('briefRequirements').value,
+                dates: document.getElementById('briefDates').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/briefs`, {
+                    method: 'POST',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify(briefData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showToast(`Brief created! ${data.importedCount} applications imported.`);
+                    closeBriefModal();
+                    loadBriefs();
+                    loadStats();
+                } else {
+                    showToast(data.error || 'Failed to create brief', 'error');
+                }
+            } catch (error) {
+                console.error('Error creating brief:', error);
+                showToast('Failed to create brief', 'error');
+            } finally {
+                saveButton.disabled = false;
+                saveButton.textContent = 'Create Brief & Import Applications';
+            }
+        });
+
+        // Load applications
+        async function loadApplications() {
+            showLoading();
+            try {
+                const params = new URLSearchParams();
+                const briefId = document.getElementById('briefFilter').value;
+                const status = document.getElementById('statusFilter').value;
+                const tier = document.getElementById('tierFilter').value;
+                
+                if (briefId !== 'all') params.append('briefId', briefId);
+                if (status !== 'all') params.append('status', status);
+                if (tier !== 'all') params.append('tier', tier);
+                
+                const response = await fetch(`${API_URL}/api/admin/applications?${params}`, {
+                    headers: getAuthHeader()
+                });
+                
+                if (!response.ok) throw new Error('Failed to load applications');
+                
+                const data = await response.json();
+                currentApplications = data.applications;
+                renderApplications(currentApplications);
+            } catch (error) {
+                console.error('Error loading applications:', error);
+                showToast('Failed to load applications', 'error');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Render applications
+        function renderApplications(applications) {
+            const tbody = document.getElementById('applicationsTableBody');
+            
+            if (!applications || applications.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: #666;">No applications found</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = applications.map(app => {
+                const statusClass = `status-${app.status.replace(' ', '-')}`;
+                
+                return `
+                    <tr>
+                        <td><input type="checkbox" class="checkbox app-checkbox" data-id="${app.id}"></td>
+                        <td>#MUOB-${app.id}</td>
+                        <td>
+                            <div>${app.email}</div>
+                            <div style="color: #666; font-size: 0.9rem;">${app.instagram || 'No Instagram'}</div>
+                        </td>
+                        <td>${app.brief_title}</td>
+                        <td>${app.tier ? app.tier.charAt(0).toUpperCase() + app.tier.slice(1) : 'Not set'}</td>
+                        <td>
+                            <select class="status-select ${statusClass}" data-id="${app.id}" onchange="updateApplicationStatus(this)">
+                                <option value="submitted" ${app.status === 'submitted' ? 'selected' : ''}>Submitted</option>
+                                <option value="under review" ${app.status === 'under review' ? 'selected' : ''}>Under Review</option>
+                                <option value="accepted" ${app.status === 'accepted' ? 'selected' : ''}>Accepted</option>
+                                <option value="unsuccessful" ${app.status === 'unsuccessful' ? 'selected' : ''}>Unsuccessful</option>
+                            </select>
+                        </td>
+                        <td>${formatDate(app.submitted_at)}</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn-table-action" onclick="openReviewModal(${app.id})">Review</button>
+                                <button class="btn-table-action">View</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+            
+            // Add checkbox listeners
+            document.querySelectorAll('.app-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', updateSelectedApplications);
+            });
+        }
+
+        // Update application status
+        async function updateApplicationStatus(selectElement) {
+            const appId = selectElement.dataset.id;
+            const status = selectElement.value;
+            
+            selectElement.className = `status-select status-${status.replace(' ', '-')}`;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/application/${appId}`, {
+                    method: 'PUT',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({ status })
+                });
+                
+                if (!response.ok) throw new Error('Failed to update status');
+                
+                showToast('Application status updated');
+                loadStats();
+            } catch (error) {
+                console.error('Error updating application status:', error);
+                showToast('Failed to update status', 'error');
+                loadApplications(); // Reload to reset
+            }
+        }
+
+        // Select all checkboxes
+        document.getElementById('selectAll').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.app-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+            updateSelectedApplications();
+        });
+
+        // Update selected applications
+        function updateSelectedApplications() {
+            selectedApplications = Array.from(document.querySelectorAll('.app-checkbox:checked'))
+                .map(checkbox => checkbox.dataset.id);
+            
+            const massActionButtons = document.querySelectorAll('.btn-mass-action');
+            if (selectedApplications.length > 0) {
+                massActionButtons.forEach(btn => btn.classList.add('show'));
+            } else {
+                massActionButtons.forEach(btn => btn.classList.remove('show'));
+            }
+        }
+
+        // Mass actions
+        document.getElementById('massApprove').addEventListener('click', async function() {
+            if (selectedApplications.length === 0) return;
+            
+            if (!confirm(`Approve ${selectedApplications.length} selected applications?`)) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/applications/bulk-update`, {
+                    method: 'POST',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({
+                        applicationIds: selectedApplications,
+                        status: 'accepted'
+                    })
+                });
+                
+                if (!response.ok) throw new Error('Failed to update applications');
+                
+                const data = await response.json();
+                showToast(`${data.updatedCount} applications approved`);
+                loadApplications();
+                loadStats();
+            } catch (error) {
+                console.error('Error updating applications:', error);
+                showToast('Failed to update applications', 'error');
+            }
+        });
+
+        document.getElementById('massDeny').addEventListener('click', async function() {
+            if (selectedApplications.length === 0) return;
+            
+            if (!confirm(`Mark ${selectedApplications.length} selected applications as unsuccessful?`)) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/applications/bulk-update`, {
+                    method: 'POST',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({
+                        applicationIds: selectedApplications,
+                        status: 'unsuccessful'
+                    })
+                });
+                
+                if (!response.ok) throw new Error('Failed to update applications');
+                
+                const data = await response.json();
+                showToast(`${data.updatedCount} applications marked as unsuccessful`);
+                loadApplications();
+                loadStats();
+            } catch (error) {
+                console.error('Error updating applications:', error);
+                showToast('Failed to update applications', 'error');
+            }
+        });
+
+        // Review modal
+        async function openReviewModal(appId) {
+            const app = currentApplications.find(a => a.id === appId);
+            if (!app) return;
+            
+            const reviewContent = document.getElementById('reviewContent');
+            document.getElementById('reviewModalTitle').textContent = `Review Application #MUOB-${appId}`;
+            
+            reviewContent.innerHTML = `
+                <h4 style="margin-bottom: 1rem; color: #444;">${app.email}</h4>
+                <p style="color: #666; margin-bottom: 1rem;">Applied for: ${app.brief_title}</p>
+                
+                <div class="form-group">
+                    <label class="form-label">Instagram</label>
+                    <input type="text" class="form-input" value="${app.instagram || ''}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Portfolio</label>
+                    <input type="text" class="form-input" value="${app.portfolio || ''}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Content Proposal</label>
+                    <textarea class="form-textarea" readonly>${app.content_proposal || ''}</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Status Update</label>
+                    <select class="form-select" id="reviewStatus">
+                        <option value="submitted" ${app.status === 'submitted' ? 'selected' : ''}>Submitted</option>
+                        <option value="under review" ${app.status === 'under review' ? 'selected' : ''}>Under Review</option>
+                        <option value="accepted" ${app.status === 'accepted' ? 'selected' : ''}>Accepted</option>
+                        <option value="unsuccessful" ${app.status === 'unsuccessful' ? 'selected' : ''}>Unsuccessful</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Feedback for Applicant</label>
+                    <textarea class="form-textarea" id="reviewFeedback" placeholder="Enter feedback that will be shown to the applicant...">${app.admin_feedback || ''}</textarea>
+                </div>
+
+                <button class="btn-save" onclick="saveReview(${appId})">Save Review</button>
+            `;
+            
+            document.getElementById('reviewModal').classList.add('active');
+        }
+
+        function closeReviewModal() {
+            document.getElementById('reviewModal').classList.remove('active');
+        }
+
+        async function saveReview(appId) {
+            const status = document.getElementById('reviewStatus').value;
+            const adminFeedback = document.getElementById('reviewFeedback').value;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/application/${appId}`, {
+                    method: 'PUT',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({ status, adminFeedback })
+                });
+                
+                if (!response.ok) throw new Error('Failed to save review');
+                
+                showToast('Review saved successfully');
+                closeReviewModal();
+                loadApplications();
+                loadStats();
+            } catch (error) {
+                console.error('Error saving review:', error);
+                showToast('Failed to save review', 'error');
+            }
+        }
+
+        // Filters
+        document.getElementById('briefStatusFilter').addEventListener('change', function() {
+            const filterValue = this.value;
+            const rows = document.querySelectorAll('#briefsTableBody tr');
+            
+            rows.forEach(row => {
+                if (filterValue === 'all') {
+                    row.style.display = '';
+                } else {
+                    const statusSelect = row.querySelector('.status-select');
+                    if (statusSelect && statusSelect.value === filterValue) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        document.getElementById('briefFilter').addEventListener('change', loadApplications);
+        document.getElementById('statusFilter').addEventListener('change', loadApplications);
+        document.getElementById('tierFilter').addEventListener('change', loadApplications);
+
+        // Modal close handlers
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Check if already logged in
+        window.addEventListener('load', function() {
+            const token = localStorage.getItem('adminToken');
+            
+            if (token) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                loadDashboard();
+            }
+        });
+    </script>
+</body>
+</html>
