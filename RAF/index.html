@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Outreach Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    /* Password Screen */
+    #password-screen {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    #password-screen h1 {
+      color: #192b6c;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    
+    #password-screen p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    
+    #password-input {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+    }
+    
+    #password-input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    #submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    #submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+    
+    #error-msg {
+      color: #dc3545;
+      margin-top: 15px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    /* Main Content */
+    #main-content {
+      display: none;
+      width: 100%;
+      max-width: 1400px;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .header {
+      background: white;
+      padding: 30px;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header h1 {
+      color: #192b6c;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      color: #666;
+      font-size: 16px;
+    }
+    
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .stat-card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+    
+    .stat-card .number {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    
+    .table-container {
+      background: white;
+      padding: 30px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    
+    #outreach {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+    }
+    
+    #outreach thead {
+      background: #192b6c;
+      color: #fff;
+    }
+    
+    #outreach th {
+      padding: 16px 12px;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    #outreach tbody tr {
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s ease;
+    }
+    
+    #outreach tbody tr:hover {
+      background: #f8f9fa !important;
+    }
+    
+    #outreach td {
+      padding: 16px 12px;
+      vertical-align: top;
+    }
+    
+    #outreach a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    #outreach a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      #password-screen {
+        padding: 40px 30px;
+      }
+      
+      .header {
+        padding: 20px;
+      }
+      
+      .header h1 {
+        font-size: 24px;
+      }
+      
+      .table-container {
+        padding: 20px;
+      }
+      
+      #outreach {
+        font-size: 12px;
+      }
+      
+      #outreach th,
+      #outreach td {
+        padding: 12px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Password Screen -->
+  <div id="password-screen">
+    <h1>🎙️ Podcast Outreach</h1>
+    <p>Enter password to access tracker</p>
+    <input 
+      type="password" 
+      id="password-input" 
+      placeholder="Enter password"
+      autocomplete="off"
+    >
+    <button id="submit-btn">Access Tracker</button>
+    <div id="error-msg">❌ Incorrect password. Please try again.</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <div class="header">
+      <h1>🎙️ Podcast Outreach Tracker</h1>
+      <p>Live data synced from Google Sheets</p>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Total Podcasts</h3>
+          <div class="number" id="total-count">-</div>
+        </div>
+        <div class="stat-card">
+          <h3>Contacted</h3>
+          <div class="number" id="contacted-count">-</div>
+        </div>
+        <div class="stat-card">
+          <h3>Responses</h3>
+          <div class="number" id="response-count">-</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading podcast data...</p>
+      </div>
+      
+      <table id="outreach">
+        <thead>
+          <tr>
+            <th>Podcast Name</th>
+            <th>Host</th>
+            <th>Niche</th>
+            <th>Followers/Subs</th>
+            <th>Email</th>
+            <th>Instagram</th>
+            <th>LinkedIn</th>
+            <th>Website</th>
+            <th>Region</th>
+            <th>Contacted</th>
+            <th>Last Contacted</th>
+            <th>Response</th>
+            <th>Notes / Next Step</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Password Check
+    const correctPassword = "PodcastKing";
+    const passwordScreen = document.getElementById("password-screen");
+    const mainContent = document.getElementById("main-content");
+    const passwordInput = document.getElementById("password-input");
+    const submitBtn = document.getElementById("submit-btn");
+    const errorMsg = document.getElementById("error-msg");
+
+    function checkPassword() {
+      if (passwordInput.value === correctPassword) {
+        passwordScreen.style.display = "none";
+        mainContent.style.display = "block";
+        document.body.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+        loadSheet();
+      } else {
+        errorMsg.style.display = "block";
+        passwordInput.value = "";
+        passwordInput.focus();
+      }
+    }
+
+    submitBtn.addEventListener("click", checkPassword);
+    passwordInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") checkPassword();
+    });
+
+    // Load Google Sheet Data
+    async function loadSheet() {
+      const SHEET_ID = "1tkKpTWBxWff4O-wsWLQBh7PvgeJCD-y2RomUpb3INa0";
+      const SHEET_NAME = "Sheet1";
+      const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+      
+      try {
+        const raw = await fetch(url).then(r => r.text());
+        const json = JSON.parse(raw.substring(47, raw.length - 2));
+        const rows = json.table.rows || [];
+        const tbody = document.querySelector("#outreach tbody");
+        tbody.innerHTML = "";
+        
+        document.querySelector(".loading").style.display = "none";
+        
+        const val = (r, i) => r.c[i]?.v ?? "";
+        
+        let totalCount = 0;
+        let contactedCount = 0;
+        let responseCount = 0;
+        
+        rows.slice(1).forEach(r => {
+          totalCount++;
+          const tr = document.createElement("tr");
+          
+          const contacted = String(val(r, 9)).toLowerCase();
+          if (contacted.includes("✅") || contacted.includes("yes") || contacted.includes("true")) {
+            tr.style.background = "#e8f5e9";
+            contactedCount++;
+          }
+          if (contacted.includes("❌") || contacted.includes("no") || contacted.includes("rejected")) {
+            tr.style.background = "#ffebee";
+          }
+          
+          const response = String(val(r, 11)).trim();
+          if (response && response !== "-" && response !== "") {
+            responseCount++;
+          }
+          
+          const ig = String(val(r, 5)).replace("@", "").trim();
+          const li = String(val(r, 6)).trim();
+          const web = String(val(r, 7)).trim();
+          const fixUrl = x => x ? (/^https?:\/\//i.test(x) ? x : "https://" + x) : "";
+          
+          tr.innerHTML = `
+            <td><strong>${val(r, 0)}</strong></td>
+            <td>${val(r, 1)}</td>
+            <td>${val(r, 2)}</td>
+            <td>${val(r, 3)}</td>
+            <td>${val(r, 4) ? `<a href="mailto:${val(r, 4)}">${val(r, 4)}</a>` : ""}</td>
+            <td>${ig ? `<a href="https://instagram.com/${ig}" target="_blank">@${ig}</a>` : ""}</td>
+            <td>${li ? `<a href="${fixUrl(li)}" target="_blank">View Profile</a>` : ""}</td>
+            <td>${web ? `<a href="${fixUrl(web)}" target="_blank">Visit</a>` : ""}</td>
+            <td>${val(r, 8)}</td>
+            <td>${val(r, 9)}</td>
+            <td>${val(r, 10)}</td>
+            <td>${val(r, 11)}</td>
+            <td>${val(r, 12)}</td>
+            <td>${val(r, 13)}</td>
+          `;
+          
+          tbody.appendChild(tr);
+        });
+        
+        document.getElementById("total-count").textContent = totalCount;
+        document.getElementById("contacted-count").textContent = contactedCount;
+        document.getElementById("response-count").textContent = responseCount;
+        
+      } catch (e) {
+        console.error("Sheet load error", e);
+        const tbody = document.querySelector("#outreach tbody");
+        tbody.innerHTML = `<tr><td colspan="14" style="padding:20px;color:#dc3545;text-align:center;">⚠️ Could not load data. Check sharing settings and sheet name.</td></tr>`;
+        document.querySelector(".loading").style.display = "none";
+      }
+    }
+
+    setInterval(loadSheet, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
