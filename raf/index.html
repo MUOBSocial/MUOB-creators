@@ -419,6 +419,11 @@
       .filter-group {
         flex-wrap: wrap;
       }
+      
+      .filter-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.7rem;
+      }
 
       th, td {
         padding: 1rem;
@@ -426,7 +431,7 @@
       }
 
       .metrics-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
       }
     }
@@ -458,12 +463,12 @@
   <div id="main-content">
     <div class="header-section">
       <h1>Let's get you on some podcasts, shall we?</h1>
-      <p>Real-time outreach tracking and management</p>
+      <p>Leads found and outreach tracking</p>
     </div>
     
     <div class="metrics-row">
       <div class="metric">
-        <div class="metric-label">Total Targets</div>
+        <div class="metric-label">Leads Found</div>
         <div class="metric-value" id="total-count">—</div>
       </div>
       <div class="metric">
@@ -471,12 +476,16 @@
         <div class="metric-value" id="contacted-count">—</div>
       </div>
       <div class="metric">
-        <div class="metric-label">Responses</div>
-        <div class="metric-value" id="response-count">—</div>
+        <div class="metric-label">Awaiting Reply</div>
+        <div class="metric-value" id="awaiting-count">—</div>
       </div>
       <div class="metric">
-        <div class="metric-label">Success Rate</div>
-        <div class="metric-value" id="success-rate">—</div>
+        <div class="metric-label">Interested</div>
+        <div class="metric-value" id="interested-count">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Not Interested</div>
+        <div class="metric-value" id="not-interested-count">—</div>
       </div>
     </div>
     
@@ -487,8 +496,10 @@
       <div class="filter-group">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="contacted">Contacted</button>
-        <button class="filter-btn" data-filter="pending">Pending</button>
-        <button class="filter-btn" data-filter="responded">Responded</button>
+        <button class="filter-btn" data-filter="not-contacted">Not Contacted</button>
+        <button class="filter-btn" data-filter="awaiting">Awaiting Reply</button>
+        <button class="filter-btn" data-filter="interested">Interested</button>
+        <button class="filter-btn" data-filter="not-interested">Not Interested</button>
       </div>
     </div>
     
@@ -511,11 +522,10 @@
               <th>LinkedIn</th>
               <th>Website</th>
               <th>Region</th>
-              <th>Status</th>
+              <th>Contacted</th>
               <th>Last Contact</th>
               <th>Response</th>
-              <th>Next Action</th>
-              <th>Priority</th>
+              <th>Notes</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -576,15 +586,22 @@
       
       rows.forEach(row => {
         const text = row.textContent.toLowerCase();
-        const statusCell = row.querySelector(".status-badge");
-        const status = statusCell ? statusCell.textContent.toLowerCase() : "";
+        const contactedCell = row.cells[9];
+        const responseCell = row.cells[11];
+        
+        if (!contactedCell || !responseCell) return;
+        
+        const contacted = contactedCell.textContent.toLowerCase();
+        const response = responseCell.textContent.toLowerCase();
         
         const matchesSearch = text.includes(searchTerm);
         const matchesFilter = 
           currentFilter === "all" ||
-          (currentFilter === "contacted" && status.includes("contacted")) ||
-          (currentFilter === "pending" && status.includes("pending")) ||
-          (currentFilter === "responded" && row.cells[11].textContent.trim() !== "—");
+          (currentFilter === "contacted" && contacted.includes("yes")) ||
+          (currentFilter === "not-contacted" && contacted.includes("no")) ||
+          (currentFilter === "awaiting" && response.includes("awaiting")) ||
+          (currentFilter === "interested" && response.includes("interested") && !response.includes("not")) ||
+          (currentFilter === "not-interested" && response.includes("not interested"));
         
         row.style.display = matchesSearch && matchesFilter ? "" : "none";
       });
@@ -609,29 +626,29 @@
         
         let totalCount = 0;
         let contactedCount = 0;
-        let responseCount = 0;
+        let awaitingCount = 0;
+        let interestedCount = 0;
+        let notInterestedCount = 0;
         
         rows.slice(1).forEach(r => {
           totalCount++;
           const tr = document.createElement("tr");
           
-          const contacted = String(val(r, 7)).toLowerCase();
-          if (contacted.includes("✅")) contactedCount++;
+          const contacted = String(val(r, 9)).toLowerCase();
+          if (contacted.includes("yes") || contacted.includes("✅")) contactedCount++;
           
-          const response = String(val(r, 9)).trim();
-          if (response && response !== "-" && response !== "") responseCount++;
+          const response = String(val(r, 11)).toLowerCase().trim();
+          if (response.includes("awaiting")) awaitingCount++;
+          if (response.includes("interested") && !response.includes("not")) interestedCount++;
+          if (response.includes("not interested")) notInterestedCount++;
           
           const ig = String(val(r, 5)).replace("@", "").trim();
           const li = String(val(r, 6)).trim();
           const web = String(val(r, 7)).trim();
           const fixUrl = x => x ? (/^https?:\/\//i.test(x) ? x : "https://" + x) : "";
           
-          const statusClass = contacted.includes("✅") ? "status-contacted" : "status-pending";
-          const statusText = contacted.includes("✅") ? "Contacted" : "Pending";
-          
-          const priority = String(val(r, 11)).trim();
-          const stars = priority.split("⭐").length - 1;
-          const priorityDisplay = stars > 0 ? "★".repeat(stars) : "—";
+          const contactedStatus = contacted.includes("yes") || contacted.includes("✅") ? "Yes" : "No";
+          const statusClass = contacted.includes("yes") || contacted.includes("✅") ? "status-contacted" : "status-pending";
           
           tr.innerHTML = `
             <td>${val(r, 0) || "—"}</td>
@@ -643,27 +660,25 @@
             <td>${li ? `<a href="${fixUrl(li)}" target="_blank">View</a>` : "—"}</td>
             <td>${web ? `<a href="${fixUrl(web)}" target="_blank">Visit</a>` : "—"}</td>
             <td>${val(r, 8) || "—"}</td>
-            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-            <td>${val(r, 9) || "—"}</td>
-            <td>${val(r, 9) || "—"}</td>
+            <td><span class="status-badge ${statusClass}">${contactedStatus}</span></td>
             <td>${val(r, 10) || "—"}</td>
-            <td><span class="priority">${priorityDisplay}</span></td>
+            <td>${val(r, 11) || "—"}</td>
+            <td>${val(r, 12) || "—"}</td>
           `;
           
           tbody.appendChild(tr);
         });
         
-        const successRate = contactedCount > 0 ? Math.round((responseCount / contactedCount) * 100) : 0;
-        
         animateValue("total-count", 0, totalCount, 1500);
         animateValue("contacted-count", 0, contactedCount, 1500);
-        animateValue("response-count", 0, responseCount, 1500);
-        document.getElementById("success-rate").textContent = successRate + "%";
+        animateValue("awaiting-count", 0, awaitingCount, 1500);
+        animateValue("interested-count", 0, interestedCount, 1500);
+        animateValue("not-interested-count", 0, notInterestedCount, 1500);
         
       } catch (e) {
         console.error("Data sync error", e);
         const tbody = document.querySelector("#outreach tbody");
-        tbody.innerHTML = `<tr><td colspan="14" style="padding:3rem;text-align:center;color:var(--text-muted);">Failed to load data. Check sheet sharing settings.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="13" style="padding:3rem;text-align:center;color:var(--text-muted);">Failed to load data. Check sheet sharing settings.</td></tr>`;
         document.querySelector(".loading").style.display = "none";
       }
     }
