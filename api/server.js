@@ -8,9 +8,9 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8080; // Railway uses PORT env var, fallback to 8080
+const PORT = process.env.PORT || 8080;
 
-// CORS configuration for production
+// CORS configuration - UPDATED with explicit methods and headers
 const corsOptions = {
     origin: function (origin, callback) {
         const allowedOrigins = [
@@ -30,11 +30,14 @@ const corsOptions = {
         }
     },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     optionsSuccessStatus: 200
 };
 
 // Middleware
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -505,17 +508,18 @@ app.get('/api/admin/stats', authenticateAdmin, (req, res) => {
     );
 });
 
+// Health check endpoint for Railway
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
+});
+
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
     console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`Admin login: admin / admin123`);
     console.log(`Railway deployment ready`);
-});
-
-// Health check endpoint for Railway
-app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
+    console.log(`CORS enabled for:`, corsOptions.origin);
 });
 
 // Graceful shutdown for Railway
