@@ -634,8 +634,9 @@
           totalCount++;
           const tr = document.createElement("tr");
           
-          const contacted = String(val(r, 9)).toLowerCase();
-          if (contacted.includes("yes") || contacted.includes("✅")) contactedCount++;
+          const contacted = String(val(r, 9)).toLowerCase().trim();
+          const isContacted = contacted.includes("yes") || contacted.includes("✅") || contacted === "true";
+          if (isContacted) contactedCount++;
           
           const response = String(val(r, 11)).toLowerCase().trim();
           if (response.includes("awaiting")) awaitingCount++;
@@ -647,8 +648,8 @@
           const web = String(val(r, 7)).trim();
           const fixUrl = x => x ? (/^https?:\/\//i.test(x) ? x : "https://" + x) : "";
           
-          const contactedStatus = contacted.includes("yes") || contacted.includes("✅") ? "Yes" : "No";
-          const statusClass = contacted.includes("yes") || contacted.includes("✅") ? "status-contacted" : "status-pending";
+          const contactedStatus = isContacted ? "Yes" : (contacted ? "No" : "—");
+          const statusClass = isContacted ? "status-contacted" : "status-pending";
           
           tr.innerHTML = `
             <td>${val(r, 0) || "—"}</td>
