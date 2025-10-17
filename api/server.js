@@ -580,11 +580,29 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
 
-// 404 handler
-app.use((req, res) => {
-    console.log(`[404] ${req.method} ${req.path} not found`);
-    res.status(404).json({ error: 'Endpoint not found' });
-});
+// Serve static files ONLY if no API route matches
+// Add this AFTER all API routes
+if (process.env.NODE_ENV === 'production') {
+    const path = require('path');
+    // Serve static files from 'public' directory or wherever your HTML files are
+    app.use(express.static(path.join(__dirname, 'public')));
+    
+    // Catch all handler - send index.html for any non-API routes
+    app.get('*', (req, res) => {
+        // Only send index.html for non-API routes
+        if (!req.path.startsWith('/api')) {
+            res.sendFile(path.join(__dirname, 'public', 'index.html'));
+        } else {
+            res.status(404).json({ error: 'API endpoint not found' });
+        }
+    });
+} else {
+    // 404 handler for development
+    app.use((req, res) => {
+        console.log(`[404] ${req.method} ${req.path} not found`);
+        res.status(404).json({ error: 'Endpoint not found' });
+    });
+}
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
