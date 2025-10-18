@@ -928,6 +928,20 @@
                     <input type="text" class="form-input" id="briefDates" placeholder="e.g., November 20-23, 2024">
                 </div>
 
+                <div class="form-group">
+                    <label class="form-label">Google Sheet URL (Optional - for importing submissions)</label>
+                    <input type="url" class="form-input" id="googleSheetUrl" placeholder="https://docs.google.com/spreadsheets/d/...">
+                    <div class="form-info">
+                        <strong>How to get the sheet URL:</strong>
+                        <ol style="margin: 0.5rem 0 0 1.5rem; font-size: 0.85rem;">
+                            <li>Open your Google Form responses in Google Sheets</li>
+                            <li>Click Share → Change to "Anyone with the link can view"</li>
+                            <li>Copy and paste the sheet URL here</li>
+                        </ol>
+                        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Submissions will be imported automatically from the sheet.</p>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn-save" id="saveBriefBtn">Create Brief & Import Applications</button>
             </form>
         </div>
@@ -944,6 +958,38 @@
             <div id="reviewContent">
                 <!-- Dynamic content will be loaded here -->
             </div>
+        </div>
+    </div>
+
+    <!-- Import Sheet Modal -->
+    <div class="modal" id="importSheetModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Import/Update from Google Sheet</h3>
+                <button class="close-modal" onclick="closeImportModal()">×</button>
+            </div>
+            
+            <form id="importSheetForm">
+                <input type="hidden" id="importBriefId">
+                
+                <div class="form-group">
+                    <label class="form-label">Google Sheet URL</label>
+                    <input type="url" class="form-input" id="importSheetUrl" placeholder="https://docs.google.com/spreadsheets/d/..." required>
+                    <div class="form-info">
+                        <strong>Instructions:</strong>
+                        <ol style="margin: 0.5rem 0 0 1.5rem; font-size: 0.85rem;">
+                            <li>Open your Google Form responses in Google Sheets</li>
+                            <li>Click Share → Change to "Anyone with the link can view"</li>
+                            <li>Copy and paste the sheet URL here</li>
+                        </ol>
+                        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff6b6b;">
+                            <strong>Note:</strong> This will update existing applications and add new ones.
+                        </p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-save" id="importSheetBtn">Import Applications</button>
+            </form>
         </div>
     </div>
 
@@ -1172,7 +1218,7 @@
                     <td>${formatDate(brief.created_at)}</td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-table-action">Edit</button>
+                            <button class="btn-table-action" onclick="importSheetModal(${brief.id})">Import Sheet</button>
                             <button class="btn-table-action" onclick="viewBrief(${brief.id})">View</button>
                         </div>
                     </td>
@@ -1266,7 +1312,8 @@
                 location: document.getElementById('briefLocation').value,
                 tier: document.getElementById('briefTier').value,
                 requirements: document.getElementById('briefRequirements').value,
-                dates: document.getElementById('briefDates').value
+                dates: document.getElementById('briefDates').value,
+                googleSheetUrl: document.getElementById('googleSheetUrl').value
             };
             
             try {
@@ -1280,7 +1327,13 @@
                 const data = await response.json();
                 
                 if (response.ok) {
-                    showToast(`Brief created! ${data.importedCount} applications imported.`);
+                    if (briefData.googleSheetUrl && data.importedCount > 0) {
+                        showToast(`Brief created! ${data.importedCount} applications imported from Google Sheet.`);
+                    } else if (briefData.googleSheetUrl && data.importedCount === 0) {
+                        showToast('Brief created! No applications found in the Google Sheet.');
+                    } else {
+                        showToast('Brief created successfully!');
+                    }
                     closeBriefModal();
                     loadBriefs();
                     loadStats();
@@ -1554,6 +1607,61 @@
                 showToast('Failed to save review', 'error');
             }
         }
+
+        // Function to open import sheet modal
+        function importSheetModal(briefId) {
+            document.getElementById('importBriefId').value = briefId;
+            document.getElementById('importSheetUrl').value = '';
+            document.getElementById('importSheetModal').classList.add('active');
+        }
+
+        function closeImportModal() {
+            document.getElementById('importSheetModal').classList.remove('active');
+            document.getElementById('importSheetForm').reset();
+        }
+
+        // Import sheet form handler
+        document.getElementById('importSheetForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const importButton = document.getElementById('importSheetBtn');
+            const briefId = document.getElementById('importBriefId').value;
+            const sheetUrl = document.getElementById('importSheetUrl').value;
+            
+            importButton.disabled = true;
+            importButton.textContent = 'Importing...';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/admin/brief/${briefId}/import-sheet`, {
+                    method: 'POST',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({ googleSheetUrl: sheetUrl }),
+                    credentials: 'include'
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showToast(`Successfully imported ${data.importedCount} applications from Google Sheet`);
+                    closeImportModal();
+                    loadBriefs();
+                    loadStats();
+                    
+                    // Reload applications if on that tab
+                    if (document.querySelector('.tab[data-tab="applications"]').classList.contains('active')) {
+                        loadApplications();
+                    }
+                } else {
+                    showToast(data.error || 'Failed to import from Google Sheet', 'error');
+                }
+            } catch (error) {
+                console.error('Error importing sheet:', error);
+                showToast('Failed to import from Google Sheet', 'error');
+            } finally {
+                importButton.disabled = false;
+                importButton.textContent = 'Import Applications';
+            }
+        });
 
         // Function for view brief (placeholder)
         function viewBrief(briefId) {
