@@ -996,7 +996,7 @@
     <script>
         // API Configuration
         const API_URL = window.location.hostname === 'localhost' 
-            ? 'http://localhost:3000' 
+            ? 'http://localhost:8080' 
             : 'https://apmuobcreators-production.up.railway.app';
 
         let selectedApplications = [];
@@ -1049,6 +1049,26 @@
             };
         }
 
+        // Test authentication
+        async function testAuth() {
+            const token = localStorage.getItem('adminToken');
+            console.log('Testing auth with token:', token ? 'Token exists' : 'No token');
+            
+            try {
+                const response = await fetch(`${API_URL}/api/verify-token`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                const data = await response.json();
+                console.log('Auth test result:', data);
+                return data.valid;
+            } catch (error) {
+                console.error('Auth test error:', error);
+                return false;
+            }
+        }
+
         // Login functionality
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -1066,21 +1086,23 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ username, password }),
-                    credentials: 'include'
+                    body: JSON.stringify({ username, password })
                 });
                 
                 const data = await response.json();
                 
                 if (response.ok) {
                     localStorage.setItem('adminToken', data.token);
+                    console.log('Login successful, token stored');
                     showToast('Login successful!');
                     
-                    setTimeout(() => {
-                        document.getElementById('loginPage').style.display = 'none';
-                        document.getElementById('dashboard').style.display = 'block';
-                        loadDashboard();
-                    }, 500);
+                    // Test authentication immediately
+                    const authValid = await testAuth();
+                    console.log('Post-login auth test:', authValid);
+                    
+                    document.getElementById('loginPage').style.display = 'none';
+                    document.getElementById('dashboard').style.display = 'block';
+                    loadDashboard();
                 } else {
                     showError(data.error || 'Invalid credentials');
                 }
@@ -1131,14 +1153,21 @@
         // Load statistics
         async function loadStats() {
             try {
+                console.log('Loading stats...');
                 const response = await fetch(`${API_URL}/api/admin/stats`, {
-                    headers: getAuthHeader(),
-                    credentials: 'include'
+                    headers: getAuthHeader()
                 });
                 
-                if (!response.ok) throw new Error('Failed to load stats');
+                console.log('Stats response status:', response.status);
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Stats error response:', errorData);
+                    throw new Error('Failed to load stats');
+                }
                 
                 const stats = await response.json();
+                console.log('Stats loaded:', stats);
                 
                 // Update briefs stats
                 document.querySelector('#briefsStats .stat-card:nth-child(1) .stat-value').textContent = stats.total_briefs || 0;
@@ -1160,14 +1189,21 @@
         async function loadBriefs() {
             showLoading();
             try {
+                console.log('Loading briefs...');
                 const response = await fetch(`${API_URL}/api/admin/briefs`, {
-                    headers: getAuthHeader(),
-                    credentials: 'include'
+                    headers: getAuthHeader()
                 });
                 
-                if (!response.ok) throw new Error('Failed to load briefs');
+                console.log('Briefs response status:', response.status);
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Briefs error response:', errorData);
+                    throw new Error('Failed to load briefs');
+                }
                 
                 const data = await response.json();
+                console.log('Briefs loaded:', data);
                 currentBriefs = data.briefs;
                 renderBriefs(currentBriefs);
                 
@@ -1237,8 +1273,7 @@
                 const response = await fetch(`${API_URL}/api/admin/brief/${briefId}/status`, {
                     method: 'PUT',
                     headers: getAuthHeader(),
-                    body: JSON.stringify({ status }),
-                    credentials: 'include'
+                    body: JSON.stringify({ status })
                 });
                 
                 if (!response.ok) throw new Error('Failed to update status');
@@ -1257,8 +1292,7 @@
             showLoading();
             try {
                 const response = await fetch(`${API_URL}/api/admin/tally/forms`, {
-                    headers: getAuthHeader(),
-                    credentials: 'include'
+                    headers: getAuthHeader()
                 });
                 
                 if (!response.ok) throw new Error('Failed to load forms');
@@ -1320,8 +1354,7 @@
                 const response = await fetch(`${API_URL}/api/admin/briefs`, {
                     method: 'POST',
                     headers: getAuthHeader(),
-                    body: JSON.stringify(briefData),
-                    credentials: 'include'
+                    body: JSON.stringify(briefData)
                 });
                 
                 const data = await response.json();
@@ -1363,8 +1396,7 @@
                 if (tier !== 'all') params.append('tier', tier);
                 
                 const response = await fetch(`${API_URL}/api/admin/applications?${params}`, {
-                    headers: getAuthHeader(),
-                    credentials: 'include'
+                    headers: getAuthHeader()
                 });
                 
                 if (!response.ok) throw new Error('Failed to load applications');
@@ -1438,8 +1470,7 @@
                 const response = await fetch(`${API_URL}/api/admin/application/${appId}`, {
                     method: 'PUT',
                     headers: getAuthHeader(),
-                    body: JSON.stringify({ status }),
-                    credentials: 'include'
+                    body: JSON.stringify({ status })
                 });
                 
                 if (!response.ok) throw new Error('Failed to update status');
@@ -1488,8 +1519,7 @@
                     body: JSON.stringify({
                         applicationIds: selectedApplications,
                         status: 'accepted'
-                    }),
-                    credentials: 'include'
+                    })
                 });
                 
                 if (!response.ok) throw new Error('Failed to update applications');
@@ -1516,8 +1546,7 @@
                     body: JSON.stringify({
                         applicationIds: selectedApplications,
                         status: 'unsuccessful'
-                    }),
-                    credentials: 'include'
+                    })
                 });
                 
                 if (!response.ok) throw new Error('Failed to update applications');
@@ -1592,8 +1621,7 @@
                 const response = await fetch(`${API_URL}/api/admin/application/${appId}`, {
                     method: 'PUT',
                     headers: getAuthHeader(),
-                    body: JSON.stringify({ status, adminFeedback }),
-                    credentials: 'include'
+                    body: JSON.stringify({ status, adminFeedback })
                 });
                 
                 if (!response.ok) throw new Error('Failed to save review');
@@ -1635,8 +1663,7 @@
                 const response = await fetch(`${API_URL}/api/admin/brief/${briefId}/import-sheet`, {
                     method: 'POST',
                     headers: getAuthHeader(),
-                    body: JSON.stringify({ googleSheetUrl: sheetUrl }),
-                    credentials: 'include'
+                    body: JSON.stringify({ googleSheetUrl: sheetUrl })
                 });
                 
                 const data = await response.json();
@@ -1701,13 +1728,22 @@
         });
 
         // Check if already logged in
-        window.addEventListener('load', function() {
+        window.addEventListener('load', async function() {
             const token = localStorage.getItem('adminToken');
             
             if (token) {
-                document.getElementById('loginPage').style.display = 'none';
-                document.getElementById('dashboard').style.display = 'block';
-                loadDashboard();
+                console.log('Token found, testing authentication...');
+                const isValid = await testAuth();
+                
+                if (isValid) {
+                    console.log('Authentication valid, loading dashboard');
+                    document.getElementById('loginPage').style.display = 'none';
+                    document.getElementById('dashboard').style.display = 'block';
+                    loadDashboard();
+                } else {
+                    console.log('Token invalid, showing login page');
+                    localStorage.removeItem('adminToken');
+                }
             }
         });
     </script>
