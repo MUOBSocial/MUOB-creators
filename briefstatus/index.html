@@ -613,8 +613,8 @@
         let closedCount = 0;
         let reviewCount = 0; // repost + reupload combined
         
-        // Skip header row (index 0)
-        rows.slice(1).forEach(r => {
+        // Skip header row (index 0) and reverse so newest is first
+        rows.slice(1).reverse().forEach(r => {
           // Check if row has data
           const date = val(r, 0);
           const briefName = val(r, 1);
