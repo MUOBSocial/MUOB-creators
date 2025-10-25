@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -608,6 +608,29 @@
         
         const val = (r, i) => r.c[i]?.v ?? "";
         
+        // Helper function to format dates
+        const formatDate = (dateVal) => {
+          if (!dateVal) return "—";
+          
+          // If it's already in the right format (e.g., "Sep 04"), return as-is
+          if (typeof dateVal === 'string' && dateVal.match(/^[A-Z][a-z]{2}\s\d{2}$/)) {
+            return dateVal;
+          }
+          
+          // If it's a Date string or needs conversion
+          try {
+            const date = new Date(dateVal);
+            if (isNaN(date.getTime())) return dateVal; // Return original if invalid
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const month = months[date.getMonth()];
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${month} ${day}`;
+          } catch {
+            return dateVal; // Return original if parsing fails
+          }
+        };
+        
         let totalCount = 0;
         let acceptingCount = 0;
         let closedCount = 0;
@@ -616,7 +639,8 @@
         // Skip header row (index 0) and reverse so newest is first
         rows.slice(1).reverse().forEach(r => {
           // Check if row has data
-          const date = val(r, 0);
+          const dateRaw = val(r, 0);
+          const date = formatDate(dateRaw);
           const briefName = val(r, 1);
           const status = String(val(r, 2)).toLowerCase().trim();
           
