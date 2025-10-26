@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie Torres — Travel & Hospitality Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: #2c3e50;
+            background: #fdfcfb;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #e8e4df;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #5a7d9a;
+        }
+        
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 56px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+        
+        .featured-work {
+            margin: 100px 0;
+        }
+        
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5a7d9a;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .work-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e8dfd0 0%, #c9b8a0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: transform 0.6s ease;
+        }
+        
+        .work-item:hover .image-placeholder {
+            transform: scale(1.05);
+        }
+        
+        .work-caption {
+            padding: 20px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+        
+        .brands-section {
+            background: #f7f5f2;
+            padding: 80px 0;
+            margin: 100px 0;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+        
+        .testimonial {
+            max-width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 60px 40px;
+            background: #fff;
+            border: 1px solid #e8e4df;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #5a7d9a;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #5a7d9a;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            border-radius: 2px;
+        }
+        
+        .cta-button:hover {
+            background: #4a6d8a;
+        }
+        
+        footer {
+            border-top: 1px solid #e8e4df;
+            padding: 40px 0;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #5a6c7d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">JAMIE TORRES</div>
+                <ul class="nav-links">
+                    <li><a href="jamie-torres-home.html">HOME</a></li>
+                    <li><a href="jamie-torres-about.html">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Creating content that makes people want to book.</h1>
+            <p>I specialize in luxury travel and hotel content that converts. My videos capture the feeling of a destination — not just the look. From boutique stays to five-star resorts, I create UGC that drives bookings and builds trust with your audience.</p>
+        </div>
+    </section>
+    
+    <section class="featured-work">
+        <div class="container">
+            <div class="section-title">Featured Work</div>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="image-placeholder">COASTAL RESORT</div>
+                    <div class="work-caption">30-second hotel room tour with ambient sound and natural lighting</div>
+                </div>
+                <div class="work-item">
+                    <div class="image-placeholder">BOUTIQUE HOTEL</div>
+                    <div class="work-caption">Destination teaser showcasing rooftop views and spa amenities</div>
+                </div>
+                <div class="work-item">
+                    <div class="image-placeholder">LUXURY AIRLINE</div>
+                    <div class="work-caption">First-person POV content highlighting business class experience</div>
+                </div>
+                <div class="work-item">
+                    <div class="image-placeholder">CITY GETAWAY</div>
+                    <div class="work-caption">Day in the life travel vlog with cinematic transitions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="brands-section">
+        <div class="container">
+            <div class="section-title">Brands I've Worked With</div>
+            <div class="brands-grid">
+                <div>Marriott Bonvoy</div>
+                <div>Expedia</div>
+                <div>Away Travel</div>
+                <div>Samsonite</div>
+                <div>Nobu Hotels</div>
+                <div>The Ritz-Carlton</div>
+                <div>Booking.com</div>
+                <div>Four Seasons</div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="testimonial">
+            <div class="testimonial-text">"Jamie's content helped us increase direct bookings by 34% in Q3. Her style feels authentic and aspirational at the same time."</div>
+            <div class="testimonial-author">— Marketing Director, Boutique Hotel Group</div>
+        </div>
+    </div>
+    
+    <section class="cta-section">
+        <div class="container">
+            <a href="jamie-torres-about.html" class="cta-button">View Case Studies</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            © 2025 Jamie Torres. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
