@@ -1758,8 +1758,54 @@
             });
         });
 
+        // Wake up Railway server before login
+        async function wakeUpServer() {
+            const wakeStatus = document.createElement('div');
+            wakeStatus.style.cssText = 'text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;';
+            wakeStatus.textContent = 'Waking up server...';
+            document.getElementById('loginForm').appendChild(wakeStatus);
+            
+            try {
+                const response = await fetch(`${API_URL}/api/test`, {
+                    signal: AbortSignal.timeout(5000) // 5 second timeout for wake-up
+                });
+                
+                if (response.ok) {
+                    wakeStatus.textContent = 'Server is ready!';
+                    wakeStatus.style.color = '#28a745';
+                    setTimeout(() => wakeStatus.remove(), 2000);
+                    return true;
+                }
+            } catch (error) {
+                wakeStatus.textContent = 'Server is starting up... This may take 30 seconds on free hosting.';
+                wakeStatus.style.color = '#ff6b6b';
+                
+                // Keep trying every 5 seconds
+                for (let i = 0; i < 6; i++) {
+                    await new Promise(resolve => setTimeout(resolve, 5000));
+                    try {
+                        const retry = await fetch(`${API_URL}/api/test`);
+                        if (retry.ok) {
+                            wakeStatus.textContent = 'Server is ready!';
+                            wakeStatus.style.color = '#28a745';
+                            setTimeout(() => wakeStatus.remove(), 2000);
+                            return true;
+                        }
+                    } catch (e) {
+                        wakeStatus.textContent = `Server is starting up... (${30 - (i+1)*5} seconds remaining)`;
+                    }
+                }
+                
+                wakeStatus.textContent = 'Server took too long to respond. Please try again or check Railway dashboard.';
+                return false;
+            }
+        }
+
         // Check if already logged in
         window.addEventListener('load', async function() {
+            // Wake up server on page load
+            await wakeUpServer();
+            
             const token = localStorage.getItem('adminToken');
             
             if (token && token !== 'null' && token !== 'undefined') {
@@ -1773,7 +1819,6 @@
                     loadDashboard();
                 } else {
                     console.log('Token expired or invalid, please log in again');
-                    // Token is already removed by testAuth if expired
                 }
             } else {
                 console.log('No token found, showing login page');
