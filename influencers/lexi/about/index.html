@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexi Carter — About & Case Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #4a4a4a;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        header {
+            padding: 30px 0;
+            background: #faf8f7;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #e8b4b8;
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e8b4b8;
+        }
+        
+        .about-hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #faf8f7, #ffffff);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #2d2d2d;
+        }
+        
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 17px;
+            color: #6a6a6a;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f9d5d8 0%, #e8b4b8 100%);
+            border-radius: 8px;
+        }
+        
+        .section-title {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #e8b4b8;
+            margin-bottom: 40px;
+        }
+        
+        .case-studies {
+            margin: 100px 0;
+        }
+        
+        .case-study {
+            background: #faf8f7;
+            padding: 60px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .case-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #2d2d2d;
+            margin-bottom: 10px;
+        }
+        
+        .case-date {
+            font-size: 12px;
+            color: #e8b4b8;
+            letter-spacing: 1px;
+        }
+        
+        .case-body p {
+            font-size: 16px;
+            color: #6a6a6a;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .case-result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff;
+            border-left: 3px solid #e8b4b8;
+            border-radius: 4px;
+        }
+        
+        .case-result strong {
+            color: #e8b4b8;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .style-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .style-content {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        .style-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2d2d2d;
+        }
+        
+        .style-content p {
+            font-size: 17px;
+            color: #6a6a6a;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: #faf8f7;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin-bottom: 25px;
+            color: #2d2d2d;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            color: #6a6a6a;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background: #e8b4b8;
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border-radius: 30px;
+        }
+        
+        .cta-button:hover {
+            background: #d9a4a8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(232, 180, 184, 0.3);
+        }
+        
+        footer {
+            border-top: 1px solid #f0ebe9;
+            padding: 35px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Lexi Carter</div>
+                <ul class="nav-links">
+                    <li><a href="lexi-carter-home.html">Home</a></li>
+                    <li><a href="lexi-carter-about.html">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="about-hero">
+        <div class="container">
+            <h1>My Story</h1>
+            <div class="about-text">
+                <p>I started creating skincare content in 2021 after struggling with acne and trying everything. What began as documenting my own skin journey turned into a full-time career creating UGC for the brands I genuinely use.</p>
+                <p>I'm a combination skin girly with a minimalist routine philosophy. I don't gatekeep, and I don't fake results. That authenticity translates into content that performs.</p>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="case-studies">
+            <div class="section-title">Case Studies</div>
+            
+            <div class="case-study">
+                <div class="case-header">
+                    <div>
+                        <div class="case-title">Indie Skincare Brand Launch</div>
+                        <div class="case-date">AUGUST 2024</div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <p>Created 12 UGC videos for a new vitamin C serum launch. Content included unboxings, application demos, and "real results" check-ins over 30 days. Videos were used in Meta ads targeting women 25-40.</p>
+                    <div class="case-result">
+                        <p><strong>Result:</strong> Videos drove over $47K in attributed sales with a 4.2% conversion rate. Client extended partnership for additional product launches.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-header">
+                    <div>
+                        <div class="case-title">Clean Beauty Subscription Box</div>
+                        <div class="case-date">SEPTEMBER 2024</div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <p>Developed a 3-video series for a monthly skincare subscription service. Focus was on showcasing product variety and the unboxing experience. Content was designed to feel personal and trustworthy.</p>
+                    <div class="case-result">
+                        <p><strong>Result:</strong> Content resulted in 800+ new subscriptions in the first two weeks and a 3.8% click-through rate on paid ads.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="style-section">
+        <div class="container">
+            <div class="style-content">
+                <h2>My Content Style</h2>
+                <p>Natural lighting. Close-up shots. Real skin (texture and all). I film in my bathroom or bedroom with my phone because that's where people actually use skincare. My videos feel like a friend showing you what worked for them — because that's what they are.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's Create Together</h2>
+            <p>I work with both established and emerging skincare brands. If you need UGC that converts, let's talk.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            © 2025 Lexi Carter. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
