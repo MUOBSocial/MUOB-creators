@@ -1049,20 +1049,38 @@
             };
         }
 
-        // Test authentication
+        // Test authentication - handle expired tokens properly
         async function testAuth() {
             const token = localStorage.getItem('adminToken');
             console.log('Testing auth with token:', token ? 'Token exists' : 'No token');
             
+            if (!token || token === 'null' || token === 'undefined') {
+                return false;
+            }
+            
             try {
-                const response = await fetch(`${API_URL}/api/verify-token`, {
+                // Use stats endpoint to verify auth since verify-token doesn't exist
+                const response = await fetch(`${API_URL}/api/admin/stats`, {
                     headers: {
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
                     }
                 });
-                const data = await response.json();
-                console.log('Auth test result:', data);
-                return data.valid;
+                
+                if (response.ok) {
+                    console.log('Auth test passed - token is valid');
+                    return true;
+                } else {
+                    const errorData = await response.json();
+                    console.log('Auth test failed:', errorData);
+                    
+                    // If token is expired, remove it
+                    if (errorData.error && errorData.error.includes('expired')) {
+                        console.log('Token expired, removing from storage');
+                        localStorage.removeItem('adminToken');
+                    }
+                    return false;
+                }
             } catch (error) {
                 console.error('Auth test error:', error);
                 return false;
@@ -1095,10 +1113,6 @@
                     localStorage.setItem('adminToken', data.token);
                     console.log('Login successful, token stored');
                     showToast('Login successful!');
-                    
-                    // Test authentication immediately
-                    const authValid = await testAuth();
-                    console.log('Post-login auth test:', authValid);
                     
                     document.getElementById('loginPage').style.display = 'none';
                     document.getElementById('dashboard').style.display = 'block';
@@ -1731,7 +1745,7 @@
         window.addEventListener('load', async function() {
             const token = localStorage.getItem('adminToken');
             
-            if (token) {
+            if (token && token !== 'null' && token !== 'undefined') {
                 console.log('Token found, testing authentication...');
                 const isValid = await testAuth();
                 
@@ -1741,9 +1755,11 @@
                     document.getElementById('dashboard').style.display = 'block';
                     loadDashboard();
                 } else {
-                    console.log('Token invalid, showing login page');
-                    localStorage.removeItem('adminToken');
+                    console.log('Token expired or invalid, please log in again');
+                    // Token is already removed by testAuth if expired
                 }
+            } else {
+                console.log('No token found, showing login page');
             }
         });
     </script>
