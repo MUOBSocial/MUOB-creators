@@ -1101,9 +1101,11 @@
             console.log('Attempting login...');
             
             try {
-                // Add timeout to prevent hanging
+                // Add timeout to prevent hanging - compatible approach
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                const timeoutId = setTimeout(() => {
+                    controller.abort();
+                }, 10000); // 10 second timeout
                 
                 console.log('Sending login request to:', `${API_URL}/api/admin/login`);
                 
@@ -1138,11 +1140,11 @@
                 console.error('Login error:', error);
                 
                 if (error.name === 'AbortError') {
-                    showError('Login timed out. Server may be down.');
+                    showError('Login timed out. Server may be sleeping - please try again in 30 seconds.');
                 } else if (error.message.includes('Failed to fetch')) {
-                    showError('Cannot connect to server. Please check your connection.');
+                    showError('Cannot connect to server. Please check if the server is running.');
                 } else {
-                    showError('Connection error. Please try again.');
+                    showError('Connection error: ' + error.message);
                 }
             } finally {
                 loginButton.disabled = false;
@@ -1762,13 +1764,19 @@
         async function wakeUpServer() {
             const wakeStatus = document.createElement('div');
             wakeStatus.style.cssText = 'text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;';
-            wakeStatus.textContent = 'Waking up server...';
+            wakeStatus.textContent = 'Checking server status...';
             document.getElementById('loginForm').appendChild(wakeStatus);
             
             try {
+                // Use compatible timeout approach
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+                
                 const response = await fetch(`${API_URL}/api/test`, {
-                    signal: AbortSignal.timeout(5000) // 5 second timeout for wake-up
+                    signal: controller.signal
                 });
+                
+                clearTimeout(timeoutId);
                 
                 if (response.ok) {
                     wakeStatus.textContent = 'Server is ready!';
