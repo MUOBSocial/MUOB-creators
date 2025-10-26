@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie Torres — About & Case Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: #2c3e50;
+            background: #fdfcfb;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #e8e4df;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #5a7d9a;
+        }
+        
+        .about-hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .about-intro {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+        
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5a7d9a;
+            margin-bottom: 60px;
+        }
+        
+        .case-study {
+            margin: 100px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .case-study:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .case-study:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e8dfd0 0%, #c9b8a0 100%);
+            border-radius: 4px;
+        }
+        
+        .case-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .case-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #5a7d9a;
+            margin-bottom: 20px;
+        }
+        
+        .case-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .style-section {
+            background: #f7f5f2;
+            padding: 100px 0;
+            margin: 100px 0;
+        }
+        
+        .style-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .style-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #5a7d9a;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            border-radius: 2px;
+        }
+        
+        .cta-button:hover {
+            background: #4a6d8a;
+        }
+        
+        footer {
+            border-top: 1px solid #e8e4df;
+            padding: 40px 0;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #5a6c7d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">JAMIE TORRES</div>
+                <ul class="nav-links">
+                    <li><a href="jamie-torres-home.html">HOME</a></li>
+                    <li><a href="jamie-torres-about.html">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="about-hero">
+        <div class="container">
+            <h1>Who I Am</h1>
+            <div class="about-intro">
+                I'm a travel creator based between New York and wherever my next flight takes me. I've been creating hospitality content for three years, working with hotels, airlines, and travel brands that want to stand out. Before this, I worked in hotel marketing — so I understand what converts.
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="section-title">Case Studies</div>
+        
+        <div class="case-study">
+            <div class="image-placeholder"></div>
+            <div class="case-content">
+                <div class="case-meta">Summer 2024</div>
+                <h3>Coastal Boutique Hotel</h3>
+                <p>Created a 5-video UGC series showcasing the property's ocean views, rooftop bar, and spa. Content was used across Instagram, TikTok, and paid ads.</p>
+                <p><strong>Result:</strong> 12% increase in summer reservations and 450K+ organic impressions.</p>
+            </div>
+        </div>
+        
+        <div class="case-study">
+            <div class="image-placeholder"></div>
+            <div class="case-content">
+                <div class="case-meta">Fall 2024</div>
+                <h3>Luxury Airline Rebrand</h3>
+                <p>Developed first-person POV content highlighting business class amenities, lounge access, and in-flight experience. Delivered 8 videos optimized for Reels and TikTok.</p>
+                <p><strong>Result:</strong> Content drove 2.1M impressions and supported a successful brand refresh campaign.</p>
+            </div>
+        </div>
+    </div>
+    
+    <section class="style-section">
+        <div class="container">
+            <div class="section-title">Content Style</div>
+            <div class="style-content">
+                <p>Cinematic but real. I use natural light, smooth transitions, and ambient sound to create content that feels like a trusted friend recommending a place — not an ad. My videos perform well organically and in paid campaigns because they prioritize feeling over perfection.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 30px; font-weight: 300;">Let's Work Together</h2>
+            <p style="font-family: 'Inter', sans-serif; margin-bottom: 40px; color: #5a6c7d;">I'm currently booking projects for Q1 2025. Whether you need UGC for ads, social content, or a full campaign, I'd love to chat.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            © 2025 Jamie Torres. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
