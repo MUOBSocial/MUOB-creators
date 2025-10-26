@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Park — About & Case Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #e0e6ed;
+            background: #0a0e27;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            padding: 25px 0;
+            background: rgba(10, 14, 39, 0.95);
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #4a90e2;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #e0e6ed;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+        
+        .about-hero {
+            padding: 80px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+        
+        .about-text p {
+            font-size: 17px;
+            color: #a8b8d1;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #1a237e 0%, #4a90e2 100%);
+            border-radius: 8px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+        
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #4a90e2;
+            margin-bottom: 50px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .case-studies {
+            padding: 90px 0;
+        }
+        
+        .case-study {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .case-study::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4a90e2 0%, transparent 100%);
+        }
+        
+        .case-header {
+            margin-bottom: 25px;
+        }
+        
+        .case-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .case-date {
+            font-size: 12px;
+            font-weight: 700;
+            color: #4a90e2;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .case-body p {
+            font-size: 16px;
+            color: #a8b8d1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .case-result {
+            background: rgba(74, 144, 226, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 25px;
+        }
+        
+        .case-result strong {
+            color: #4a90e2;
+            font-weight: 700;
+        }
+        
+        .approach-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 90px 0;
+            border-top: 1px solid rgba(74, 144, 226, 0.2);
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            text-align: center;
+        }
+        
+        .approach-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        
+        .approach-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        
+        .approach-content p {
+            font-size: 18px;
+            color: #a8b8d1;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+        
+        .cta-section p {
+            font-size: 17px;
+            color: #a8b8d1;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            border-radius: 4px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #357abd 0%, #4a90e2 100%);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            border-top: 1px solid rgba(74, 144, 226, 0.2);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #a8b8d1;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">RYAN_PARK</div>
+                <ul class="nav-links">
+                    <li><a href="ryan-park-home.html">Home</a></li>
+                    <li><a href="ryan-park-about.html">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h1>Who I Am</h1>
+                    <p>I'm a tech content creator and product designer based in San Francisco. I've been reviewing productivity tools and tech gear for five years — helping people build better workflows and make smarter buying decisions.</p>
+                    <p>I started making content because I was tired of overhyped reviews that didn't answer real questions. My goal: create honest, useful content that actually helps people.</p>
+                </div>
+                <div class="image-placeholder"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-label">// CASE_STUDIES</div>
+            
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">Productivity App Launch</div>
+                    <div class="case-date">AUGUST_2024</div>
+                </div>
+                <div class="case-body">
+                    <p>Created a 5-video tutorial series for a new task management app. Content covered initial setup, advanced features, and workflow integrations with other productivity tools.</p>
+                    <p>Videos were designed to be educational but engaging — showing real use cases instead of just feature lists. Filmed in my actual workspace using the app in my daily routine.</p>
+                    <div class="case-result">
+                        <p><strong>Result:</strong> Videos generated 300K+ views across YouTube and TikTok. Content contributed to 2,000+ app downloads in the first month and a 4.7% conversion rate from video views.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">Desk Accessory Brand Collaboration</div>
+                    <div class="case-date">SEPTEMBER_2024</div>
+                </div>
+                <div class="case-body">
+                    <p>Filmed an aesthetic desk setup video featuring cable management solutions and monitor arms. Content focused on both the visual appeal and functional benefits of the products.</p>
+                    <p>Used smooth camera movements and close-up product shots to showcase build quality and design details. Added voiceover explaining why each product improves my workflow.</p>
+                    <div class="case-result">
+                        <p><strong>Result:</strong> Video was used in Instagram ads and organic posts. Drove $12K in attributed sales within two weeks and became the brand's top-performing creator content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="approach-section">
+        <div class="container">
+            <div class="approach-content">
+                <h2>Content Approach</h2>
+                <p>Clean. Minimal. Informative. I film with natural light and focus on product details — texture, functionality, and real-world use. My videos are easy to follow, visually satisfying, and built to perform across platforms. I prioritize clarity over hype because that's what actually drives purchases.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's Build Something</h2>
+            <p>I'm currently open to new tech and productivity brand partnerships. If you're launching something people will actually use, I want to hear about it.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            © 2025 Ryan Park. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
