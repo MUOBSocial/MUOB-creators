@@ -1098,16 +1098,30 @@
             loginButton.disabled = true;
             loginButton.textContent = 'Signing in...';
             
+            console.log('Attempting login...');
+            
             try {
+                // Add timeout to prevent hanging
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                
+                console.log('Sending login request to:', `${API_URL}/api/admin/login`);
+                
                 const response = await fetch(`${API_URL}/api/admin/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ username, password })
+                    body: JSON.stringify({ username, password }),
+                    signal: controller.signal
                 });
                 
+                clearTimeout(timeoutId);
+                
+                console.log('Response received:', response.status);
+                
                 const data = await response.json();
+                console.log('Response data:', data);
                 
                 if (response.ok) {
                     localStorage.setItem('adminToken', data.token);
@@ -1122,8 +1136,11 @@
                 }
             } catch (error) {
                 console.error('Login error:', error);
-                if (error.message.includes('CORS')) {
-                    showError('Server configuration error. Please contact support.');
+                
+                if (error.name === 'AbortError') {
+                    showError('Login timed out. Server may be down.');
+                } else if (error.message.includes('Failed to fetch')) {
+                    showError('Cannot connect to server. Please check your connection.');
                 } else {
                     showError('Connection error. Please try again.');
                 }
