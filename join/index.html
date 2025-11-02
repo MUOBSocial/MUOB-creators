@@ -889,8 +889,27 @@ p {
   margin: 0 auto;
   background: white;
   border-radius: 15px;
-  overflow: hidden;
+  overflow-x: auto;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+}
+
+@media (min-width: 769px) {
+  .comparison-table::after {
+    display: none;
+  }
 }
 
 .comparison-table table {
@@ -1569,6 +1588,37 @@ p {
   .thread-meta {
     font-size: 0.7rem;
   }
+  
+  .comparison-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .comparison-table table {
+    min-width: 500px;
+    font-size: 0.8rem;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    min-width: 80px;
+    font-size: 0.7rem;
+  }
+  
+  .comparison-section .container {
+    padding: 0 1rem;
+  }
+  
+  .comparison-section h2 {
+    font-size: 1.6rem;
+    padding: 0 0.5rem;
+  }
 }
 </style>
 </head>
@@ -1978,7 +2028,7 @@ p {
 <!-- COMPARISON TABLE -->
 <section class="comparison-section">
   <div class="container">
-    <h2>Why MUOB Beats Cold Outreach Every Single Time</h2>
+    <h2>Why MUOB Works Better Than Cold Outreach</h2>
     <div class="comparison-table">
       <table>
         <thead>
