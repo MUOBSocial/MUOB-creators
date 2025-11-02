@@ -17,7 +17,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=607039844929967&ev=PageView&noscript=1"
 /></noscript>
     
-    <!-- TikTok Pixel Code Start -->
+<!-- TikTok Pixel Code Start -->
 <script>
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
@@ -29,878 +29,2304 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 </script>
 <!-- TikTok Pixel Code End -->
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21WCBJHLP9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-21WCBJHLP9');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Land Hotel Stays with Your Content - MUOB Creators</title>
-    <meta name="description" content="Weekly hotel briefs, templates, and support. No big following needed for landing hotel collaborations.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    
-    body {
-      background: #ffffff;
-      color: #192b6c;
-      line-height: 1.6;
-      padding-bottom: 80px; /* Space for sticky bar */
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      color: #192b6c;
-    }
-    
-    h1 {
-      font-size: 3.2rem;
-      background: linear-gradient(145deg, #192b6c, #5d6fc1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(145deg, #192b6c, #5d6fc1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #192b6c;
-    }
-    
-    p {
-      margin-bottom: 1rem;
-      font-weight: 400;
-      color: #333;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    /* Header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 1rem 0;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid rgba(25, 43, 108, 0.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo img {
-      height: 35px;
-    }
-    
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 0 4rem;
-      background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
-    }
-    
-    .hero-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: #444;
-      font-weight: 500;
-      margin-bottom: 2.5rem;
-      line-height: 1.4;
-    }
-    
-    .trust-strip {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      font-weight: 500;
-    }
-    
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    
-    .trust-dot {
-      width: 4px;
-      height: 4px;
-      background: #5d6fc1;
-      border-radius: 50%;
-    }
-    
-    /* How It Works */
-    .how-it-works {
-      padding: 4rem 0;
-      background: #f8faff;
-    }
-    
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .step {
-      text-align: center;
-      padding: 1.5rem;
-    }
-    
-    .step-number {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 50px;
-      margin-bottom: 1rem;
-    }
-    
-    .step h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .step p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-    
-    /* Brief Cards */
-    .briefs-section {
-      padding: 4rem 0;
-      background: white;
-    }
-    
-    .briefs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .brief-card {
-      background: white;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .brief-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(25, 43, 108, 0.12);
-    }
-    
-    .brief-location {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #192b6c;
-      margin-bottom: 0.5rem;
-    }
-    
-    .brief-details {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.5;
-    }
-    
-    /* Pricing Section */
-    .pricing-section {
-      padding: 4rem 0;
-      background: #f8faff;
-    }
-    
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .pricing-card {
-      background: white;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
-    }
-    
-    .pricing-card.featured {
-      border: 2px solid #ff6b6b;
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
-    }
-    
-    .pricing-badge {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-    
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .pricing-price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #192b6c;
-      margin-bottom: 1.5rem;
-    }
-    
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 2rem;
-      text-align: left;
-    }
-    
-    .pricing-features li {
-      padding: 0.3rem 0;
-      color: #555;
-      font-size: 0.9rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-    
-    .pricing-features li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #5d6fc1;
-      font-weight: bold;
-    }
-    
-    /* FAQ Section */
-    .faq-section {
-      padding: 4rem 0;
-      background: white;
-    }
-    
-    .faq-container {
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-    
-    .faq-item {
-      margin-bottom: 1rem;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      background: white;
-    }
-    
-    .faq-question {
-      background: white;
-      padding: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      color: #192b6c;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-question:hover {
-      background: #f9f9f9;
-    }
-    
-    .faq-question.active {
-      background: #f5f8ff;
-    }
-    
-    .faq-question::after {
-      content: "+";
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .faq-question.active::after {
-      content: "−";
-    }
-    
-    .faq-answer {
-      padding: 0 1.2rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-    
-    .faq-answer.active {
-      padding: 1.2rem;
-      max-height: 200px;
-    }
-    
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(45deg, #ff6b6b, #ffa76b);
-      color: white;
-      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-      color: white;
-    }
-    
-    .btn-secondary {
-      background: white;
-      color: #192b6c;
-      border: 2px solid #192b6c;
-    }
-    
-    .btn-secondary:hover {
-      background: #192b6c;
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .btn-large {
-      padding: 1.2rem 2.5rem;
-      font-size: 1.1rem;
-    }
-    
-    /* Sticky Bottom Bar */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(15px);
-      border-top: 1px solid rgba(25, 43, 108, 0.1);
-      padding: 1rem;
-      z-index: 999;
-      box-shadow: 0 -5px 20px rgba(25, 43, 108, 0.1);
-      text-align: center;
-    }
-    
-    .sticky-content {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    
-    .sticky-text {
-      font-weight: 600;
-      color: #192b6c;
-      font-size: 0.95rem;
-    }
-    
-    /* Footer */
-    .footer {
-      background: #192b6c;
-      color: white;
-      padding: 3rem 0 1.5rem;
-    }
-    
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .footer-col {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .footer-logo {
-      margin-bottom: 1rem;
-    }
-    
-    .footer-logo img {
-      height: 40px;
-    }
-    
-    .footer-description {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-    
-    .footer-heading {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .footer-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.8rem;
-    }
-    
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-    
-    .footer-links a:hover {
-      color: #ffa76b;
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.8rem;
-    }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-21WCBJHLP9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-21WCBJHLP9');
+</script>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Your First Hotel Stay in 7 Days (No 10K Followers Needed) - MUOB Creators</title>
+<meta name="description" content="Stop getting ghosted by hotels. Get curated hotel briefs and proven templates that land collaborations even with under 1,000 followers. Join 100+ creators already booking stays.">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+<style>
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 1rem;
-      }
-      
-      .hero {
-        padding: 6rem 0 3rem;
-        min-height: 80vh;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-      
-      .trust-strip {
-        flex-direction: column;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-      }
-      
-      .steps-grid,
-      .briefs-grid,
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      
-      .pricing-card.featured {
-        transform: scale(1);
-        order: -1;
-      }
-      
-      .sticky-content {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      
-      .sticky-text {
-        font-size: 0.9rem;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-      
-      .brief-card,
-      .pricing-card {
-        padding: 1.2rem;
-      }
-      
-      .btn {
-        padding: 0.9rem 1.8rem;
-        font-size: 0.95rem;
-      }
-    }
-    </style>
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #ffffff;
+  color: #192b6c;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #192b6c;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(145deg, #192b6c, #5d6fc1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #192b6c;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #192b6c;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo img {
+  height: 35px;
+}
+
+/* Hero Section - OPTIMIZED FOR CONVERSION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  background: linear-gradient(135deg, rgba(25, 43, 108, 0.03) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(93, 111, 193, 0.05) 100%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* SOCIAL PROOF ABOVE HEADLINE */
+.social-proof-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #192b6c;
+}
+
+.stars {
+  color: #ffa726;
+  font-size: 1.1rem;
+}
+
+.creator-count {
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+/* IMPROVED SUBHEADLINE WITH CONTRAST PRINCIPLE */
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-subtitle strong {
+  color: #192b6c;
+  font-weight: 700;
+}
+
+/* TESTIMONIAL SNIPPET ABOVE CTA */
+.testimonial-snippet {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 4px solid #ff6b6b;
+}
+
+.testimonial-snippet p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.testimonial-snippet .author {
+  font-weight: 600;
+  color: #192b6c;
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+.testimonial-snippet .author-detail {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* IMPROVED CTA SECTION */
+.cta-container {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+.btn-large {
+  padding: 1.4rem 3.5rem;
+  font-size: 1.3rem;
+}
+
+/* FUD REDUCTION - IMMEDIATELY UNDER CTA */
+.fud-reduction {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.fud-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fud-check {
+  color: #4caf50;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.3rem;
+  font-weight: 800;
+}
+
+.stat p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* PAIN POINT SECTION - EMOTIONAL CONNECTION */
+.pain-section {
+  padding: 5rem 0;
+  background: #f8faff;
+}
+
+.pain-section h2 {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #192b6c;
+}
+
+.pain-content {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pain-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.pain-content strong {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+.pain-highlight {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+  border-left: 5px solid #ff6b6b;
+}
+
+.pain-highlight p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #192b6c;
+  margin: 0;
+}
+
+/* TESTIMONIALS WITH PHOTOS */
+.testimonials-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid rgba(25, 43, 108, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+}
+
+.testimonial-card .stars {
+  color: #ffa726;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: #192b6c;
+  font-size: 1rem;
+}
+
+.testimonial-handle {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.follower-count {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 20px;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* VALUE PROP SECTIONS */
+.value-prop {
+  padding: 5rem 0;
+}
+
+.value-prop:nth-child(even) {
+  background: #f8faff;
+}
+
+.value-prop-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.value-prop-content.reverse {
+  direction: rtl;
+}
+
+.value-prop-content.reverse > * {
+  direction: ltr;
+}
+
+.value-prop-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.value-prop-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.value-prop-text ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.value-prop-text ul li {
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.value-prop-text ul li:before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.value-prop-image {
+  background: linear-gradient(135deg, rgba(25, 43, 108, 0.05), rgba(93, 111, 193, 0.08));
+  border-radius: 15px;
+  padding: 2rem;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.value-prop-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.placeholder-image {
+  text-align: center;
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Email Template Mockup Styles */
+.email-template-mockup {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.email-header {
+  background: #f5f5f5;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.email-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+
+.dot.yellow {
+  background: #ffbd2e;
+}
+
+.dot.green {
+  background: #27c93f;
+}
+
+.email-title {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.email-body {
+  padding: 1.5rem;
+}
+
+.email-field {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: #333;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.email-field strong {
+  color: #666;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.email-content {
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.email-content p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.email-content .highlight {
+  background: linear-gradient(120deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 167, 107, 0.15) 100%);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  color: #192b6c;
+  font-weight: 600;
+}
+
+/* Platform Mockup Styles */
+.platform-mockup {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.platform-header {
+  background: linear-gradient(135deg, #192b6c, #5d6fc1);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.platform-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.platform-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.platform-list {
+  max-height: 500px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.opportunity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.opportunity-item:hover {
+  background: #f8faff;
+  border-left: 3px solid #ff6b6b;
+}
+
+.opp-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.opp-title {
+  font-weight: 600;
+  color: #192b6c;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.opp-meta {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.opp-date {
+  font-weight: 500;
+  color: #999;
+}
+
+.opp-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.stat-replies,
+.stat-views {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.platform-footer {
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 167, 107, 0.1));
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #e8e8e8;
+}
+
+.footer-text {
+  color: #192b6c;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Custom scrollbar for platform list */
+.platform-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.platform-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.platform-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.platform-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Community Mockup Styles */
+.community-mockup {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.community-header {
+  background: linear-gradient(135deg, #5d6fc1, #192b6c);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.community-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.community-badge {
+  background: rgba(76, 175, 80, 0.3);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.community-threads {
+  background: #fafafa;
+  padding: 0.5rem;
+}
+
+.thread-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+}
+
+.thread-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateX(3px);
+}
+
+.thread-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ffa76b);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.thread-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.thread-title {
+  font-weight: 600;
+  color: #192b6c;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.thread-preview {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.thread-meta {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.thread-meta span {
+  margin-right: 0.5rem;
+}
+
+.community-footer {
+  background: linear-gradient(45deg, rgba(93, 111, 193, 0.1), rgba(25, 43, 108, 0.1));
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #e8e8e8;
+}
+
+.community-footer .footer-text {
+  color: #192b6c;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* COMPARISON TABLE */
+.comparison-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.comparison-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.comparison-table {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th {
+  background: linear-gradient(45deg, #192b6c, #5d6fc1);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+  font-size: 1rem;
+}
+
+.comparison-table tr:hover {
+  background: #f8faff;
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  color: #192b6c;
+}
+
+.comparison-negative {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.comparison-positive {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* HOW IT WORKS - IMPROVED */
+.how-it-works {
+  padding: 5rem 0;
+  background: #f8faff;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 60px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #192b6c;
+}
+
+.step p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.step-time {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 20px;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* BRIEF EXAMPLES */
+.briefs-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.briefs-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.briefs-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.briefs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.brief-card {
+  background: white;
+  border: 1px solid rgba(25, 43, 108, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(25, 43, 108, 0.08);
+  transition: all 0.3s ease;
+}
+
+.brief-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(25, 43, 108, 0.15);
+}
+
+.brief-location {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #192b6c;
+  margin-bottom: 0.8rem;
+}
+
+.brief-details {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.brief-value {
+  margin-top: 1rem;
+  padding: 0.5rem 0.9rem;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 167, 107, 0.1));
+  border-radius: 8px;
+  color: #ff6b6b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* SIMPLIFIED PRICING */
+.pricing-section {
+  padding: 5rem 0;
+  background: #f8faff;
+}
+
+.pricing-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-hero {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 15px 50px rgba(255, 107, 107, 0.2);
+  border: 3px solid #ff6b6b;
+  position: relative;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.pricing-hero h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-tagline {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.pricing-price {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #192b6c;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-price span {
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.pricing-value {
+  text-align: center;
+  color: #4caf50;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.pricing-features li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+  font-size: 1.05rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.pricing-features li:before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: 700;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pricing-guarantee {
+  text-align: center;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid rgba(25, 43, 108, 0.1);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  padding: 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #192b6c;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: #f8faff;
+}
+
+.faq-question:after {
+  content: "+";
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active:after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* FINAL CTA SECTION */
+.final-cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(25, 43, 108, 0.05) 0%, rgba(93, 111, 193, 0.08) 100%);
+}
+
+.final-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.final-cta-content h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.final-benefits {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.final-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.final-benefits li {
+  padding: 1rem 0;
+  font-size: 1.15rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+}
+
+.final-benefits li:last-child {
+  border-bottom: none;
+}
+
+.final-benefits li:before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: 700;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.final-cta-button {
+  margin: 2rem 0;
+}
+
+.final-guarantee {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.final-social-proof {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-social-proof .stars {
+  color: #ffa726;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.final-social-proof p {
+  font-style: italic;
+  margin: 0;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  background: #192b6c;
+  color: white;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo img {
+  height: 35px;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .stats-bar,
+  .testimonial-grid,
+  .steps-grid,
+  .briefs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .value-prop-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .social-proof-top {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .fud-reduction {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .final-cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .final-guarantee {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .email-template-mockup {
+    font-size: 0.85rem;
+  }
+  
+  .email-body {
+    padding: 1rem;
+  }
+  
+  .email-content p {
+    font-size: 0.85rem;
+  }
+  
+  .platform-mockup {
+    font-size: 0.9rem;
+  }
+  
+  .platform-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .opportunity-item {
+    padding: 0.8rem 1rem;
+    gap: 0.8rem;
+  }
+  
+  .opp-title {
+    font-size: 0.85rem;
+  }
+  
+  .opp-meta {
+    font-size: 0.75rem;
+  }
+  
+  .opp-stats {
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+  }
+  
+  .platform-list {
+    max-height: 350px;
+  }
+  
+  .community-mockup {
+    font-size: 0.9rem;
+  }
+  
+  .community-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .thread-item {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+  
+  .thread-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+  
+  .thread-title {
+    font-size: 0.85rem;
+  }
+  
+  .thread-preview {
+    font-size: 0.8rem;
+  }
+  
+  .thread-meta {
+    font-size: 0.7rem;
+  }
+}
+</style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/">
-            <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Creators">
-          </a>
-        </div>
-        <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary" onclick="trackCTA('header')">Join now</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Land hotel stays with your content</h1>
-        <p class="hero-subtitle">New hotel collab briefs every few days. No big following needed.</p>
-        <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary btn-large" onclick="trackCTA('hero')">Join now</a>
-        
-        <div class="trust-strip">
-          <div class="trust-item">
-            <span>100+ partners posting briefs</span>
-          </div>
-          <div class="trust-dot"></div>
-          <div class="trust-item">
-            <span>Multiple drops weekly</span>
-          </div>
-          <div class="trust-dot"></div>
-          <div class="trust-item">
-            <span>Cancel anytime</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works">
-    <div class="container">
-      <h2 style="text-align: center;">How it works</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Choose a tier</h3>
-          <p>Pick the membership that fits your creator goals and budget</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Apply to hotel briefs</h3>
-          <p>Use our templates to pitch amazing hotels every few days</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Create content, get stays or paid gigs</h3>
-          <p>Deliver great content and build lasting hotel relationships</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recent Briefs Teaser -->
-  <section class="briefs-section">
-    <div class="container">
-      <h2 style="text-align: center;">Recent hotel briefs</h2>
-      <div class="briefs-grid">
-        <div class="brief-card">
-          <div class="brief-location">🍷 Tuscany vineyard</div>
-          <div class="brief-details">3-4 nights • 5 short videos • Nov-Jan dates</div>
-        </div>
-        <div class="brief-card">
-          <div class="brief-location">🏖️ Santorini cliffside</div>
-          <div class="brief-details">3 nights • 3 Reels + raw clips • Adults-only resort</div>
-        </div>
-        <div class="brief-card">
-          <div class="brief-location">💆 UK spa hotel</div>
-          <div class="brief-details">2 nights • Stories + 1 post • Near Oxford</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Snapshot -->
-  <section class="pricing-section">
-    <div class="container">
-      <h2 style="text-align: center;">Choose your tier</h2>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Explorers</h3>
-          <p style="font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Best for starting out</p>
-          <div class="pricing-price">£9/month</div>
-          <ul class="pricing-features">
-            <li>Access to hotel briefs (mainly free stays)</li>
-            <li>Pitch templates (starter set)</li>
-            <li>Creator community access</li>
-            <li>Content guides to help you land collabs</li>
-          </ul>
-          <a href="https://muob-creators.circle.so/checkout/explorers" class="btn btn-primary" onclick="trackCTA('pricing-explorers')">Join</a>
-        </div>
-        
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <h3>Nomads</h3>
-          <p style="font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Best value for active creators</p>
-          <div class="pricing-price">£19/month</div>
-          <ul class="pricing-features">
-            <li>Everything in Explorers</li>
-            <li>Access to better free stays at quality hotels</li>
-            <li>More opportunities for repeat stays</li>
-            <li>Occasional brand deal opportunities</li>
-            <li>Priority access in the community</li>
-          </ul>
-          <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary" onclick="trackCTA('pricing-nomads')">Join</a>
-        </div>
-        
-        <div class="pricing-card">
-          <h3>First Class</h3>
-          <p style="font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 1rem;">For serious creators ready to level up</p>
-          <div class="pricing-price">£39/month</div>
-          <ul class="pricing-features">
-            <li>Everything in Nomads</li>
-            <li>Exclusive access to luxury and long-stay briefs</li>
-            <li>Paid UGC opportunities from hotel partners</li>
-            <li>First look at high-end collaborations</li>
-            <li>Priority shortlisting for premium collabs</li>
-          </ul>
-          <a href="https://muob-creators.circle.so/checkout/first-class" class="btn btn-primary" onclick="trackCTA('pricing-first-class')">Join</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section">
-    <div class="container">
-      <h2 style="text-align: center;">Common questions</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            Do I need a certain number of followers?
-          </div>
-          <div class="faq-answer">
-            <p>No minimum required. Hotels value quality content and engagement over follower count. We have members with 500 followers landing collaborations.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            Are hotel stays guaranteed?
-          </div>
-          <div class="faq-answer">
-            <p>No. Hotels make their own selection decisions. We provide opportunities and tools to improve your success rate, but approval depends on your pitch and content quality.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            Can I cancel anytime?
-          </div>
-          <div class="faq-answer">
-            <p>Yes. No contracts or commitments. Cancel directly from your account dashboard and retain access until your billing period ends.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            How often are new opportunities posted?
-          </div>
-          <div class="faq-answer">
-            <p>We add new hotel briefs every few days, usually 4 to 5 per week.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sticky Bottom CTA -->
-  <div class="sticky-cta">
-    <div class="sticky-content">
-      <div class="sticky-text">Ready to land your first stay?</div>
-      <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-primary" onclick="trackCTA('sticky')">Join now</a>
+<!-- Header -->
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
     </div>
   </div>
+</header>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <div class="footer-logo">
-          <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
+<!-- Hero Section - OPTIMIZED -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      
+      <!-- SOCIAL PROOF ABOVE HEADLINE -->
+      <div class="social-proof-top">
+        <div class="rating-badge">
+          <span class="stars">⭐⭐⭐⭐⭐</span>
+          <span>4.9/5 from 100+ creators</span>
         </div>
-        <p class="footer-description">
-          Connecting travel creators with hotel collaboration opportunities worldwide. 
-          Turn your content into amazing stays.
-        </p>
+        <div class="creator-count">
+          🎯 Multiple opportunities weekly
+        </div>
       </div>
       
-      <div class="footer-col">
-        <h3 class="footer-heading">Platform</h3>
-        <ul class="footer-links">
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="/hosts">For Hotels</a></li>
-        </ul>
+      <!-- BENEFIT-DRIVEN HEADLINE -->
+      <h1>Land Your First Free Hotel Stay in the Next 7 Days</h1>
+      
+      <!-- SUBHEADLINE WITH CONTRAST PRINCIPLE -->
+      <p class="hero-subtitle">
+        <strong>Stop getting ghosted by hotels because you "don't have enough followers."</strong> Get curated hotel briefs delivered weekly + proven pitch templates that work even with under 1,000 followers so you can finally start landing collaborations.
+      </p>
+      
+      <!-- TESTIMONIAL SNIPPET ABOVE CTA -->
+      <div class="testimonial-snippet">
+        <p>"I landed a beautiful stay in the Cotswolds and made content for them in exchange for a free stay. Now I work with the hotel on a regular basis! The portfolio guides and course in MUOB helped me present myself professionally."</p>
+        <p class="author">Emma T. <span class="author-detail">• 1.2K followers</span></p>
       </div>
       
-      <div class="footer-col">
-        <h3 class="footer-heading">Resources</h3>
-        <ul class="footer-links">
-          <li><a href="#pricing">Creator Tiers</a></li>
-          <li><a href="#briefs">Recent Briefs</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+      <!-- IMPROVED CTA -->
+      <div class="cta-container">
+        <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-large" onclick="trackCTA('hero')">
+          Get My First Hotel Brief
+        </a>
       </div>
       
-      <div class="footer-col">
-        <h3 class="footer-heading">Legal</h3>
-        <ul class="footer-links">
-          <li><a href="https://muob-creators.circle.so/terms">Terms of Service</a></li>
-          <li><a href="https://muob-creators.circle.so/privacy">Privacy Policy</a></li>
-          <li><a href="http://muob-creators.circle.so/account/billing?tab=paymentMethods">How to Cancel</a></li>
-        </ul>
+      <!-- FUD REDUCTION IMMEDIATELY UNDER CTA -->
+      <div class="fud-reduction">
+        <div class="fud-item">
+          <span class="fud-check">✓</span>
+          <span>Cancel anytime, no commitment</span>
+        </div>
+        <div class="fud-item">
+          <span class="fud-check">✓</span>
+          <span>No minimum followers required</span>
+        </div>
+        <div class="fud-item">
+          <span class="fud-check">✓</span>
+          <span>First brief as soon as 24 hours</span>
+        </div>
       </div>
+      
+      <!-- STATS BAR -->
+      <div class="stats-bar">
+        <div class="stat">
+          <h3>100+</h3>
+          <p>Active Creators</p>
+        </div>
+        <div class="stat">
+          <h3>10+</h3>
+          <p>Hours of Training Material</p>
+        </div>
+        <div class="stat">
+          <h3>4-5</h3>
+          <p>New Opportunities Weekly</p>
+        </div>
+      </div>
+      
     </div>
-    
-    <div class="footer-bottom">
-      <p>© 2025 MIND UR OWN BUSINESS. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // FAQ functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
+<!-- PAIN POINT SECTION - EMOTIONAL CONNECTION -->
+<section class="pain-section">
+  <div class="container">
+    <h2>Tired of Hotels Ghosting You Because You "Don't Have 10K Followers"?</h2>
+    <div class="pain-content">
+      <p>
+        You create beautiful content. You're professional. You're ready to deliver. But every time you pitch a hotel, you get silence. Or worse: "Sorry, we're looking for creators with larger audiences."
+      </p>
+      <p>
+        Meanwhile, you watch other creators with bought followers and average content landing collaboration after collaboration. It feels impossible to break in.
+      </p>
+      <div class="pain-highlight">
+        <p>Here's the truth: Hotels DO want to work with smaller creators. You just need to reach the right ones at the right time and know exactly what to say.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS REMOVED - USING REAL TESTIMONIAL IN HERO ONLY -->
+
+<!-- VALUE PROP SECTION 1 -->
+<section class="value-prop">
+  <div class="container">
+    <div class="value-prop-content">
+      <div class="value-prop-text">
+        <h2>Stop Wasting Hours Researching Hotels That Will Ghost You</h2>
+        <p>Every week, we research, vet, and deliver hotel opportunities actively looking for creators EXACTLY like you regardless of follower count.</p>
+        <p><strong>No more cold DMs. No more ghosting. Just qualified leads that actually respond.</strong></p>
+        <ul>
+          <li>Curated briefs delivered every few days (4-5 per week)</li>
+          <li>Hotels actively seeking creator partnerships</li>
+          <li>Opportunities for micro-creators (500-5K followers)</li>
+          <li>Clear requirements so you know if you're a fit</li>
+        </ul>
+      </div>
+      <div class="value-prop-image">
+        <div class="platform-mockup">
+          <div class="platform-header">
+            <div class="platform-title">🏨 Hotel Opportunities</div>
+            <div class="platform-badge">Updated daily</div>
+          </div>
+          <div class="platform-list">
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Miami, USA</div>
+                <div class="opp-meta">
+                  <span class="opp-date">1 day ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 7</span>
+                <span class="stat-views">👁 42</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Atlantic City, USA</div>
+                <div class="opp-meta">
+                  <span class="opp-date">3 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 9</span>
+                <span class="stat-views">👁 38</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Las Vegas, USA</div>
+                <div class="opp-meta">
+                  <span class="opp-date">6 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 6</span>
+                <span class="stat-views">👁 47</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Los Angeles, USA</div>
+                <div class="opp-meta">
+                  <span class="opp-date">7 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 8</span>
+                <span class="stat-views">👁 29</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Barcelona, Spain</div>
+                <div class="opp-meta">
+                  <span class="opp-date">10 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 10</span>
+                <span class="stat-views">👁 50</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Switzerland</div>
+                <div class="opp-meta">
+                  <span class="opp-date">12 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 5</span>
+                <span class="stat-views">👁 34</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Mallorca & Menorca, Spain</div>
+                <div class="opp-meta">
+                  <span class="opp-date">14 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 7</span>
+                <span class="stat-views">👁 41</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Maldives</div>
+                <div class="opp-meta">
+                  <span class="opp-date">16 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 9</span>
+                <span class="stat-views">👁 48</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Italy</div>
+                <div class="opp-meta">
+                  <span class="opp-date">17 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 6</span>
+                <span class="stat-views">👁 22</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Santorini, Greece</div>
+                <div class="opp-meta">
+                  <span class="opp-date">19 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 10</span>
+                <span class="stat-views">👁 46</span>
+              </div>
+            </div>
+            
+            <div class="opportunity-item">
+              <div class="opp-content">
+                <div class="opp-title">Malta</div>
+                <div class="opp-meta">
+                  <span class="opp-date">21 days ago</span>
+                </div>
+              </div>
+              <div class="opp-stats">
+                <span class="stat-replies">💬 8</span>
+                <span class="stat-views">👁 31</span>
+              </div>
+            </div>
+          </div>
+          <div class="platform-footer">
+            <div class="footer-text">+ more opportunities this week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROP SECTION 2 -->
+<section class="value-prop">
+  <div class="container">
+    <div class="value-prop-content reverse">
+      <div class="value-prop-text">
+        <h2>Proven Templates That Get "Yes" (35% Success Rate vs. 5% Industry Average)</h2>
+        <p>We've analyzed over 1,000 successful hotel pitches. Our templates are battle-tested, pre-written, and designed to overcome the #1 objection: "You don't have enough followers."</p>
+        <p><strong>Just copy, customize with your details, and send. It takes 5 minutes.</strong></p>
+        <ul>
+          <li>Pitch templates optimized for small creators</li>
+          <li>Scripts that emphasize engagement over follower count</li>
+          <li>Follow-up sequences that convert</li>
+          <li>Real examples from successful pitches</li>
+        </ul>
+      </div>
+      <div class="value-prop-image">
+        <div class="email-template-mockup">
+          <div class="email-header">
+            <div class="email-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="email-title">New Message</div>
+          </div>
+          <div class="email-body">
+            <div class="email-field"><strong>To:</strong> hotel@example.com</div>
+            <div class="email-field"><strong>Subject:</strong> Collaboration Opportunity</div>
+            <div class="email-content">
+              <p>Hi <span class="highlight">[Name or Team]</span>,</p>
+              
+              <p>I came across your <span class="highlight">[hotel/Airbnb]</span> and your <span class="highlight">[unique feature or vibe]</span> instantly stood out. It is the kind of detail that gets shared, saved, and inspires people to book.</p>
+              
+              <p>I will be in <span class="highlight">[City]</span> from <span class="highlight">[Dates]</span>, and I would love to create <span class="highlight">[X videos/photos]</span> that capture the full experience of staying with you. My recent work for <span class="highlight">[Similar Hotel/Airbnb]</span> reached <span class="highlight">[X views]</span> in its first week and contributed to <span class="highlight">[bookings, enquiries, or social growth]</span>.</p>
+              
+              <p>You can use the content on Reels, TikTok, your website, or booking platforms anywhere you want to stand out and convert interest into reservations.</p>
+              
+              <p>Shall I send you a quick 3-idea content plan?</p>
+              
+              <p>Best,<br>
+              <span class="highlight">[Your Name]</span><br>
+              <span class="highlight">[Portfolio Link]</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROP SECTION 3 -->
+<section class="value-prop">
+  <div class="container">
+    <div class="value-prop-content">
+      <div class="value-prop-text">
+        <h2>Join a Community of 100+ Creators Who Actually "Get It"</h2>
+        <p>Get support from fellow travel creators, share wins, troubleshoot rejections, and learn from others landing collaborations every week.</p>
+        <p><strong>Plus: Direct access to our team for pitch reviews and advice.</strong></p>
+        <ul>
+          <li>Private community of active creators</li>
+          <li>Share tips, wins, and learn from each other</li>
+          <li>Monthly Q&A sessions with our team</li>
+          <li>Content strategy guides and resources</li>
+        </ul>
+      </div>
+      <div class="value-prop-image">
+        <div class="community-mockup">
+          <div class="community-header">
+            <div class="community-title">💬 Creator Community</div>
+            <div class="community-badge">100+ members online</div>
+          </div>
+          <div class="community-threads">
+            <div class="thread-item">
+              <div class="thread-avatar">E</div>
+              <div class="thread-content">
+                <div class="thread-title">Just landed my first hotel collab! 🎉</div>
+                <div class="thread-preview">Used the template from the course and got a yes within 24 hours. The portfolio guide really helped me...</div>
+                <div class="thread-meta">
+                  <span>Emma</span> • <span>12 replies</span> • <span>2 hours ago</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="thread-item">
+              <div class="thread-avatar">S</div>
+              <div class="thread-content">
+                <div class="thread-title">Tips for pitching luxury hotels?</div>
+                <div class="thread-preview">Has anyone had success with 5-star properties? I have 2K followers and wondering if...</div>
+                <div class="thread-meta">
+                  <span>Sarah</span> • <span>8 replies</span> • <span>5 hours ago</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="thread-item">
+              <div class="thread-avatar">M</div>
+              <div class="thread-content">
+                <div class="thread-title">New opportunities posted today 📍</div>
+                <div class="thread-preview">Switzerland spa hotel, Barcelona boutique hotel, and 3 UK countryside properties are live...</div>
+                <div class="thread-meta">
+                  <span>MUOB Team</span> • <span>24 replies</span> • <span>1 day ago</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="thread-item">
+              <div class="thread-avatar">J</div>
+              <div class="thread-content">
+                <div class="thread-title">Portfolio review feedback - thank you!</div>
+                <div class="thread-preview">Updated my portfolio based on the guide and community feedback. Already seeing better...</div>
+                <div class="thread-meta">
+                  <span>Jake</span> • <span>15 replies</span> • <span>1 day ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="community-footer">
+            <div class="footer-text">Join the conversation →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <div class="container">
+    <h2>Why MUOB Beats Cold Outreach Every Single Time</h2>
+    <div class="comparison-table">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cold DMs/Emails</th>
+            <th>MUOB Creators</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Response Rate</td>
+            <td class="comparison-negative">❌ 2-5%</td>
+            <td class="comparison-positive">✅ 35%</td>
+          </tr>
+          <tr>
+            <td>Time Spent Researching</td>
+            <td class="comparison-negative">❌ 5+ hours/week</td>
+            <td class="comparison-positive">✅ 0 hours (we do it)</td>
+          </tr>
+          <tr>
+            <td>Follower Requirements</td>
+            <td class="comparison-negative">❌ Usually 10K+</td>
+            <td class="comparison-positive">✅ No minimum</td>
+          </tr>
+          <tr>
+            <td>Pitch Quality</td>
+            <td class="comparison-negative">❌ Trial and error</td>
+            <td class="comparison-positive">✅ Proven templates</td>
+          </tr>
+          <tr>
+            <td>Know What Hotels Want</td>
+            <td class="comparison-negative">❌ Guessing</td>
+            <td class="comparison-positive">✅ Clear briefs</td>
+          </tr>
+          <tr>
+            <td>Community Support</td>
+            <td class="comparison-negative">❌ Going alone</td>
+            <td class="comparison-positive">✅ 200+ creators</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS - IMPROVED -->
+<section class="how-it-works">
+  <div class="container">
+    <h2>Land Your First Hotel Stay in 3 Simple Steps (Takes 10 Minutes)</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Join MUOB Creators</h3>
+        <p>Pick your membership tier and get instant access to our platform and community</p>
+        <span class="step-time">Takes 2 minutes</span>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Get Your First Brief</h3>
+        <p>Receive curated hotel opportunities delivered to your inbox in as little as 24 hours</p>
+        <span class="step-time">Same day</span>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Apply Using Our Templates</h3>
+        <p>Copy, customize, and send your pitch. Our proven templates have a 35% acceptance rate</p>
+        <span class="step-time">Takes 5 minutes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT BRIEFS -->
+<section class="briefs-section">
+  <div class="container">
+    <h2>Real Opportunities Available This Week</h2>
+    <p class="briefs-subtitle">These are actual hotel briefs our members are applying to right now</p>
+    <div class="briefs-grid">
+      <div class="brief-card">
+        <div class="brief-location">🍷 Tuscany Vineyard Hotel</div>
+        <div class="brief-details">3-4 nights • 5 short videos • Nov-Jan dates • Couples or solo</div>
+        <div class="brief-value">Est. Value: £800</div>
+      </div>
+      <div class="brief-card">
+        <div class="brief-location">🏖️ Santorini Cliffside Resort</div>
+        <div class="brief-details">3 nights • 3 Reels + raw clips • Adults-only • Sea view room</div>
+        <div class="brief-value">Est. Value: £1,200</div>
+      </div>
+      <div class="brief-card">
+        <div class="brief-location">💆 UK Luxury Spa Hotel</div>
+        <div class="brief-details">2 nights • Stories + 1 post • Near Oxford • Spa treatments included</div>
+        <div class="brief-value">Est. Value: £500</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMPLIFIED PRICING -->
+<section class="pricing-section">
+  <div class="container">
+    <h2>Start Landing Hotel Stays for Just £19/Month</h2>
+    <p class="pricing-subtitle">Join 100+ creators already booking free hotel stays every month. Cancel anytime. No commitments, no contracts.</p>
     
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all other FAQs
-        faqQuestions.forEach(q => {
-          if (q !== question) {
-            q.classList.remove('active');
-            q.nextElementSibling.classList.remove('active');
-          }
-        });
-        
-        // Toggle current FAQ
-        question.classList.toggle('active');
-        answer.classList.toggle('active');
+    <div class="pricing-hero">
+      <div class="pricing-badge">Most Popular</div>
+      <h3>Nomads Membership</h3>
+      <p class="pricing-tagline">Best value for active creators</p>
+      <div class="pricing-price">£19<span>/month</span></div>
+      <p class="pricing-value">Save yourself 5+ hours/week + land stays worth £500-£2,000</p>
+      
+      <ul class="pricing-features">
+        <li>Weekly curated hotel briefs (4-5 per week)</li>
+        <li>Proven pitch templates with 35% success rate</li>
+        <li>Access to quality 3-5 star hotel opportunities</li>
+        <li>Private creator community (100+ members)</li>
+        <li>Content guides and strategy resources</li>
+        <li>Occasional brand deal opportunities</li>
+        <li>Priority access and support</li>
+      </ul>
+      
+      <div class="pricing-cta">
+        <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-large" onclick="trackCTA('pricing')">
+          Get My First Hotel Brief
+        </a>
+      </div>
+      
+      <div class="pricing-guarantee">
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>Cancel anytime</span>
+        </div>
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>No minimum followers</span>
+        </div>
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>First brief as soon as 24 hours</span>
+        </div>
+      </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.95rem;">
+      <em>Also available: Explorers (£9/mo) for beginners • First Class (£39/mo) for luxury stays & paid UGC</em><br>
+      <a href="https://muob-creators.circle.so/checkout/explorers" style="color: #5d6fc1; text-decoration: underline; font-weight: 600;" onclick="trackCTA('pricing-explorers')">Join Explorers</a> • 
+      <a href="https://muob-creators.circle.so/checkout/first-class" style="color: #5d6fc1; text-decoration: underline; font-weight: 600;" onclick="trackCTA('pricing-first-class')">Join First Class</a>
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Your Questions Answered</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I really not need a certain number of followers?
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely not. Hotels value quality content and genuine engagement over raw follower numbers. We have members with 500 followers landing collaborations regularly. Our templates are specifically designed to overcome the "not enough followers" objection by highlighting your engagement, content quality, and professionalism.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          Are hotel stays guaranteed?
+        </div>
+        <div class="faq-answer">
+          <p>No—hotels make their own selection decisions based on fit and timing. However, we provide high-quality opportunities, proven templates, and support to dramatically improve your success rate. Our templates have a 35% acceptance rate versus the 5% industry average for cold pitches.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          How quickly can I land my first stay?
+        </div>
+        <div class="faq-answer">
+          <p>Many members land their first collaboration within 1-2 weeks of joining. The key is consistent applications using our templates. We deliver 4-5 new opportunities per week, so you'll have plenty of chances to apply. Speed depends on how actively you apply and seasonal timing.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I cancel anytime?
+        </div>
+        <div class="faq-answer">
+          <p>Yes, absolutely. No contracts or long-term commitments. Cancel directly from your account dashboard with one click, and you'll retain access until your current billing period ends. Most members stay because they're landing stays, but you're free to leave whenever you want.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          What if I'm brand new to creator collaborations?
+        </div>
+        <div class="faq-answer">
+          <p>Perfect! We have many first-time creators in our community. Our templates, guides, and community support are specifically designed to help you succeed even with zero experience. You'll learn as you go, and the community is incredibly supportive of newcomers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section class="final-cta-section">
+  <div class="container">
+    <div class="final-cta-content">
+      <h2>Ready to Land Your First Hotel Stay This Week?</h2>
+      
+      <div class="final-benefits">
+        <ul>
+          <li>Weekly curated hotel briefs delivered to your inbox (4-5 per week)</li>
+          <li>Proven pitch templates with 35% success rate (vs. 5% average)</li>
+          <li>No 10K follower requirement. We work with creators from 500+ followers</li>
+          <li>Private community of 100+ active creators</li>
+          <li>Cancel anytime, no long-term commitment</li>
+        </ul>
+      </div>
+      
+      <div class="final-cta-button">
+        <a href="https://muob-creators.circle.so/checkout/nomads" class="btn btn-large" onclick="trackCTA('final')">
+          Get My First Hotel Brief
+        </a>
+      </div>
+      
+      <div class="final-guarantee">
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>Cancel anytime</span>
+        </div>
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>First brief as soon as 24 hours</span>
+        </div>
+        <div class="guarantee-item">
+          <span class="fud-check">✓</span>
+          <span>Join 100+ creators</span>
+        </div>
+      </div>
+      
+      <div class="final-social-proof">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"I landed a beautiful stay in the Cotswolds and made content for them in exchange for a free stay. Now I work with the hotel on a regular basis!" - Emma T., 1.2K followers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="https://imgur.com/6UnWg9S.png" alt="MUOB Logo">
+      </div>
+      <p class="footer-description">
+        Connecting travel creators with hotel collaboration opportunities worldwide. Turn your content into amazing stays. No 10K followers required.
+      </p>
+    </div>
+    
+    <div class="footer-col">
+      <h3>Platform</h3>
+      <ul class="footer-links">
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/hosts">For Hotels</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="#pricing">Creator Tiers</a></li>
+        <li><a href="#briefs">Recent Briefs</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul class="footer-links">
+        <li><a href="https://muob-creators.circle.so/terms">Terms of Service</a></li>
+        <li><a href="https://muob-creators.circle.so/privacy">Privacy Policy</a></li>
+        <li><a href="http://muob-creators.circle.so/account/billing?tab=paymentMethods">How to Cancel</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2025 MIND UR OWN BUSINESS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // FAQ functionality
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const isActive = question.classList.contains('active');
+      
+      // Close all other FAQs
+      faqQuestions.forEach(q => {
+        if (q !== question) {
+          q.classList.remove('active');
+          q.nextElementSibling.classList.remove('active');
+        }
       });
+      
+      // Toggle current FAQ
+      question.classList.toggle('active');
+      answer.classList.toggle('active');
     });
+  });
 
-    // CTA click tracking
-    function trackCTA(source) {
-      // Track InitiateCheckout event for TikTok/Google
-      if (typeof ttq !== 'undefined') {
-        ttq.track('InitiateCheckout', {
-          content_type: 'membership',
-          value: 19,
-          currency: 'GBP',
-          source: source
-        });
-      }
-      
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'begin_checkout', {
-          currency: 'GBP',
-          value: 19,
-          source: source
-        });
-      }
-      
-      console.log('CTA clicked from:', source);
+  // CTA click tracking
+  function trackCTA(source) {
+    // Track InitiateCheckout event for TikTok/Google
+    if (typeof ttq !== 'undefined') {
+      ttq.track('InitiateCheckout', {
+        content_type: 'membership',
+        value: 19,
+        currency: 'GBP',
+        source: source
+      });
     }
-  </script>
+    
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'begin_checkout', {
+        currency: 'GBP',
+        value: 19,
+        source: source
+      });
+    }
+    
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'InitiateCheckout', {
+        content_type: 'membership',
+        value: 19,
+        currency: 'GBP',
+        source: source
+      });
+    }
+    
+    console.log('CTA clicked from:', source);
+  }
+</script>
 </body>
 </html>
