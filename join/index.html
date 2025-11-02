@@ -891,25 +891,7 @@ p {
   border-radius: 15px;
   overflow-x: auto;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
   -webkit-overflow-scrolling: touch;
-}
-
-.comparison-table::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 30px;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
-  pointer-events: none;
-}
-
-@media (min-width: 769px) {
-  .comparison-table::after {
-    display: none;
-  }
 }
 
 .comparison-table table {
