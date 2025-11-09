@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Jess Farnham Brand Colors */
+    --background: 42 100% 98%; /* Cream white #fffbf5 */
+    --foreground: 348 80% 25%; /* Deep red for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 348 80% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 348 80% 25%;
+
+    --primary: 46 100% 73%; /* Yellow #ffdb75 */
+    --primary-foreground: 348 80% 25%;
+
+    --secondary: 351 82% 59%; /* Red #ee3e5a */
+    --secondary-foreground: 42 100% 98%;
+
+    --muted: 42 100% 95%;
+    --muted-foreground: 348 40% 45%;
+
+    --accent: 335 81% 64%; /* Pink #f17fb1 */
+    --accent-foreground: 42 100% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 42 100% 98%;
+
+    --border: 42 50% 90%;
+    --input: 42 50% 90%;
+    --ring: 46 100% 73%;
+
+    --radius: 1rem;
+
+    /* Brand accent colors */
+    --orange: 28 90% 54%; /* #f48020 */
+    --blue: 199 72% 71%; /* #80c2eb */
+    --green: 134 42% 62%; /* #76c488 */
+    --lilac: 285 25% 72%; /* #c5a2cc */
+    --purple: 301 50% 60%; /* #c47dc6 */
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(46, 100%, 73%), hsl(351, 82%, 59%));
+    --gradient-card: linear-gradient(180deg, hsl(335, 81%, 64%), hsl(301, 50%, 60%));
+    --gradient-accent: linear-gradient(90deg, hsl(199, 72%, 71%), hsl(134, 42%, 62%));
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Shantell Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
